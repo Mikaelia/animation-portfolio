@@ -1,5 +1,4 @@
 import ProjectCard from "../components/ProjectCard";
-import PlaceholderCard from "../components/PlaceholderCard.tsx";
 import Pot from "@rive/Pot.tsx";
 
 export const HomePage = () => {
@@ -8,7 +7,7 @@ export const HomePage = () => {
       <div className=" mb-20 flex w-full place-content-center bg-gray4">
         <div className="rive-projects pb-20 pt-20 text-white">
           <h2 className=" text-7xl">Code-y Bits</h2>
-          <p className=" pt-6">Let's learn fun web animation stuff.</p>
+          <p className=" pt-6">Let's learn fun web sheeeyit.</p>
         </div>
       </div>
 
@@ -23,8 +22,30 @@ export const HomePage = () => {
               <Pot fit={"Cover"}></Pot>
             </ProjectCard>
           </li>
-          <PlaceholderCard></PlaceholderCard>
-          <PlaceholderCard></PlaceholderCard>
+          <li>
+            <ProjectCard
+              name="css-sword"
+              title="CSS Sword"
+              description="Swish swish"
+              src="./css-sword.png"
+            ></ProjectCard>
+          </li>
+          <li>
+            <ProjectCard
+              name="css-green-ball"
+              title="CSS Green Ball"
+              description="Bounce bounce"
+              src="./css-green-ball.png"
+            ></ProjectCard>
+          </li>
+          <li>
+            <ProjectCard
+              name="css-toucan"
+              title="CSS Toucan"
+              description="Squack squack"
+              src="./css-toucan.png"
+            ></ProjectCard>
+          </li>
         </ul>
       </div>
     </div>

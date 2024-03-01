@@ -1,15 +1,32 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        llpurple: "#93B2FF",
-        lpurple: "#3668D4",
-        purple: "#3668D4",
-        dpurple: "#3668D4",
+        black: "#0F0F0F",
         white: "#FFFFFF",
-        orange: "#FF7053",
+        gray1: "#E3E3E3",
+        gray2: "#494949",
+        gray3: "#333333",
+        gray4: "#1D1D1D",
+        gray5: "#2E2E2E",
+        gray6: "#8E8E8E",
+      },
+      fontFamily: {
+        display: [["Roboto slab", "sans-serif"]],
+        body: ["Roboto slab", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+      },
+      gridTemplateColumns: {
+        projects: "repeat(auto-fit, minmax(300px, 1fr))",
+      },
+      gridTemplateRows: {
+        projects: "repeat(3, min-content)",
+      },
+      screens: {
+        sm: "450px",
       },
     },
   },

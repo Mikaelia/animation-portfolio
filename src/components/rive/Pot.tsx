@@ -1,17 +1,17 @@
-import React from "react";
-import { useRive, Layout, Alignment, Fit, } from "@rive-app/react-canvas";
+import { useRive, Layout, Alignment, Fit } from "@rive-app/react-canvas";
 
-const Pot = () => {
+const Pot = ({ fit = "Contain" }: { fit: "Cover" | "Contain" }) => {
   const { RiveComponent } = useRive({
     src: `/bubbling-pot.riv`,
     stateMachines: "State Machine 1",
     // shouldDisableRiveListeners: true,
     layout: new Layout({
-      fit: Fit.Cover,
+      fit: Fit[fit],
       alignment: Alignment.TopCenter,
     }),
     autoplay: true,
     onStateChange: (event) => {
+      // @ts-expect-error: Unreachable code error
       const eventName = event.data[0];
       if (eventName === "HOVER") {
         document.body.style.cursor = "pointer";
@@ -25,4 +25,4 @@ const Pot = () => {
   return <RiveComponent />;
 };
 
-export default Pot
+export default Pot;

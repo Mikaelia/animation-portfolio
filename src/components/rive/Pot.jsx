@@ -1,9 +1,9 @@
 import React from "react";
 import { useRive, Layout, Alignment, Fit, } from "@rive-app/react-canvas";
 
- export const Pot = () => {
+const Pot = () => {
   const { RiveComponent } = useRive({
-    src: "bubbling-pot.riv",
+    src: `/bubbling-pot.riv`,
     stateMachines: "State Machine 1",
     // shouldDisableRiveListeners: true,
     layout: new Layout({
@@ -24,3 +24,5 @@ import { useRive, Layout, Alignment, Fit, } from "@rive-app/react-canvas";
 
   return <RiveComponent />;
 };
+
+export default Pot

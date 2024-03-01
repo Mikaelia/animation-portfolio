@@ -13,6 +13,9 @@ export default {
         gray4: "#1D1D1D",
         gray5: "#2E2E2E",
         gray6: "#8E8E8E",
+        pink: "#FF5678",
+        green: "#4CBE9C",
+        blue: "#3BCBE1",
       },
       fontFamily: {
         display: [["Roboto slab", "sans-serif"]],

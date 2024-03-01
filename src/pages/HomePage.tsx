@@ -4,10 +4,13 @@ import Pot from "@rive/Pot";
 
 export const HomePage = () => {
   return (
-    <div className="home flex flex-col items-center font-body">
+    <div className="home  flex flex-col items-center">
       <div className=" mb-20 flex w-full place-content-center bg-gray4">
         <div className="rive-projects pb-20 pt-20 text-white">
-          <h2 className="font-regular text-8xl">Rive Projects</h2>
+          <h2 className=" text-7xl">Rive Projects</h2>
+          <p className=" pt-6">
+            Let's learn some fun web animation.
+          </p>
         </div>
       </div>
 

@@ -3,10 +3,12 @@ import { Routes, Route } from "react-router-dom";
 import { Layout } from "./pages/Layout.tsx";
 import { HomePage } from "./pages/HomePage.tsx";
 import { NoMatchPage } from "./pages/NoMatchPage";
-import { PotPage } from "./pages/ProjectPotPage.jsx";
-import { ProjectSwordPage } from "./pages/ProjectSwordPage.jsx";
-import { ProjectBallPage } from "./pages/ProjectBallPage.jsx";
-import { ProjectToucanPage } from "./pages/ProjectToucanPage.jsx";
+import { PotPage } from "./pages/ProjectPotPage";
+import { ProjectSwordPage } from "./pages/ProjectSwordPage";
+import { ProjectBallPage } from "./pages/ProjectBallPage";
+import { ProjectToucanPage } from "./pages/ProjectToucanPage";
+import { ProjectMagicSkyPage } from "./pages/ProjectMagicSkyPage";
+import { ProjectWaterPage } from "./pages/ProjectWaterPage";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           <Route index element={<HomePage />} />
           {/* // Tmp fix as Rive doesn't seem to play well with dynamic imports */}
           <Route path="animation/bubbling-pot" element={<PotPage />} />
+          <Route path="animation/magic-sky" element={<ProjectMagicSkyPage />} />
+          <Route path="animation/liquid" element={<ProjectWaterPage />} />
           <Route path="css/css-sword" element={<ProjectSwordPage />} />
           <Route path="css/css-green-ball" element={<ProjectBallPage />} />
           <Route path="css/css-toucan" element={<ProjectToucanPage />} />

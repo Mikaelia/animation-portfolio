@@ -1,6 +1,6 @@
 import { useRive, Layout, Alignment, Fit } from "@rive-app/react-canvas";
 
-const Pot = ({ fit = "Contain" }: { fit: "Cover" | "Contain" }) => {
+const Pot = ({ fit = "Contain" }: { fit?: "Cover" | "Contain" }) => {
   const { RiveComponent } = useRive({
     src: `/bubbling-pot.riv`,
     stateMachines: "State Machine 1",

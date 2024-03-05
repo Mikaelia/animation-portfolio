@@ -1,5 +1,5 @@
 import Pot from "@rive/Pot.tsx";
-import ProjectPage from "./ProjectPage"
+import {ProjectPage} from "./ProjectPage"
 
 export const PotPage = () => {
   return (

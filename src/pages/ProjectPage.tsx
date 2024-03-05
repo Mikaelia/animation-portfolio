@@ -1,4 +1,4 @@
-const PotPage = ({
+export const ProjectPage = ({
   children,
   instructions,
   title,
@@ -19,5 +19,3 @@ const PotPage = ({
     </div>
   );
 };
-
-export default PotPage;

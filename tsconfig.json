@@ -3,7 +3,7 @@
     "baseUrl": "./src", 
     "paths": {
       "@rive/*": ["components/rive/*"],
-      // "@components": ["components/*"]
+      "@components/*": ["components/*"]
     },
 
     "target": "ES2020",

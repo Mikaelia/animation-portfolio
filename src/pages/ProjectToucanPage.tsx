@@ -1,4 +1,4 @@
-import ProjectPage from "./ProjectPage";
+import {ProjectPage} from "./ProjectPage";
 import {CodepenWrapper} from "../components/CodepenWrapper"
 
 export const ProjectToucanPage = () => {

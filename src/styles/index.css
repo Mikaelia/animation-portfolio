@@ -4,6 +4,7 @@
 @import 'tailwindcss/utilities';
 @import 'typeface-roboto-slab';
 @import 'typeface-poppins';
+@import '@fontsource/nanum-pen-script';
 
 :root {
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */

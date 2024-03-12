@@ -21,6 +21,7 @@ export default {
         display: [["Roboto slab", "sans-serif"]],
         body: ["Roboto slab", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
+        handwriting: ["Nanum Pen Script"]
       },
       gridTemplateColumns: {
         projects: "repeat(auto-fit, minmax(300px, 1fr))",

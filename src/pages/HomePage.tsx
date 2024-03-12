@@ -3,7 +3,6 @@ import { CssCard } from "@components/Cards/CssCard";
 import Pot from "@rive/Pot";
 import Cat from "@rive/Cat";
 import Liquid from "@rive/Liquid.jsx";
-import { useState } from "react";
 
 export const HomePage = () => {
   return (

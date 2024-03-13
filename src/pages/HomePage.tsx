@@ -1,22 +1,30 @@
+import {useState} from "react"
 import { AnimationCard } from "@components/Cards/AnimationCard";
 import { CssCard } from "@components/Cards/CssCard";
 import Pot from "@rive/Pot";
 import Cat from "@rive/Cat";
 import Liquid from "@rive/Liquid.jsx";
+import SanFrancisco from "@rive/SanFrancisco";
 
 export const HomePage = () => {
+  const [catLoaded, setCatLoaded] = useState(false)
   return (
     <div className="home flex flex-col items-center">
-      <div className="mb-20 flex w-full place-content-center bg-gray4">
-        <div className="rive-projects border-b border-gray2 border-opacity-65 bg-gray3 bg-opacity-50 relative w-full pb-20 pt-20 flex items-center flex-col text-center text-white">
-          <h2 className="font-handwriting text-7xl">MIKAELA GURNEY</h2>
+      <div className="mb-20 flex w-full place-content-center">
+        <div className={`rive-projects  border-gray2 relative w-full pb-20 pt-20 border-b flex items-center flex-col duration-500 text-center ${catLoaded ? "text-white bg-gray3 bg-opacity-50 border-opacity-65" : "text-black bg-black border-opacity-0"}`}>
+          <h1 className="font-handwriting text-7xl">MIKAELA GURNEY</h1>
           <p className="font-handwriting text-xl pt-6 mb-20">Let's learn fun web sheeeyit.</p>
-          <div className="w-full left-[-18rem] top-1 absolute items-center flex h-[300px] overflow-hidden" >
+          <div className="w-full left-[-18rem] top-[-6rem] absolute items-center flex h-[500px] overflow-hidden" >
           <div className="cat w-full h-[500px] w-full ">
-            <Cat fit="Contain"></Cat>
+            <Cat handleWakeUp={() => setCatLoaded(true)}></Cat>
           </div>
           </div>
         </div>
+      </div>
+      <h1 className="font-handwriting text-5xl ">About Me:</h1>
+
+      <div className="san-francisco-section h-[1200px] w-full">
+        <SanFrancisco/>
       </div>
 
       <div className="flex w-full justify-center p-12">

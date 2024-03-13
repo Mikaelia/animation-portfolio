@@ -1,18 +1,39 @@
-import { useRive, Layout, Alignment, Fit } from "@rive-app/react-canvas";
+import { useRive, Layout, Alignment, Fit, useStateMachineInput } from "@rive-app/react-canvas";
+import { useEffect, useState } from "react"; 
 
-const Liquid = ({fit, alignment="TopCenter", className=""}) => {
-  const { RiveComponent } = useRive({
+const STATE_MACHINE = "State Machine 1"
+const Cat = ({handleWakeUp}) => {
+  const [isLoaded, setIsLoaded] = useState(false)
+  const { RiveComponent, rive } = useRive({
     src: `/cat.riv`,
-    stateMachines: "State Machine 1",
-
+    stateMachines: STATE_MACHINE,
     layout: new Layout({
-      fit: Fit[fit],
-      alignment: Alignment[alignment],
+      fit: Fit.Contain,
+      alignment: Alignment.TopCenter,
     }),
     autoplay: true,
+    onStateChange: (event) => {
+      const names = event.data;
+      names.forEach((name) => {
+        // change this to one that's only triggered once
+        console.log(name)
+       if (name === "exit") {
+        setIsLoaded(true)
+        handleWakeUp()
+       }
+      });
+    },
   });
+  
+  const isLoadedInput = useStateMachineInput(rive, STATE_MACHINE, 'loaded')
 
-  return <RiveComponent className={className} />;
+
+  useEffect(() => {
+    console.log(isLoadedInput);
+    if (rive && isLoaded) isLoadedInput.value = true
+  }, [rive, isLoaded])
+
+  return <RiveComponent />;
 };
 
-export default Liquid;
+export default Cat;

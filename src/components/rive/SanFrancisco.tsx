@@ -1,13 +1,13 @@
 
-import { useState, useEffect, useRef } from 'react';
-import { useRive, Layout, Alignment, Fit, useStateMachineInput, RiveEventType, EventType } from "@rive-app/react-canvas";
-import useMediaQuery from "@/utils/useMediaBreakpoint";
+// import { useState, useEffect, useRef } from 'react';
+import { useRive, Layout, Alignment, Fit } from "@rive-app/react-canvas";
+// import useMediaQuery from "@/utils/useMediaBreakpoint";
 
 
 const STATE_MACHINE = "State Machine 1"
 
 const SanFrancisco = ({ fit = "Cover" }: { fit?: "Cover" | "Contain" }) => {
-  const { RiveComponent, rive } = useRive({
+  const { RiveComponent } = useRive({
     src: `/san-francisco.riv`,
     stateMachines: STATE_MACHINE,
     layout: new Layout({

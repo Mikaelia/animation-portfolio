@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import Card from "../Card";
+import Card from "./Card";
 
 export const CssCard: React.FC<{
   children?: ReactNode;
@@ -24,12 +24,10 @@ export const CssCard: React.FC<{
         <h4 className="mb-2 font-bold text-white text-opacity-80 duration-500 ease-in-out  group-hover:text-opacity-100">
           {title}
         </h4>
-        <div className="flex justify-between">
-          <p className="text-gray1 text-opacity-65 duration-500 group-hover:text-opacity-100">
-            {description}
-          </p>
-          <div className="pill rounded-xl bg-blue p-3">CSS</div>
-        </div>
+        <p className="text-gray1 text-opacity-65 duration-500 group-hover:text-opacity-100">
+          {description}
+        </p>
+        <div className="pill rounded-tl-xl border-2 border-r-0 border-lblue rounded-bl-xl bg-blue p-3 absolute top-5 right-0">CSS</div>
       </Link>
     </Card>
   );

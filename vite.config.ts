@@ -12,5 +12,7 @@ export default defineConfig({
     alias: {
       '@rive': new URL('./src/components/rive', import.meta.url).pathname,
       '@components': new URL('./src/components/', import.meta.url).pathname,
+      '@': new URL('./src', import.meta.url).pathname
     }
-}});
+  }
+});

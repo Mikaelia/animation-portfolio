@@ -9,6 +9,8 @@ import { ProjectBallPage } from "./pages/ProjectBallPage";
 import { ProjectToucanPage } from "./pages/ProjectToucanPage";
 import { ProjectMagicSkyPage } from "./pages/ProjectMagicSkyPage";
 import { ProjectWaterPage } from "./pages/ProjectWaterPage";
+import { ProjectSharkSubPage } from "./pages/ProjectSharkSubPage";
+import { ProjectSanFranciscoPage } from "./pages/ProjectSanFranciscoPage";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="animation/bubbling-pot" element={<PotPage />} />
           <Route path="animation/magic-sky" element={<ProjectMagicSkyPage />} />
           <Route path="animation/liquid" element={<ProjectWaterPage />} />
+          <Route path="animation/undersea-socials" element={<ProjectSharkSubPage />} />
+          <Route path="animation/san-francisco" element={<ProjectSanFranciscoPage />} />
           <Route path="css/css-sword" element={<ProjectSwordPage />} />
           <Route path="css/css-green-ball" element={<ProjectBallPage />} />
           <Route path="css/css-toucan" element={<ProjectToucanPage />} />

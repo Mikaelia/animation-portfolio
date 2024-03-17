@@ -16,7 +16,7 @@ export const HomePage = () => {
       <div className={`header flex w-full h-screen items-center duration-1000 ${catLoaded ? "bg-gray3 border-b border-gray2" : " border-b border-black bg-black"}`}>
         <div className={`rive-projects w-full relative pb-20 pt-20 flex items-center flex-col duration-1000 text-center ${catLoaded ? "text-white" : "text-black"}`}>
           <h1 className="font-handwriting mt-[-15rem] sm:mt-[-10rem] lg:text-9xl sm:text-8xl text-7xl">MIKAELA GURNEY</h1>
-          <p className="font-handwriting lg:text-2xl md:text-xl pt-6 mb-20">Let's do fun web sheeeyit.</p>
+          <p className="font-handwriting lg:text-2xl md:text-xl pt-6 mb-20">Let's do fun web stuff.</p>
           <div className="w-full xl:left-[-18rem] xl:top-[-16rem] left-[-1.75rem] sm:bottom-[-18rem] absolute items-center flex h-[500px] overflow-hidden" >
             <div className="cat xl:pr-[17rem] w-full h-[500px] w-full ">
               <Cat handleWakeUp={() => setCatLoaded(true)}></Cat>

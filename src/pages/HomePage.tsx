@@ -30,7 +30,7 @@ export const HomePage = () => {
           <Plane />
         </div>
         <div className="xl:pl-20 xl:mt-56 lg:w-[45vw] flex flex-col text-center xl:text-left items-center max-w-5xl">
-          <p className="text-xl mb-[4rem]"> My name's Mikaela. <br></br><br></br> I'm a frontend developer living and working in San Francisco, CA. On this page you'll find some of my CSS and animation experiments and mini-projects. <br></br><br></br> I'm excited by building interactions that are fun, intuitive, and have a personality of their own. Over the past four years, I've enjoyed working closely with designers and developers to bring ideas to life: building out new products and enhancing existing features, creating design and layout systems, architecting UI component libraries, and developing tools to make other engineers' lives easier. <br></br><br></br>My mission is to create virtual experiences that'll brighten your day.
+          <p className="text-xl mb-[4rem]"> My name's Mikaela. <br></br><br></br> I'm a frontend developer living and working in San Francisco, CA. On this page you'll find some of my CSS and animation experiments and mini-projects. <br></br><br></br> I'm excited by building interactions that are fun, intuitive, and have a personality of their own. Over the past four years, I've enjoyed working closely with designers and developers to bring ideas to life; building out new products and enhancing existing features, creating design and layout systems, architecting UI component libraries, and developing tools to make other engineers' lives easier. <br></br><br></br>My mission is to create virtual experiences that'll brighten your day.
           </p>
           <Socials></Socials>
         </div>

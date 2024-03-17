@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import Card from "@components/Card";
+import Card from "@/components/Cards/Card";
 
 export const AnimationCard: React.FC<{
   children?: ReactNode;
@@ -26,15 +26,10 @@ export const AnimationCard: React.FC<{
       <h4 className="mb-2 font-bold text-white text-opacity-80 duration-500 ease-in-out group-hover:text-opacity-100">
         {title}
       </h4>
-      <div className="flex justify-between">
-        <p className="text-gray1 text-opacity-65 duration-500 group-hover:text-opacity-100">
-          {description}
-        </p>
-        <div className="flex gap-2">
-          <div className="pill rounded-xl bg-pink p-3">Animation</div>
-          {/* <div className="pill bg-green rounded-xl p-3">Rive</div> */}
-        </div>
-      </div>
+      <p className="text-gray1 text-opacity-65 duration-500 group-hover:text-opacity-100">
+        {description}
+      </p>
+      <div className="pill rounded-tl-xl border-2 border-r-0 border-lpink rounded-bl-xl bg-pink p-3 absolute top-5 right-0">Animation</div>
     </Link>
   </Card>
 );

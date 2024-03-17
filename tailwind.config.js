@@ -14,14 +14,16 @@ export default {
         gray5: "#2E2E2E",
         gray6: "#8E8E8E",
         pink: "#FF5678",
+        lpink: "#FF7490",
         green: "#4CBE9C",
+        lblue: "#B8DCE1",
         blue: "#3BCBE1",
       },
       fontFamily: {
         display: [["Roboto slab", "sans-serif"]],
         body: ["Roboto slab", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
-        handwriting: ["Nanum Pen Script"]
+        handwriting: ["Nanum Pen Script", 'sans-serif']
       },
       gridTemplateColumns: {
         projects: "repeat(auto-fit, minmax(300px, 1fr))",

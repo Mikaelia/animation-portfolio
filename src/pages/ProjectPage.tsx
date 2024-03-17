@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export const ProjectPage = ({
   children,
   instructions,
@@ -8,14 +9,23 @@ export const ProjectPage = ({
   title: string;
 }) => {
   return (
-    <div className="home mt-65 flex h-[calc(100vh-63px)] justify-start pb-3 pt-3">
-      <div className="child-container mr-3 h-full w-full max-w-5xl overflow-hidden rounded-br-md rounded-tr-md bg-gray4 p-3">
-        {children}
+    <>
+      <nav className="font-semibold absolute">
+        <ul className="flex items-center gap-5 p-5 ">
+          <li className="text-gray6 duration-500 ease-in-out hover:text-white">
+            <Link to="/">Home</Link>
+          </li>
+        </ul>
+      </nav>
+      <div className="home pt-16 flex h-full justify-between pb-3 pt-3">
+        <div className="child-container mr-3 h-full w-full overflow-hidden rounded-br-md rounded-tr-md bg-gray4 p-3">
+          {children}
+        </div>
+        <div className="sidePanel w-1/4 rounded-bl-md rounded-tl-md border border-r-0 border-gray5 bg-gray4 p-8 text-xl font-semibold">
+          <h1 className="title mb-4">{title}</h1>
+          <p className="text-sm font-light">{instructions}</p>
+        </div>
       </div>
-      <div className="sidePanel w-1/3 rounded-bl-md rounded-tl-md border border-r-0 border-gray5 bg-gray4 p-8 text-xl font-semibold">
-        <h1 className="title mb-4">{title}</h1>
-        <p className="text-sm font-light">{instructions}</p>
-      </div>
-    </div>
+    </>
   );
 };

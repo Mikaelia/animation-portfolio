@@ -15,7 +15,7 @@ const Socials = () => {
     autoplay: true,
   });
 
-
+  // @ts-expect-error
   const onRiveEventReceived = (riveEvent) => {
     const eventData = riveEvent.data;
     const root = document.getElementById("root");

@@ -1,5 +1,5 @@
 import { ProjectPage } from "./ProjectPage";
-import { CodepenWrapper } from "../components/CodepenWrapper";
+import { CodepenWrapper } from "@components/CodepenWrapper.tsx";
 
 export const ProjectBallPage = () => {
   return (

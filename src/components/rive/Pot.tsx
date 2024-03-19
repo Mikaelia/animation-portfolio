@@ -1,7 +1,7 @@
 import { useRive, Layout, Alignment, Fit } from "@rive-app/react-canvas";
 
 const Pot = ({ fit = "Contain" }: { fit?: "Cover" | "Contain" }) => {
-  const { RiveComponent } = useRive({
+  const { RiveComponent: LePot } = useRive({
     src: `/bubbling-pot.riv`,
     stateMachines: "State Machine 1",
     // shouldDisableRiveListeners: true,
@@ -22,7 +22,7 @@ const Pot = ({ fit = "Contain" }: { fit?: "Cover" | "Contain" }) => {
     },
   });
 
-  return <RiveComponent />;
+  return <LePot />;
 };
 
 export default Pot;

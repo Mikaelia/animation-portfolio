@@ -14,7 +14,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #0F0F0F;
-  color:  #FFFFFF;
+  color: #FFFFFF;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,10 +28,11 @@
 body {
   box-sizing: border-box;
   height: 100%;
+  overscroll-behavior-y: none;
 }
 
 html {
-height: 100%;
+  height: 100%;
 }
 
 #root {

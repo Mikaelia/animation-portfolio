@@ -1,5 +1,4 @@
-import { useEffect, useRef } from "react";
-import Birds from "./Birds";
+import { useRef } from "react";
 
 export default function Background() {
   const stickyElement = useRef<HTMLDivElement>(null);
@@ -28,7 +27,7 @@ export default function Background() {
   return (
     <div
       ref={stickyElement}
-      className="sky-slide-2 sticky top-0 z-[-1] mt-[-50rem] h-screen min-w-[2000px] max-w-[2000px]"
+      className="sky-slide-2 sticky top-0 z-[-1] h-screen min-w-[2000px] max-w-[2000px]"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

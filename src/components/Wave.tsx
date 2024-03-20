@@ -1,27 +1,15 @@
-import React from "react"
-
-const Wave = () => (
-  <div className="wave-container">
+const Wave = ({ className }: never) => (
+  <div className={className}>
     <svg
+      style={{ width: "2000px" }}
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1079.86 900"
-      style={{
-        width: "2000px",
-        marginTop: "10rem",
-        height: "70rem",
-      }}
+      viewBox="0 0 1079 300"
       preserveAspectRatio="none"
+      fill="#0F0F0F"
     >
-      <g id="Layer_2" data-name="Layer 2">
-        <g id="background-wave">
-          <path
-            fill="#0e0603"
-            d="M1079.86,773.85C880.23,903.11,735.25,911.36,637.36,892.27c-118.29-23-175.3-87.29-335-118.42-123.11-24-229.95-13.32-302.35,0V64.14a1137.41,1137.41,0,0,0,179.4,55.44c60.26,13.28,146.39,35.31,234.73,26.07,164.94-17.24,199.79-95.73,347.13-131.9,70.06-17.2,175.46-26.09,318.6,21.84Z"
-          />
-        </g>
-      </g>
+      <path d="M0.01,64.14c58.169785,23.392937,118.174202,41.936108,179.4,55.44c60.26,13.28,146.39,35.31,234.73,26.07c164.94-17.24,199.79-95.73,347.13-131.9c70.06-17.2,175.46-26.09,318.6,21.84v264.41L0,300" />
     </svg>
-  </div >
-)
+  </div>
+);
 
-export default Wave
+export default Wave;

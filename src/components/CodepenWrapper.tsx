@@ -1,4 +1,10 @@
-export const CodepenWrapper = ({ id, title }) => {
+export const CodepenWrapper = ({
+  id,
+  title,
+}: {
+  id: string;
+  title: string;
+}) => {
   return (
     <div className="h-full">
       <iframe

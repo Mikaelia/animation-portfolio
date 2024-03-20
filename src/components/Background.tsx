@@ -23,7 +23,7 @@ export default function Background() {
   return (
     <div
       ref={stickyElement}
-      className="stick sky-slide top-0 z-[-1] h-screen min-w-[2000px] max-w-[2000px] overflow-hidden"
+      className="stick sky-slide top-0 z-[-2] h-screen min-w-[2000px] max-w-[2000px] overflow-hidden"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

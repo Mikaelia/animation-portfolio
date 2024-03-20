@@ -9,18 +9,17 @@ import SanFrancisco from "@rive/SanFrancisco";
 import Plane from "@rive/Plane";
 import Socials from "@/components/rive/Socials";
 import Background from "@/components/Background";
-import "../assets/styles/birds.css";
-import Wave from "@/components/Wave";
-import Background2 from "@/components/Background2";
-import FooterWave from "@components/FooterWave.tsx";
+import "../assets/styles/custom.css";
+import RiveFooter from "@rive/FooterWave.tsx";
+import HeaderWave from "@/components/HeaderWave";
 
 export const HomePage = () => {
   const [catLoaded, setCatLoaded] = useState(false);
 
   return (
-    <div className="homepage relative flex flex-col items-center">
+    <div className="homepage relative flex flex-col items-center overflow-x-hidden">
       <div
-        className={`header flex h-screen w-full items-center duration-1000 ${catLoaded ? "border-b border-gray2 bg-gray3" : " border-b border-black bg-black"}`}
+        className={` z-1 header flex h-screen w-full max-w-[2000px] items-center duration-1000 ${catLoaded ? " bg-gray3" : "bg-black"}`}
       >
         <div
           className={`rive-projects relative flex w-full flex-col items-center pb-20 pt-20 text-center duration-1000 ${catLoaded ? "text-white" : "text-black"}`}
@@ -38,6 +37,9 @@ export const HomePage = () => {
           </div>
         </div>
       </div>
+      <div className="overflow-x-hidden">
+        <HeaderWave background={catLoaded ? "#333333" : "#0F0F0F"}></HeaderWave>
+      </div>
 
       <div className="plane-section xl:justify-space-between flex w-full flex-col items-center justify-center pl-20 pr-20 lg:mt-16 xl:mt-20 xl:flex-row">
         <div className=" xl:w-9rem sm:display-block display-none mt-[10rem] h-[20rem] w-[100vw] max-w-3xl md:h-[20rem] md:w-[45vw] lg:mt-0 xl:mt-[5rem]">
@@ -51,14 +53,14 @@ export const HomePage = () => {
             Francisco, CA. On this page you'll find some of my CSS and animation
             experiments and mini-projects. <br></br>
             <br></br> I'm excited by building interactions that are fun,
-            intuitive, and have a personality of their own. Over the past four
-            years, I've enjoyed working closely with designers and developers to
-            bring ideas to life; building out new products and enhancing
-            existing features, creating design and layout systems, architecting
-            UI component libraries, and developing tools to make other
-            engineers' lives easier. <br></br>
-            <br></br>My mission is to create virtual experiences that'll
-            brighten your day.
+            intuitive, and have a personality of their own.
+            <br></br>
+            <br></br>
+            Over the past four years, I've enjoyed working closely with
+            designers and developers to bring ideas to life; building out new
+            products and enhancing existing features, creating design and layout
+            systems, architecting UI component libraries, and developing tools
+            to make other engineers' lives easier.
           </p>
           <Socials></Socials>
         </div>
@@ -137,9 +139,12 @@ export const HomePage = () => {
           </li>
         </ul>
       </div>
-      <Wave></Wave>
-      <Background2></Background2>
-      <FooterWave></FooterWave>
+      <div className="overflow-x-hidden">
+        <RiveFooter></RiveFooter>
+        {/*<Wave style={{ marginBottom: "-10rem" }}></Wave>*/}
+      </div>
+      {/*<Background2></Background2>*/}
+      {/*<FooterWave></FooterWave>*/}
     </div>
   );
 };

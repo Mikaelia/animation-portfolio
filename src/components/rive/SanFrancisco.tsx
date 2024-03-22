@@ -1,23 +1,24 @@
-
 // import { useState, useEffect, useRef } from 'react';
 import { useRive, Layout, Alignment, Fit } from "@rive-app/react-canvas";
 // import useMediaQuery from "@/utils/useMediaBreakpoint";
 
-
-const STATE_MACHINE = "State Machine 1"
+const STATE_MACHINE = "State Machine 1";
 
 const SanFrancisco = ({ fit = "Cover" }: { fit?: "Cover" | "Contain" }) => {
-  const { RiveComponent } = useRive({
-    src: `/san-francisco.riv`,
-    stateMachines: STATE_MACHINE,
-    layout: new Layout({
-      fit: Fit[fit],
-      alignment: Alignment.TopCenter,
-    }),
-    autoplay: true,
-  }, {
-    // shouldResizeCanvasToContainer: false
-  });
+  const { RiveComponent } = useRive(
+    {
+      src: `/san-francisco.riv`,
+      stateMachines: STATE_MACHINE,
+      layout: new Layout({
+        fit: Fit[fit],
+        alignment: Alignment.Center,
+      }),
+      autoplay: true,
+    },
+    {
+      // shouldResizeCanvasToContainer: false
+    },
+  );
 
   // const elementRef = useRef(null);
   // const lgQuery = useMediaQuery("only screen and (min-width: 1025px)");
@@ -40,7 +41,6 @@ const SanFrancisco = ({ fit = "Cover" }: { fit?: "Cover" | "Contain" }) => {
   //   }
   // };
 
-
   // Wait until the rive object is instantiated before adding the Rive
   // event listener
 
@@ -50,10 +50,7 @@ const SanFrancisco = ({ fit = "Cover" }: { fit?: "Cover" | "Contain" }) => {
   //   }
   // }, [rive]);
 
-
   /////////
-
-
 
   // On larger viewports, display the entire artboard while maintaining aspect ratio
   // On smaller viewports, cover the viewport with the artboard while maintaining aspect ratio
@@ -73,7 +70,6 @@ const SanFrancisco = ({ fit = "Cover" }: { fit?: "Cover" | "Contain" }) => {
   //     }
   //   }
   // }, [rive, lgQuery]);
-
 
   return (
     // <div className="san-francisco-section lg:h-[250vh] max-w-[1450px] w-full md:h-[200vh] sm:display:none" ref={elementRef}>

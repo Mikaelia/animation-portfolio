@@ -11,7 +11,7 @@ export const AnimationCard: React.FC<{
 }> = ({ children, name, title, description, src }) => (
   <Card>
     <Link to={`animation/${name}`}>
-      <div className="child-container w-100 mb-6 h-52 overflow-hidden rounded-xl opacity-100 sm:h-80 xl:h-80">
+      <div className="child-container w-100 mb-6 h-52 overflow-hidden rounded-xl bg-[white] bg-opacity-30 sm:h-80 xl:h-80">
         {src ? (
           <div
             className="h-full bg-cover"
@@ -29,7 +29,9 @@ export const AnimationCard: React.FC<{
       <p className="text-gray1 text-opacity-65 duration-500 group-hover:text-opacity-100">
         {description}
       </p>
-      <div className="pill rounded-tl-xl border-2 border-r-0 border-lpink rounded-bl-xl bg-pink p-3 absolute top-5 right-0">Animation</div>
+      <div className="pill absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 border-lpink bg-pink p-3">
+        Animation
+      </div>
     </Link>
   </Card>
 );

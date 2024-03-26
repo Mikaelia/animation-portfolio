@@ -46,22 +46,50 @@ export const HomePage = () => {
           <Plane />
         </div>
         <div className="flex max-w-5xl flex-col items-center text-center lg:w-[45vw] xl:mt-56 xl:pl-20 xl:text-left">
-          <p className="mb-[4rem] text-xl">
-            {" "}
-            My name's Mikaela. <br></br>
-            <br></br> I'm a frontend developer living and working in San
-            Francisco, CA. On this page you'll find some of my CSS and animation
-            experiments and mini-projects. <br></br>
-            <br></br> I'm excited by building interactions that are fun,
-            intuitive, and have a personality of their own.
-            <br></br>
-            <br></br>
-            Over the past four years, I've enjoyed working closely with
-            designers and developers to bring ideas to life; building out new
-            products and enhancing existing features, creating design and layout
-            systems, architecting UI component libraries, and developing tools
-            to make other engineers' lives easier.
-          </p>
+          <div className="mb-6 text-xl">
+            <p className="mb-12">
+              My name's Mikaela. <br></br>
+              <br></br> I'm a frontend developer based in foggy San Francisco.
+              Here you'll find some of my CSS and animation experiments and
+              mini-projects.
+            </p>
+            <p className="mb-12">
+              I love creating clean, flexible UIs and playful interactions for
+              users to enjoy. Over the past four years, I've had the pleasure of
+              collaborating with designers and developers to launch new products
+              and reimagine existing features. I've also worked on design
+              systems and component libraries to streamline development across
+              engineering teams.
+            </p>
+            <p className="mb-12">
+              As an artist I'm addicted to detail. Check out my{" "}
+              <a
+                className="underline"
+                href={"https://www.facebook.com/mikaelaspencils/"}
+                target="_blank"
+              >
+                pencil
+              </a>{" "}
+              work or follow along as I learn to{" "}
+              <a
+                className="underline"
+                href={"https://www.instagram.com/mikaelisms/"}
+                target="_blank"
+              >
+                watercolor
+              </a>
+              .
+            </p>
+            I even have a{" "}
+            <a
+              className="underline"
+              href={"https://www.pixelsips.dev"}
+              target="_blank"
+            >
+              blog
+            </a>
+            , where I (very) occasionally write stuff!
+          </div>
           <Socials></Socials>
         </div>
       </div>

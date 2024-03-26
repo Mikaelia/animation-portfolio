@@ -88,7 +88,7 @@ export const HomePage = () => {
             >
               blog
             </a>
-            , where I (very) occasionally write stuff!
+            , where I (very) occasionally write things!
           </div>
           <Socials></Socials>
         </div>

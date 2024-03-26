@@ -147,3 +147,29 @@
 .card:hover {
   background: rgba(255, 255, 255, 0.37);
 }
+
+.select-button {
+  transition: .2s ease;
+  text-align: left;
+}
+
+.select-button:hover, .select-button.active {
+  outline: 2px solid white;
+}
+
+.select-button::before {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+  background: #0f0f0f;
+  top: calc(50% - .5rem);
+  right: 1rem;
+  border: 1px solid white;
+
+}
+
+.select-button:hover::before, .select-button.active::before {
+  background: white;
+}

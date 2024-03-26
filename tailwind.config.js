@@ -16,6 +16,7 @@ export default {
         pink: "#FF5678",
         lpink: "#FF7490",
         green: "#4CBE9C",
+        lgreen: "#C3E88D",
         lblue: "#B8DCE1",
         blue: "#3BCBE1",
       },
@@ -23,7 +24,7 @@ export default {
         display: [["Roboto slab", "sans-serif"]],
         body: ["Roboto slab", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
-        handwriting: ["Nanum Pen Script", 'sans-serif']
+        handwriting: ["Nanum Pen Script", "sans-serif"],
       },
       gridTemplateColumns: {
         projects: "repeat(auto-fit, minmax(300px, 1fr))",

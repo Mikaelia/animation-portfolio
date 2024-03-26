@@ -12,6 +12,7 @@ import Background from "@/components/Background";
 import "../assets/styles/custom.css";
 import RiveFooter from "@rive/FooterWave.tsx";
 import HeaderWave from "@/components/HeaderWave";
+import Blackbird from "@rive/Blackbird.tsx";
 
 export const HomePage = () => {
   const [catLoaded, setCatLoaded] = useState(false);
@@ -132,6 +133,15 @@ export const HomePage = () => {
               description="Trailhead homepage hero animation"
               src="./magic-sky.png"
             ></AnimationCard>
+          </li>
+          <li>
+            <AnimationCard
+              name="blackbird"
+              title="Blackbird"
+              description="Birb time"
+            >
+              <Blackbird></Blackbird>
+            </AnimationCard>
           </li>
           <li>
             <AnimationCard

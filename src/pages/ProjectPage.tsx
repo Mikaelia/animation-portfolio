@@ -9,7 +9,7 @@ export const ProjectPage = ({
   children: React.ReactNode;
   instructions: string;
   title: string;
-  instructionControls: React.ReactNode;
+  instructionControls?: React.ReactNode;
 }) => {
   return (
     <>

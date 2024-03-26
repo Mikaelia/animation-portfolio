@@ -38,4 +38,9 @@ export default {
     },
   },
   plugins: [],
+  safelist: [
+    {
+      pattern: /bg-green/,
+    },
+  ],
 };

@@ -8,7 +8,7 @@ import {
 import { useEffect } from "react";
 
 const STATE_MACHINE = "State Machine 1";
-const Blackbird = ({ stateNumber }: { stateNumber: number }) => {
+const Blackbird = ({ stateNumber = 0 }: { stateNumber?: number }) => {
   const { RiveComponent, rive } = useRive({
     src: `/bird.riv`,
     stateMachines: STATE_MACHINE,
@@ -27,7 +27,9 @@ const Blackbird = ({ stateNumber }: { stateNumber: number }) => {
   );
 
   useEffect(() => {
-    if (rive && animationState) animationState.value = stateNumber;
+    if (rive && animationState) {
+      animationState.value = stateNumber;
+    }
   }, [rive, stateNumber, animationState]);
 
   return <RiveComponent />;

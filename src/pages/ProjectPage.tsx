@@ -13,7 +13,7 @@ export const ProjectPage = ({
     <>
       <nav className="font-semibold">
         <ul className="flex items-center gap-5 p-4 ">
-          <li className="text-gray6 duration-500 ease-in-out hover:text-white">
+          <li className="inline-block bg-white bg-clip-text duration-500 ease-in-out hover:bg-gradient-to-r hover:from-pink hover:via-orange-500 hover:to-yellow-500 hover:text-transparent">
             <Link to="/">Home</Link>
           </li>
         </ul>

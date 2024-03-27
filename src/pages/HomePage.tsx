@@ -106,7 +106,7 @@ export const HomePage = () => {
             <CssCard
               name="css-sword"
               title="CSS Sword"
-              description="Swish swish"
+              description="A sword made using only HTML and CSS"
               src="./css-sword.png"
             ></CssCard>
           </li>
@@ -114,7 +114,7 @@ export const HomePage = () => {
             <CssCard
               name="css-green-ball"
               title="CSS Green Ball"
-              description="Bounce bounce"
+              description="A ball made using only HTML and CSS"
               src="./css-green-ball.png"
             ></CssCard>
           </li>
@@ -122,7 +122,7 @@ export const HomePage = () => {
             <CssCard
               name="css-toucan"
               title="CSS Toucan"
-              description="Squack squack"
+              description="A toucan made using only HTML and CSS"
               src="./css-toucan.png"
             ></CssCard>
           </li>
@@ -130,7 +130,7 @@ export const HomePage = () => {
             <AnimationCard
               name="magic-sky"
               title="Magic Sky"
-              description="Trailhead homepage hero animation"
+              description="Salesforce's Trailhead homepage hero animation project"
               src="./magic-sky.png"
             ></AnimationCard>
           </li>
@@ -147,7 +147,7 @@ export const HomePage = () => {
             <AnimationCard
               name="san-francisco"
               title="San Francisco"
-              description="SF fun"
+              description="An animated scene of San Francisco"
             >
               <SanFrancisco></SanFrancisco>
             </AnimationCard>
@@ -156,13 +156,17 @@ export const HomePage = () => {
             <AnimationCard
               name="undersea-socials"
               title="Undersea Socials"
-              description="Idea for underwater social links"
+              description="A discarded idea for underwater social links"
             >
               <SharkSub></SharkSub>
             </AnimationCard>
           </li>
           <li>
-            <AnimationCard name="liquid" title="Liquid" description="Blub blub">
+            <AnimationCard
+              name="liquid"
+              title="Liquid"
+              description="First simple Rive animation"
+            >
               <Liquid alignment="BottomCenter" fit="Cover"></Liquid>
             </AnimationCard>
           </li>
@@ -170,7 +174,7 @@ export const HomePage = () => {
             <AnimationCard
               name="bubbling-pot"
               title="Bubbling Pot"
-              description="Boil boil"
+              description="Bubbling pot animation"
             >
               <Pot fit={"Cover"}></Pot>
             </AnimationCard>
@@ -179,10 +183,7 @@ export const HomePage = () => {
       </div>
       <div className="overflow-x-hidden">
         <RiveFooter></RiveFooter>
-        {/*<Wave style={{ marginBottom: "-10rem" }}></Wave>*/}
       </div>
-      {/*<Background2></Background2>*/}
-      {/*<FooterWave></FooterWave>*/}
     </div>
   );
 };

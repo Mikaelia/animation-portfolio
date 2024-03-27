@@ -3,9 +3,9 @@ import Blackbird from "@rive/Blackbird";
 import { useState } from "react";
 
 const buttonsConfig = [
-  { id: 0, label: "Happy Step", color: "blue" },
-  { id: 1, label: "Shuffle", color: "pink" },
-  { id: 2, label: "Peck", color: "green" },
+  { id: 0, label: "Happy Step", color: "green" },
+  { id: 1, label: "Shuffle", color: "blue" },
+  { id: 2, label: "Peck", color: "pink" },
 ];
 
 export const ProjectBlackbirdPage = () => {
@@ -19,7 +19,8 @@ export const ProjectBlackbirdPage = () => {
 
   const buildInstructionControls = () => {
     return (
-      <div className="buttons mt-12 flex flex-col items-center">
+      <div className="buttons items-left mt-10 flex flex-col">
+        <h2 style={{ fontSize: "0.875rem" }}>Choose:</h2>
         {buttonsConfig.map(({ id, label, color }) => (
           <button
             key={id}
@@ -38,7 +39,7 @@ export const ProjectBlackbirdPage = () => {
   return (
     <ProjectPage
       title="Blackbird"
-      instructions="Morning challenge -- make a bird shuffle"
+      instructions="Morning challenge: make a bird shuffle."
       instructionControls={buildInstructionControls()}
     >
       <Blackbird stateNumber={animationState}></Blackbird>

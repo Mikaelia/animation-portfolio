@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export const ProjectPage = ({
   children,
@@ -11,27 +12,75 @@ export const ProjectPage = ({
   title: string;
   instructionControls?: React.ReactNode;
 }) => {
+  const [showSidePanel, setShowSidePanel] = useState(true);
+  const toggleSidePanel = () => {
+    setShowSidePanel(!showSidePanel);
+  };
+
   return (
     <>
-      <nav className="font-semibold">
-        <ul className="flex items-center gap-5 p-4 ">
-          <li className="inline-block bg-white bg-clip-text duration-500 ease-in-out hover:bg-gradient-to-r hover:from-pink hover:via-orange-500 hover:to-yellow-500 hover:text-transparent">
+      <nav className=" mb-3  border-b border-gray5 bg-gray4 font-semibold ">
+        <ul className="ml-1 flex items-center gap-5 p-1">
+          <li className="inline-block bg-white bg-clip-text font-handwriting text-xl duration-500 ease-in-out">
             <Link to="/">Home</Link>
           </li>
         </ul>
       </nav>
       <div
         className="home flex justify-between pb-3 "
-        style={{ height: "calc(100vh - 60px)" }}
+        style={{ height: "calc(100vh - 50px)" }}
       >
-        <div className="child-container mr-3 h-full w-full overflow-hidden rounded-br-md rounded-tr-md bg-gray4 p-3">
+        <div className="child-container  h-full w-full overflow-hidden rounded-br-md rounded-tr-md border border-l-0 border-gray5 bg-gray4 p-3">
           {children}
         </div>
-        <div className="sidePanel w-1/3 rounded-bl-md rounded-tl-md border border-r-0 border-gray5 bg-gray4 p-8 text-xl font-semibold">
-          <h1 className="title mb-4">{title}</h1>
+        <div
+          className={`${!showSidePanel ? "minimized" : ""} side-panel ml-3 w-1/3 rounded-bl-md rounded-tl-md border border-r-0 border-gray5 bg-gray4 p-8 text-xl font-semibold`}
+        >
+          <h1 className="title mb-6">{title}</h1>
           <p className="text-sm font-light">{instructions}</p>
+          <button className="hide-button" onClick={toggleSidePanel}>
+            <svg
+              className="open-svg h-8 w-8"
+              xmlns="http://www.w3.org/2000/svg"
+              width="800"
+              height="800"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="white"
+                d="M5.636 7.757 7.05 6.343 12.707 12 7.05 17.657l-1.414-1.414L9.878 12 5.636 7.757Z"
+              />
+              <path
+                fill="white"
+                d="m12.707 6.343-1.414 1.414L15.535 12l-4.242 4.243 1.414 1.414L18.364 12l-5.657-5.657Z"
+              />
+            </svg>
+          </button>
           {instructionControls}
         </div>
+        <button
+          className={`${!showSidePanel ? "minimized" : ""} show-button`}
+          onClick={toggleSidePanel}
+        >
+          <svg
+            className="open-svg h-8 w-8"
+            xmlns="http://www.w3.org/2000/svg"
+            width="800"
+            height="800"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="white"
+              d="M5.636 7.757 7.05 6.343 12.707 12 7.05 17.657l-1.414-1.414L9.878 12 5.636 7.757Z"
+            />
+            <path
+              fill="white"
+              d="m12.707 6.343-1.414 1.414L15.535 12l-4.242 4.243 1.414 1.414L18.364 12l-5.657-5.657Z"
+            />
+          </svg>
+        </button>
       </div>
     </>
   );

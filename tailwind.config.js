@@ -19,6 +19,7 @@ export default {
         lgreen: "#C3E88D",
         lblue: "#B8DCE1",
         blue: "#3BCBE1",
+        yellow: "#FDD11A",
       },
       fontFamily: {
         display: [["Roboto slab", "sans-serif"]],

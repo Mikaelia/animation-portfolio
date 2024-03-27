@@ -73,8 +73,6 @@
   animation-iteration-count: infinite;
 }
 
-
-
 .bird--one {
   animation-duration: 1s;
 }
@@ -151,10 +149,11 @@
 .select-button {
   transition: .2s ease;
   text-align: left;
+  opacity: 90%
 }
 
 .select-button:hover, .select-button.active {
-  outline: 2px solid white;
+  outline: 1px solid white;
 }
 
 .select-button::before {
@@ -166,10 +165,65 @@
   background: #0f0f0f;
   top: calc(50% - .5rem);
   right: 1rem;
-  border: 1px solid white;
 
 }
 
 .select-button:hover::before, .select-button.active::before {
   background: white;
 }
+
+.side-panel {
+  transition: margin 1s ease;
+  margin-right: 0;
+  position: relative
+}
+.side-panel.minimized {
+  margin-right: -40vw;
+}
+
+.hide-button {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  width: auto;
+  padding: .1rem;
+  background-color: #3BCBE1;
+  border: 1px solid #B8DCE1;
+  border-radius:  10px 0 0 10px;
+}
+
+.show-button {
+  top: 8rem;
+  right: 0;
+  position: absolute;
+  margin: 0;
+  transform: translateX(10rem);
+  transition: transform .5s ease;
+  width: auto;
+  padding: .5rem;
+  background-color: #FF5678;
+  border: 1px solid #FF7490;
+  border-radius: 10px 0 0 10px;
+}
+
+.show-button.minimized {
+  transform: translateX(0);
+}
+
+
+.open-svg:hover {
+  animation: point 1s infinite;
+}
+
+@keyframes point {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+

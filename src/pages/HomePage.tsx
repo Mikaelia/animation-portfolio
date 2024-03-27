@@ -52,11 +52,11 @@ export const HomePage = () => {
             </p>
             <p className="mb-12">
               I love creating clean, flexible UIs and playful interactions for
-              users to enjoy. Over the past four years, I've had the pleasure of
-              collaborating with designers and developers to launch new products
-              and reimagine existing features. I've also worked on design
-              systems and component libraries to streamline development across
-              engineering teams.
+              users to enjoy. I've had the pleasure of collaborating with
+              designers and developers to launch new products and reimagine
+              existing features. I've also worked on design systems and
+              component libraries to streamline development across engineering
+              teams.
             </p>
             <p className="mb-12">
               As an artist I'm addicted to detail. Check out my{" "}

@@ -1,11 +1,7 @@
 import { useState } from "react";
 import { AnimationCard } from "@components/Cards/AnimationCard";
 import { CssCard } from "@components/Cards/CssCard";
-import Pot from "@rive/Pot";
 import Cat from "@rive/Cat";
-import Liquid from "@rive/Liquid.jsx";
-import SharkSub from "@rive/SharkSub";
-import SanFrancisco from "@rive/SanFrancisco";
 import Plane from "@rive/Plane";
 import Socials from "@/components/rive/Socials";
 import Background from "@/components/Background";
@@ -96,10 +92,6 @@ export const HomePage = () => {
       </div>
 
       <Background />
-      {/* <Wave></Wave> */}
-      {/* <Background2></Background2> */}
-
-      {/* <h2 className="font-handwriting mt-0 mb-32 text-5xl ">Mini Projects</h2> */}
       <div className="mt-32 flex w-full justify-center p-12">
         <ul className="relative grid w-full max-w-7xl auto-rows-min grid-cols-projects grid-rows-projects justify-center gap-8 overflow-visible">
           <li>
@@ -148,36 +140,32 @@ export const HomePage = () => {
               name="san-francisco"
               title="San Francisco"
               description="An animated scene of San Francisco"
-            >
-              <SanFrancisco></SanFrancisco>
-            </AnimationCard>
+              src="./san-francisco.png"
+            ></AnimationCard>
           </li>
           <li>
             <AnimationCard
               name="undersea-socials"
               title="Undersea Socials"
               description="A discarded idea for underwater social links"
-            >
-              <SharkSub></SharkSub>
-            </AnimationCard>
+              src="./undersea-socials.png"
+            ></AnimationCard>
           </li>
           <li>
             <AnimationCard
               name="liquid"
               title="Liquid"
-              description="First simple Rive animation"
-            >
-              <Liquid alignment="BottomCenter" fit="Cover"></Liquid>
-            </AnimationCard>
+              description="Simple liquid Rive animation"
+              src="./liquid.png"
+            ></AnimationCard>
           </li>
           <li>
             <AnimationCard
               name="bubbling-pot"
               title="Bubbling Pot"
               description="Bubbling pot animation"
-            >
-              <Pot fit={"Cover"}></Pot>
-            </AnimationCard>
+              src="./bubbling-pot.png"
+            ></AnimationCard>
           </li>
         </ul>
       </div>

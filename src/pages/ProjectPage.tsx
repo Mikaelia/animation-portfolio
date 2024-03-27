@@ -18,7 +18,7 @@ export const ProjectPage = ({
   };
 
   return (
-    <>
+    <div className="w-screen">
       <nav className=" mb-3  border-b border-gray5 bg-gray4 font-semibold ">
         <ul className="ml-1 flex items-center gap-5 p-1">
           <li className="inline-block bg-white bg-clip-text font-handwriting text-xl duration-500 ease-in-out">
@@ -82,6 +82,6 @@ export const ProjectPage = ({
           </svg>
         </button>
       </div>
-    </>
+    </div>
   );
 };

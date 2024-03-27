@@ -1,9 +1,12 @@
 import { Outlet } from "react-router-dom";
+import { ReactLenis } from "@studio-freight/react-lenis";
 
 export const Layout = () => {
   return (
-    <div className="relative h-full overflow-x-hidden font-poppins">
-      <Outlet />
-    </div>
+    <ReactLenis root>
+      <div className="relative h-full font-poppins">
+        <Outlet />
+      </div>
+    </ReactLenis>
   );
 };

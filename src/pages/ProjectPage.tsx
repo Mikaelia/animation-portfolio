@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import useMediaQuery from "@/utils/useMediaBreakpoint";
+import HomeButton from "@rive/HomeButton.tsx";
 
 export const ProjectPage = ({
   children,
@@ -29,9 +30,11 @@ export const ProjectPage = ({
   return (
     <div className="relative overflow-x-hidden">
       <nav className=" mb-3  border-b border-gray5 bg-gray4 font-semibold ">
-        <ul className="ml-1 flex items-center gap-5 p-1">
+        <ul className="ml-3 flex items-center gap-5 p-1">
           <li className="nav inline-block bg-white bg-clip-text font-handwriting text-2xl duration-500 ease-in-out">
-            <Link to="/">Home</Link>
+            <Link to="/">
+              <HomeButton></HomeButton>
+            </Link>
           </li>
         </ul>
       </nav>

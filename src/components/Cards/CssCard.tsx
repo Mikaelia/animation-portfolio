@@ -27,9 +27,15 @@ export const CssCard: React.FC<{
         <p className="text-gray1 text-opacity-65 duration-500 group-hover:text-opacity-100">
           {description}
         </p>
-        <div className="pill absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 border-lblue bg-blue p-3">
-          CSS {art ? "Art" : "Animation"}
-        </div>
+        {art ? (
+          <div className="pill absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 border-lblue bg-blue p-3">
+            CSS Art
+          </div>
+        ) : (
+          <div className="pill border-lpurple bg-purple absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 p-3">
+            CSS Animation
+          </div>
+        )}
       </Link>
     </Card>
   );

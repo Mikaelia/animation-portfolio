@@ -125,7 +125,7 @@ export const HomePage = () => {
             <CssCard
               name="css-smiley"
               title="Smiley"
-              description="A toucan made using only HTML and CSS"
+              description="A smiley made using only HTML and CSS"
               src="./smiley.png"
               art
             ></CssCard>

@@ -39,7 +39,7 @@ export const ProjectBlackbirdPage = () => {
   return (
     <ProjectPage
       title="Blackbird"
-      instructions="Morning challenge: make a bird shuffle."
+      instructions="Morning challenge: make a bird shuffle. Created using Rive and React."
       instructionControls={buildInstructionControls()}
     >
       <Blackbird stateNumber={animationState}></Blackbird>

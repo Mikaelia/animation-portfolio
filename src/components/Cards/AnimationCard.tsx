@@ -31,7 +31,7 @@ export const AnimationCard: React.FC<{
         {description}
       </p>
       {js ? (
-        <div className="pill border-lpurple bg-purple absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 p-3">
+        <div className="pill absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 border-lgreen bg-green p-3">
           JS Animation
         </div>
       ) : (

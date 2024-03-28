@@ -29,6 +29,15 @@ body {
   box-sizing: border-box;
   height: 100%;
   overscroll-behavior-y: none;
+  cursor: url("./cursors/default.svg") 25 15, auto;
+}
+
+body:active, a:active, .card:active, .nav:active, button:active {
+   cursor: url("./cursors/active.svg") 25 15, pointer;
+}
+
+a, .card, .nav, button  {
+   cursor: url("./cursors/hover.svg") 25 15, pointer;
 }
 
 html {
@@ -38,6 +47,9 @@ html {
 #root {
   height: 100%;
 }
+
+
+
 
 /* //figure out how to do this tailwind */
 

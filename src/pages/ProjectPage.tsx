@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useMediaQuery from "@/utils/useMediaBreakpoint";
 
 export const ProjectPage = ({
   children,
@@ -13,9 +14,17 @@ export const ProjectPage = ({
   instructionControls?: React.ReactNode;
 }) => {
   const [showSidePanel, setShowSidePanel] = useState(true);
+  const [absoluteSidepanel, setAbsoluteSidepanel] = useState(false);
+  const smQuery = useMediaQuery("only screen and (max-width: 768px)");
+
   const toggleSidePanel = () => {
     setShowSidePanel(!showSidePanel);
   };
+
+  useEffect(() => {
+    setShowSidePanel(!smQuery);
+    setAbsoluteSidepanel(smQuery);
+  }, [smQuery]);
 
   return (
     <div className="relative overflow-x-hidden">
@@ -34,7 +43,7 @@ export const ProjectPage = ({
           {children}
         </div>
         <div
-          className={`${!showSidePanel ? "minimized" : ""} side-panel ml-3 w-1/3 rounded-bl-md rounded-tl-md border border-r-0 border-gray5 bg-gray4 p-8 text-xl font-semibold`}
+          className={`${!showSidePanel ? "minimized" : ""} ${absoluteSidepanel ? "absolute left-0 ml-0 w-full" : "relative"} ${absoluteSidepanel && !showSidePanel && "hidden"} side-panel ml-3 w-1/3 rounded-bl-md rounded-tl-md border border-r-0 border-gray5 bg-gray4 p-8 text-xl font-semibold`}
         >
           <h1 className="title mb-6">{title}</h1>
           <p className="text-sm font-light">{instructions}</p>

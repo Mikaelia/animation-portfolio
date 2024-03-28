@@ -119,6 +119,14 @@ export const HomePage = () => {
             ></CssCard>
           </li>
           <li>
+            <CssCard
+              name="text-hover-up"
+              title="Text hover animation"
+              description="Fun text hover animation"
+              src="./text-hover-up.gif"
+            ></CssCard>
+          </li>
+          <li>
             <AnimationCard
               name="magic-sky"
               title="Magic Sky"

@@ -12,7 +12,7 @@ import { ProjectWaterPage } from "./pages/ProjectWaterPage";
 import { ProjectSharkSubPage } from "./pages/ProjectSharkSubPage";
 import { ProjectSanFranciscoPage } from "./pages/ProjectSanFranciscoPage";
 import { ProjectBlackbirdPage } from "@/pages/ProjectBlackbirdPage.tsx";
-
+import { ProjectTextHoverUp } from "./pages/ProjectTextHoverUp.tsx";
 function App() {
   return (
     <>
@@ -38,6 +38,7 @@ function App() {
           <Route path="css/css-sword" element={<ProjectSwordPage />} />
           <Route path="css/css-green-ball" element={<ProjectBallPage />} />
           <Route path="css/css-toucan" element={<ProjectToucanPage />} />
+          <Route path="css/text-hover-up" element={<ProjectTextHoverUp />} />
           <Route path="*" element={<NoMatchPage />} />
         </Route>
       </Routes>

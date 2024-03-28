@@ -8,18 +8,17 @@ export const CssCard: React.FC<{
   title: string;
   description: string;
   src?: string;
-  isMovie?: boolean;
 }> = ({ name, title, description, src }) => {
   return (
     <Card>
       <Link to={`css/${name}`}>
         <div className="child-container w-100  mb-6 h-52 overflow-hidden rounded-xl opacity-100 sm:h-80 xl:h-80">
           <div
-            className="h-full bg-cover"
+            className="h-full bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: `url(${src})`,
             }}
-          />
+          ></div>
         </div>
         <h4 className="mb-2 font-bold text-white text-opacity-80 duration-500 ease-in-out  group-hover:text-opacity-100">
           {title}
@@ -27,7 +26,9 @@ export const CssCard: React.FC<{
         <p className="text-gray1 text-opacity-65 duration-500 group-hover:text-opacity-100">
           {description}
         </p>
-        <div className="pill rounded-tl-xl border-2 border-r-0 border-lblue rounded-bl-xl bg-blue p-3 absolute top-5 right-0">CSS</div>
+        <div className="pill absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 border-lblue bg-blue p-3">
+          CSS
+        </div>
       </Link>
     </Card>
   );

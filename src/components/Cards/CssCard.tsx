@@ -8,10 +8,11 @@ export const CssCard: React.FC<{
   title: string;
   description: string;
   src?: string;
-}> = ({ name, title, description, src }) => {
+  art?: boolean;
+}> = ({ name, title, description, src, art }) => {
   return (
     <Card>
-      <Link to={`css/${name}`}>
+      <Link to={`${!art ? "animation/" : ""}css/${name}`}>
         <div className="child-container w-100  mb-6 h-52 overflow-hidden rounded-xl opacity-100 sm:h-80 xl:h-80">
           <div
             className="h-full bg-cover bg-center bg-no-repeat"
@@ -27,7 +28,7 @@ export const CssCard: React.FC<{
           {description}
         </p>
         <div className="pill absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 border-lblue bg-blue p-3">
-          CSS
+          CSS {art ? "Art" : "Animation"}
         </div>
       </Link>
     </Card>

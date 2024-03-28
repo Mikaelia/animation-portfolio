@@ -8,9 +8,10 @@ export const AnimationCard: React.FC<{
   title: string;
   description: string;
   src?: string;
-}> = ({ children, name, title, description, src }) => (
+  js?: boolean;
+}> = ({ children, name, title, description, src, js }) => (
   <Card>
-    <Link to={`animation/${name}`}>
+    <Link to={`animation/${js ? "js/" : ""}${name}`}>
       <div className="child-container w-100 mb-6 h-52 overflow-hidden rounded-xl bg-[white] bg-opacity-30 sm:h-80 xl:h-80">
         {src ? (
           <div
@@ -29,9 +30,15 @@ export const AnimationCard: React.FC<{
       <p className="text-gray1 text-opacity-65 duration-500 group-hover:text-opacity-100">
         {description}
       </p>
-      <div className="pill absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 border-lpink bg-pink p-3">
-        Animation
-      </div>
+      {js ? (
+        <div className="pill border-lpurple bg-purple absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 p-3">
+          JS Animation
+        </div>
+      ) : (
+        <div className="pill absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 border-lpink bg-pink p-3">
+          Animation
+        </div>
+      )}
     </Link>
   </Card>
 );

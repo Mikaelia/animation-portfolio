@@ -28,7 +28,7 @@ export const HomePage = () => {
             Let's do fun web stuff.
           </p>
           <div className="absolute left-[-1.75rem] flex h-[500px] w-full items-center overflow-hidden sm:bottom-[-18rem] xl:left-[-18rem] xl:top-[-16rem]">
-            <div className="cat h-[500px] w-full w-full xl:pr-[17rem] ">
+            <div className="cat h-[500px] w-full xl:pr-[17rem] ">
               <Cat handleWakeUp={() => setCatLoaded(true)}></Cat>
             </div>
           </div>
@@ -100,6 +100,7 @@ export const HomePage = () => {
               title="CSS Sword"
               description="A sword made using only HTML and CSS"
               src="./css-sword.png"
+              art
             ></CssCard>
           </li>
           <li>
@@ -108,6 +109,7 @@ export const HomePage = () => {
               title="CSS Green Ball"
               description="A ball made using only HTML and CSS"
               src="./css-green-ball.png"
+              art
             ></CssCard>
           </li>
           <li>
@@ -116,6 +118,16 @@ export const HomePage = () => {
               title="CSS Toucan"
               description="A toucan made using only HTML and CSS"
               src="./css-toucan.png"
+              art
+            ></CssCard>
+          </li>
+          <li>
+            <CssCard
+              name="css-smiley"
+              title="Smiley"
+              description="A toucan made using only HTML and CSS"
+              src="./smiley.png"
+              art
             ></CssCard>
           </li>
           <li>
@@ -126,12 +138,31 @@ export const HomePage = () => {
               src="./text-hover-up.gif"
             ></CssCard>
           </li>
+
+          <li>
+            <CssCard
+              name="gooey-nav"
+              title="Gooey"
+              description="Gooey nav with html filter"
+              src="./gooey-nav.gif"
+            ></CssCard>
+          </li>
+          <li>
+            <AnimationCard
+              name="canvas-floating-boxes"
+              title="Floating"
+              description="Canvas interactive floating boxes animation"
+              src="./floating-boxes.gif"
+              js
+            ></AnimationCard>
+          </li>
           <li>
             <AnimationCard
               name="magic-sky"
               title="Magic Sky"
               description="Salesforce's Trailhead homepage hero animation project"
               src="./magic-sky.png"
+              js
             ></AnimationCard>
           </li>
           <li>
@@ -164,7 +195,7 @@ export const HomePage = () => {
               name="liquid"
               title="Liquid"
               description="Simple liquid Rive animation"
-              src="./liquid.png"
+              src="./liquid.gif"
             ></AnimationCard>
           </li>
           <li>

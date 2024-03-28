@@ -13,6 +13,10 @@ import { ProjectSharkSubPage } from "./pages/ProjectSharkSubPage";
 import { ProjectSanFranciscoPage } from "./pages/ProjectSanFranciscoPage";
 import { ProjectBlackbirdPage } from "@/pages/ProjectBlackbirdPage.tsx";
 import { ProjectTextHoverUp } from "./pages/ProjectTextHoverUp.tsx";
+import { ProjectFloatingBoxesPage } from "./pages/ProjectFloatingBoxesPage.tsx";
+import { ProjectGooeyPage } from "@/pages/ProjectGooeyPage.tsx";
+import { ProjectSmileyPage } from "@/pages/ProjectSmileyPage.tsx";
+
 function App() {
   return (
     <>
@@ -21,7 +25,6 @@ function App() {
           <Route index element={<HomePage />} />
           {/* // Tmp fix as Rive doesn't seem to play well with dynamic imports */}
           <Route path="animation/bubbling-pot" element={<PotPage />} />
-          <Route path="animation/magic-sky" element={<ProjectMagicSkyPage />} />
           <Route path="animation/liquid" element={<ProjectWaterPage />} />
           <Route
             path="animation/undersea-socials"
@@ -38,7 +41,23 @@ function App() {
           <Route path="css/css-sword" element={<ProjectSwordPage />} />
           <Route path="css/css-green-ball" element={<ProjectBallPage />} />
           <Route path="css/css-toucan" element={<ProjectToucanPage />} />
-          <Route path="css/text-hover-up" element={<ProjectTextHoverUp />} />
+          <Route path="css/css-smiley" element={<ProjectSmileyPage />} />
+          <Route
+            path="animation/css/text-hover-up"
+            element={<ProjectTextHoverUp />}
+          />
+          <Route
+            path="animation/css/gooey-nav"
+            element={<ProjectGooeyPage />}
+          />
+          <Route
+            path="animation/js/magic-sky"
+            element={<ProjectMagicSkyPage />}
+          />
+          <Route
+            path="animation/js/canvas-floating-boxes"
+            element={<ProjectFloatingBoxesPage />}
+          />
           <Route path="*" element={<NoMatchPage />} />
         </Route>
       </Routes>

@@ -32,12 +32,12 @@ body {
   cursor: url("../assets/cursors/default.svg") 25 15, auto;
 }
 
-body:active, a:active, .card:active, .nav:active, button:active {
-   cursor: url("../assets/cursors/active.svg") 25 15, pointer;
+a, .card, .nav, button:hover  {
+   cursor: url("../assets/cursors/hover.svg") 25 15, pointer;
 }
 
-a, .card, .nav, button  {
-   cursor: url("../assets/cursors/hover.svg") 25 15, pointer;
+body:active, a:active, .card:active, .nav:active, button:active {
+   cursor: url("../assets/cursors/active.svg") 25 15, pointer;
 }
 
 html {

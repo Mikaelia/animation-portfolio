@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import useMediaQuery from "@/utils/useMediaBreakpoint";
 
 export const ProjectPage = ({
@@ -9,7 +9,7 @@ export const ProjectPage = ({
   instructionControls,
 }: {
   children: React.ReactNode;
-  instructions: string;
+  instructions: string | React.ReactNode;
   title: string;
   instructionControls?: React.ReactNode;
 }) => {

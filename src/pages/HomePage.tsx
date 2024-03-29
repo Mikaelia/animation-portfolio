@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, Element } from "react-scroll";
 import { AnimationCard } from "@components/Cards/AnimationCard";
 import { CssCard } from "@components/Cards/CssCard";
 import Cat from "@rive/Cat";
@@ -9,9 +10,11 @@ import "../assets/styles/custom.css";
 import RiveFooter from "@rive/FooterWave.tsx";
 import HeaderWave from "@/components/HeaderWave";
 import Blackbird from "@rive/Blackbird.tsx";
+import useMediaQuery from "@/utils/useMediaBreakpoint.ts";
 
 export const HomePage = () => {
   const [catLoaded, setCatLoaded] = useState(false);
+  const smQuery = useMediaQuery("only screen and (max-width: 768px)");
 
   return (
     <div className="homepage relative flex flex-col items-center overflow-x-hidden">
@@ -33,13 +36,41 @@ export const HomePage = () => {
             </div>
           </div>
         </div>
+        {catLoaded && smQuery && (
+          <Link
+            className="scroll-button"
+            style={{ zIndex: "1" }}
+            to="section1"
+            smooth="easeInOutCubic"
+            duration={1500}
+          >
+            <svg
+              className="scroll-svg h-8 w-8"
+              xmlns="http://www.w3.org/2000/svg"
+              width="800"
+              height="800"
+              fill="none"
+              viewBox="0 0 24 24"
+              style={{ transform: "rotate(90deg)" }}
+            >
+              <path
+                fill="white"
+                d="M5.636 7.757 7.05 6.343 12.707 12 7.05 17.657l-1.414-1.414L9.878 12 5.636 7.757Z"
+              />
+              <path
+                fill="white"
+                d="m12.707 6.343-1.414 1.414L15.535 12l-4.242 4.243 1.414 1.414L18.364 12l-5.657-5.657Z"
+              />
+            </svg>
+          </Link>
+        )}
       </div>
       <div className="overflow-x-hidden">
         <HeaderWave background={catLoaded ? "#333333" : "#0F0F0F"}></HeaderWave>
       </div>
-
       <div className="plane-section xl:justify-space-between flex w-full flex-col items-center justify-center pl-20 pr-20 lg:mt-16 xl:mt-20 xl:flex-row">
         <div className=" xl:w-9rem sm:display-block display-none mt-[10rem] h-[20rem] w-[100vw] max-w-3xl md:h-[20rem] md:w-[45vw] lg:mt-0 xl:mt-[5rem]">
+          <Element name="section1"></Element>
           <Plane />
         </div>
         <div className="flex max-w-5xl flex-col items-center text-center lg:w-[45vw] xl:mt-56 xl:pl-20 xl:text-left">
@@ -87,6 +118,7 @@ export const HomePage = () => {
             </a>
             , where I (very) occasionally write things!
           </div>
+
           <Socials></Socials>
         </div>
       </div>

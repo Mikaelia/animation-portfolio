@@ -227,3 +227,31 @@
   }
 }
 
+.scroll-button{
+  border: 2px solid white;
+  border-radius: 50%;
+  opacity: 80%;
+  position: absolute;
+  top: 90vh;
+  right: 2rem;
+}
+
+.scroll-button:hover {
+  animation: downpoint 1s infinite;
+  opacity: 100%
+}
+.scroll-svg{
+  transform: rotate(90deg)
+}
+
+@keyframes downpoint {
+  0% {
+    transform: translateY(0) ;
+  }
+  50% {
+    transform: translateY(1rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

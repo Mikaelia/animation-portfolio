@@ -39,7 +39,8 @@ export const ProjectPage = ({
       <div
         className="home flex justify-between pb-3 "
         style={{
-          height: `${smQuery ? "90vh" : "calc(100vh - 55px)"}`,
+          height: "calc(100vh - 45px)",
+          overflowY: "hidden",
         }}
       >
         <div className="child-container  h-full w-full overflow-hidden rounded-br-md rounded-tr-md border border-l-0 border-gray5 bg-gray4 p-3">

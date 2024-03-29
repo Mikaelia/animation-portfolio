@@ -10,11 +10,11 @@ import "../assets/styles/custom.css";
 import RiveFooter from "@rive/FooterWave.tsx";
 import HeaderWave from "@/components/HeaderWave";
 import Blackbird from "@rive/Blackbird.tsx";
-import useMediaQuery from "@/utils/useMediaBreakpoint.ts";
+// import useMediaQuery from "@/utils/useMediaBreakpoint.ts";
 
 export const HomePage = () => {
   const [catLoaded, setCatLoaded] = useState(false);
-  const smQuery = useMediaQuery("only screen and (max-width: 768px)");
+  // const smQuery = useMediaQuery("only screen and (max-width: 768px)");
 
   return (
     <div className="homepage relative flex flex-col items-center overflow-x-hidden">
@@ -36,9 +36,9 @@ export const HomePage = () => {
             </div>
           </div>
         </div>
-        {catLoaded && smQuery && (
+        {catLoaded && (
           <Link
-            className="scroll-button"
+            className="scroll-button md:hidden"
             style={{ zIndex: "1" }}
             to="section1"
             smooth="easeInOutCubic"

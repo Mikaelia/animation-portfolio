@@ -14,7 +14,6 @@ export const CodepenWrapper = ({
         title={title}
         src={`https://codepen.io/Mikiaela/embed/${id}?default-tab=html%2Cresult`}
         loading="lazy"
-        allowTransparency={true}
         allowFullScreen
       >
         See the Pen{" "}

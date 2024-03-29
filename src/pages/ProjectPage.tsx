@@ -32,15 +32,15 @@ export const ProjectPage = ({
       <nav className=" mb-3  border-b border-gray5 bg-gray4 font-semibold ">
         <ul className="ml-3 flex items-center gap-5 p-1">
           <li className="nav inline-block bg-white bg-clip-text font-handwriting text-2xl duration-500 ease-in-out">
-            <Link to="/">
-              <HomeButton></HomeButton>
-            </Link>
+            <Link to="/">{smQuery ? "Home" : <HomeButton></HomeButton>}</Link>
           </li>
         </ul>
       </nav>
       <div
         className="home flex justify-between pb-3 "
-        style={{ height: "calc(100vh - 55px)" }}
+        style={{
+          height: `${smQuery ? "calc(100vh - 60px)" : "calc(100vh - 55px)"}`,
+        }}
       >
         <div className="child-container  h-full w-full overflow-hidden rounded-br-md rounded-tr-md border border-l-0 border-gray5 bg-gray4 p-3">
           {children}

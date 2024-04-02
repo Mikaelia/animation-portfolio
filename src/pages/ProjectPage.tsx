@@ -30,7 +30,7 @@ export const ProjectPage = ({
   return (
     <div className="relative overflow-x-hidden">
       <nav className=" mb-3  border-b border-gray5 bg-gray4 font-semibold ">
-        <ul className="ml-3 flex items-center gap-5 p-1">
+        <ul className="ml-3 flex items-center gap-5 p-2">
           <li className="nav inline-block bg-white bg-clip-text font-handwriting text-2xl duration-500 ease-in-out">
             <Link to="/">{smQuery ? "Home" : <HomeButton></HomeButton>}</Link>
           </li>
@@ -39,7 +39,7 @@ export const ProjectPage = ({
       <div
         className="home flex justify-between pb-3 "
         style={{
-          height: "calc(100vh - 45px)",
+          height: "calc(100vh - 55px)",
           overflowY: "hidden",
         }}
       >

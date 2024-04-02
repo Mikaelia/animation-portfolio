@@ -16,6 +16,7 @@ import { ProjectTextHoverUp } from "./pages/ProjectTextHoverUp.tsx";
 import { ProjectFloatingBoxesPage } from "./pages/ProjectFloatingBoxesPage.tsx";
 import { ProjectGooeyPage } from "@/pages/ProjectGooeyPage.tsx";
 import { ProjectSmileyPage } from "@/pages/ProjectSmileyPage.tsx";
+import { ProjectFileExplorerPage } from "@/pages/ProjectFileExplorerPage.tsx";
 
 function App() {
   return (
@@ -57,6 +58,10 @@ function App() {
           <Route
             path="animation/js/canvas-floating-boxes"
             element={<ProjectFloatingBoxesPage />}
+          />
+          <Route
+            path="react/file-explorer"
+            element={<ProjectFileExplorerPage />}
           />
           <Route path="*" element={<NoMatchPage />} />
         </Route>

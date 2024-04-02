@@ -177,6 +177,11 @@
   margin-right: 0;
   position: relative
 }
+
+.side-panel p {
+  margin-bottom: 1rem;
+}
+
 .side-panel.minimized {
   margin-right: -40vw;
 }

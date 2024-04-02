@@ -10,6 +10,7 @@ import "../assets/styles/custom.css";
 import RiveFooter from "@rive/FooterWave.tsx";
 import HeaderWave from "@/components/HeaderWave";
 import Blackbird from "@rive/Blackbird.tsx";
+import { ReactCard } from "@components/Cards/ReactCard.tsx";
 // import useMediaQuery from "@/utils/useMediaBreakpoint.ts";
 
 export const HomePage = () => {
@@ -143,6 +144,14 @@ export const HomePage = () => {
               src="./css-green-ball.png"
               art
             ></CssCard>
+          </li>
+          <li>
+            <ReactCard
+              name="file-explorer"
+              title="File Explorer"
+              src="./file-explorer.png"
+              description="A simple react file explorer"
+            ></ReactCard>
           </li>
           <li>
             <CssCard

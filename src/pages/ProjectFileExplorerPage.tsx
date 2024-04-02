@@ -10,9 +10,9 @@ export const ProjectFileExplorerPage = () => {
           non-ideal data to a format compatible with dynamic folder creation.
         </p>
         <p>
-          This was a speed project -- I just wanted to take a basic JS explorer
-          that I had created for a past interview, and make it look reasonable
-          in as little time as possible.
+          This was a speed project -- I just wanted to take an un-styled JS
+          explorer that I had created for a past interview, and make it look
+          reasonable in as little time as possible.
         </p>
         <p>
           Check out the code{" "}

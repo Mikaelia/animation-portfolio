@@ -179,14 +179,14 @@ export const HomePage = () => {
               src="./text-hover-up.gif"
             ></CssCard>
           </li>
-
           <li>
-            <CssCard
-              name="gooey-nav"
-              title="Gooey"
-              description="Gooey nav with html filter"
-              src="./gooey-nav.gif"
-            ></CssCard>
+            <AnimationCard
+              name="blackbird"
+              title="Blackbird"
+              description="Birb time"
+            >
+              <Blackbird></Blackbird>
+            </AnimationCard>
           </li>
           <li>
             <AnimationCard
@@ -207,13 +207,12 @@ export const HomePage = () => {
             ></AnimationCard>
           </li>
           <li>
-            <AnimationCard
-              name="blackbird"
-              title="Blackbird"
-              description="Birb time"
-            >
-              <Blackbird></Blackbird>
-            </AnimationCard>
+            <CssCard
+              name="gooey-nav"
+              title="Gooey"
+              description="Gooey nav with html filter"
+              src="./gooey-nav.gif"
+            ></CssCard>
           </li>
           <li>
             <AnimationCard

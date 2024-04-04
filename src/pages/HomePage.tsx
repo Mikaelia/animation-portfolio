@@ -10,7 +10,7 @@ import "../assets/styles/custom.css";
 import RiveFooter from "@rive/FooterWave.tsx";
 import HeaderWave from "@/components/HeaderWave";
 import Blackbird from "@rive/Blackbird.tsx";
-import { ReactCard } from "@components/Cards/ReactCard.tsx";
+import { UICard } from "@components/Cards/UICard.tsx";
 // import useMediaQuery from "@/utils/useMediaBreakpoint.ts";
 
 export const HomePage = () => {
@@ -146,12 +146,12 @@ export const HomePage = () => {
             ></CssCard>
           </li>
           <li>
-            <ReactCard
+            <UICard
               name="file-explorer"
               title="File Explorer"
               src="./file-explorer.png"
               description="A simple react file explorer"
-            ></ReactCard>
+            ></UICard>
           </li>
           <li>
             <CssCard
@@ -172,12 +172,20 @@ export const HomePage = () => {
             ></CssCard>
           </li>
           <li>
-            <CssCard
+            <UICard
               name="text-hover-up"
               title="Text hover animation"
               description="Fun text hover animation"
               src="./text-hover-up.gif"
-            ></CssCard>
+            ></UICard>
+          </li>
+          <li>
+            <UICard
+              name="text-hover-flip"
+              title="Text flip hover animation"
+              description="Fun text hover animation"
+              src="./text-hover-flip.gif"
+            ></UICard>
           </li>
           <li>
             <AnimationCard
@@ -207,12 +215,12 @@ export const HomePage = () => {
             ></AnimationCard>
           </li>
           <li>
-            <CssCard
+            <UICard
               name="gooey-nav"
               title="Gooey"
               description="Gooey nav with html filter"
               src="./gooey-nav.gif"
-            ></CssCard>
+            ></UICard>
           </li>
           <li>
             <AnimationCard

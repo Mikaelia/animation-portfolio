@@ -1,4 +1,4 @@
-import { ProjectPage } from "./ProjectPage";
+import { ProjectPage } from "../ProjectPage";
 import Blackbird from "@rive/Blackbird";
 import { useState } from "react";
 

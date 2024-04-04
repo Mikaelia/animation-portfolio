@@ -1,4 +1,4 @@
-import { ProjectPage } from "./ProjectPage";
+import { ProjectPage } from "../ProjectPage";
 import { GHPageWrapper } from "@components/GHPageWrapper.tsx";
 
 export const ProjectFileExplorerPage = () => {

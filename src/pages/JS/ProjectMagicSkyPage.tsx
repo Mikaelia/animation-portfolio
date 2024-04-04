@@ -1,5 +1,5 @@
-import { ProjectPage } from "./ProjectPage";
-import video from "../assets/videos/magic-sky.mp4";
+import { ProjectPage } from "../ProjectPage";
+import video from "../../assets/videos/magic-sky.mp4";
 
 export const ProjectMagicSkyPage = () => {
   const instructions = () => {

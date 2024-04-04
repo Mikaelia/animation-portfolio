@@ -1,5 +1,5 @@
 import Liquid from "@rive/Liquid.jsx";
-import { ProjectPage } from "./ProjectPage";
+import { ProjectPage } from "../ProjectPage";
 
 export const ProjectWaterPage = () => {
   return (

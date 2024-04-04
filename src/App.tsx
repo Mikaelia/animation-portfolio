@@ -3,20 +3,21 @@ import { Routes, Route } from "react-router-dom";
 import { Layout } from "./pages/Layout.tsx";
 import { HomePage } from "./pages/HomePage.tsx";
 import { NoMatchPage } from "./pages/NoMatchPage";
-import { PotPage } from "./pages/ProjectPotPage";
-import { ProjectSwordPage } from "./pages/ProjectSwordPage";
-import { ProjectBallPage } from "./pages/ProjectBallPage";
-import { ProjectToucanPage } from "./pages/ProjectToucanPage";
-import { ProjectMagicSkyPage } from "./pages/ProjectMagicSkyPage";
-import { ProjectWaterPage } from "./pages/ProjectWaterPage";
-import { ProjectSharkSubPage } from "./pages/ProjectSharkSubPage";
-import { ProjectSanFranciscoPage } from "./pages/ProjectSanFranciscoPage";
-import { ProjectBlackbirdPage } from "@/pages/ProjectBlackbirdPage.tsx";
-import { ProjectTextHoverUp } from "./pages/ProjectTextHoverUp.tsx";
-import { ProjectFloatingBoxesPage } from "./pages/ProjectFloatingBoxesPage.tsx";
-import { ProjectGooeyPage } from "@/pages/ProjectGooeyPage.tsx";
-import { ProjectSmileyPage } from "@/pages/ProjectSmileyPage.tsx";
-import { ProjectFileExplorerPage } from "@/pages/ProjectFileExplorerPage.tsx";
+import { PotPage } from "./pages/Rive/ProjectPotPage";
+import { ProjectSwordPage } from "./pages/CSS/ProjectSwordPage";
+import { ProjectBallPage } from "./pages/CSS/ProjectBallPage";
+import { ProjectToucanPage } from "./pages/CSS/ProjectToucanPage";
+import { ProjectMagicSkyPage } from "./pages/JS/ProjectMagicSkyPage";
+import { ProjectWaterPage } from "./pages/Rive/ProjectWaterPage";
+import { ProjectSharkSubPage } from "./pages/Rive/ProjectSharkSubPage";
+import { ProjectSanFranciscoPage } from "./pages/Rive/ProjectSanFranciscoPage";
+import { ProjectBlackbirdPage } from "./pages/Rive/ProjectBlackbirdPage.tsx";
+import { ProjectTextHoverUp } from "./pages/UI/ProjectTextHoverUp.tsx";
+import { ProjectTextHoverFlip } from "./pages/UI/ProjectTextHoverFlip.tsx";
+import { ProjectFloatingBoxesPage } from "./pages/JS/ProjectFloatingBoxesPage.tsx";
+import { ProjectGooeyPage } from "./pages/UI/ProjectGooeyPage.tsx";
+import { ProjectSmileyPage } from "./pages/CSS/ProjectSmileyPage.tsx";
+import { ProjectFileExplorerPage } from "./pages/UI/ProjectFileExplorerPage.tsx";
 
 function App() {
   return (
@@ -43,14 +44,9 @@ function App() {
           <Route path="css/css-green-ball" element={<ProjectBallPage />} />
           <Route path="css/css-toucan" element={<ProjectToucanPage />} />
           <Route path="css/css-smiley" element={<ProjectSmileyPage />} />
-          <Route
-            path="animation/css/text-hover-up"
-            element={<ProjectTextHoverUp />}
-          />
-          <Route
-            path="animation/css/gooey-nav"
-            element={<ProjectGooeyPage />}
-          />
+          <Route path="ui/text-hover-up" element={<ProjectTextHoverUp />} />
+          <Route path="ui/text-hover-flip" element={<ProjectTextHoverFlip />} />
+          <Route path="ui/gooey-nav" element={<ProjectGooeyPage />} />
           <Route
             path="animation/js/magic-sky"
             element={<ProjectMagicSkyPage />}
@@ -60,7 +56,7 @@ function App() {
             element={<ProjectFloatingBoxesPage />}
           />
           <Route
-            path="react/file-explorer"
+            path="ui/file-explorer"
             element={<ProjectFileExplorerPage />}
           />
           <Route path="*" element={<NoMatchPage />} />

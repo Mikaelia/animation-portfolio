@@ -109,7 +109,7 @@ export const HomePage = () => {
               </a>
               .
             </p>
-            I even have a{" "}
+            I also have a{" "}
             <a
               className="underline"
               href={"https://www.pixelsips.dev"}

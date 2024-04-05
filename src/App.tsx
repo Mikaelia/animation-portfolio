@@ -14,6 +14,7 @@ import { ProjectSanFranciscoPage } from "./pages/Rive/ProjectSanFranciscoPage";
 import { ProjectBlackbirdPage } from "./pages/Rive/ProjectBlackbirdPage.tsx";
 import { ProjectTextHoverUp } from "./pages/UI/ProjectTextHoverUp.tsx";
 import { ProjectTextHoverFlip } from "./pages/UI/ProjectTextHoverFlip.tsx";
+import { ProjectMirroredPage } from "./pages/UI/ProjectMirroredPage.tsx";
 import { ProjectFloatingBoxesPage } from "./pages/JS/ProjectFloatingBoxesPage.tsx";
 import { ProjectGooeyPage } from "./pages/UI/ProjectGooeyPage.tsx";
 import { ProjectSmileyPage } from "./pages/CSS/ProjectSmileyPage.tsx";
@@ -45,6 +46,7 @@ function App() {
           <Route path="css/css-toucan" element={<ProjectToucanPage />} />
           <Route path="css/css-smiley" element={<ProjectSmileyPage />} />
           <Route path="ui/text-hover-up" element={<ProjectTextHoverUp />} />
+          <Route path="ui/header-mirror" element={<ProjectMirroredPage />} />
           <Route path="ui/text-hover-flip" element={<ProjectTextHoverFlip />} />
           <Route path="ui/gooey-nav" element={<ProjectGooeyPage />} />
           <Route

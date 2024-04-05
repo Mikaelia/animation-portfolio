@@ -146,14 +146,6 @@ export const HomePage = () => {
             ></CssCard>
           </li>
           <li>
-            <UICard
-              name="file-explorer"
-              title="File Explorer"
-              src="./file-explorer.png"
-              description="A simple react file explorer"
-            ></UICard>
-          </li>
-          <li>
             <CssCard
               name="css-toucan"
               title="CSS Toucan"
@@ -170,6 +162,22 @@ export const HomePage = () => {
               src="./smiley.png"
               art
             ></CssCard>
+          </li>
+          <li>
+            <UICard
+              name="file-explorer"
+              title="File Explorer"
+              src="./file-explorer.png"
+              description="A simple react file explorer"
+            ></UICard>
+          </li>
+          <li>
+            <UICard
+              name="header-mirror"
+              title="Header Mirror"
+              src="./mirrored.gif"
+              description="Mirroring header effect"
+            ></UICard>
           </li>
           <li>
             <UICard

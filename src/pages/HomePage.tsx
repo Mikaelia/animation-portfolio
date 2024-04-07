@@ -196,6 +196,14 @@ export const HomePage = () => {
             ></UICard>
           </li>
           <li>
+            <UICard
+              name="animated-tooltip"
+              title="Animated tooltip"
+              description="Animated tooltip that unscrambles words"
+              src="./tooltip.gif"
+            ></UICard>
+          </li>
+          <li>
             <AnimationCard
               name="blackbird"
               title="Blackbird"

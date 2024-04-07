@@ -19,6 +19,7 @@ import { ProjectFloatingBoxesPage } from "./pages/JS/ProjectFloatingBoxesPage.ts
 import { ProjectGooeyPage } from "./pages/UI/ProjectGooeyPage.tsx";
 import { ProjectSmileyPage } from "./pages/CSS/ProjectSmileyPage.tsx";
 import { ProjectFileExplorerPage } from "./pages/UI/ProjectFileExplorerPage.tsx";
+import { ProjectAnimatedTooltipPage } from "@/pages/UI/ProjectAnimatedTooltipPage.tsx";
 
 function App() {
   return (
@@ -48,6 +49,10 @@ function App() {
           <Route path="ui/text-hover-up" element={<ProjectTextHoverUp />} />
           <Route path="ui/header-mirror" element={<ProjectMirroredPage />} />
           <Route path="ui/text-hover-flip" element={<ProjectTextHoverFlip />} />
+          <Route
+            path="ui/animated-tooltip"
+            element={<ProjectAnimatedTooltipPage />}
+          />
           <Route path="ui/gooey-nav" element={<ProjectGooeyPage />} />
           <Route
             path="animation/js/magic-sky"

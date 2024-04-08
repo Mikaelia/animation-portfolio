@@ -204,6 +204,14 @@ export const HomePage = () => {
             ></UICard>
           </li>
           <li>
+            <UICard
+              name="explore-button"
+              title="Explore Button"
+              description="Animated button with mouse interaction"
+              src="./explore-button.gif"
+            ></UICard>
+          </li>
+          <li>
             <AnimationCard
               name="blackbird"
               title="Blackbird"

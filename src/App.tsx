@@ -20,6 +20,7 @@ import { ProjectGooeyPage } from "./pages/UI/ProjectGooeyPage.tsx";
 import { ProjectSmileyPage } from "./pages/CSS/ProjectSmileyPage.tsx";
 import { ProjectFileExplorerPage } from "./pages/UI/ProjectFileExplorerPage.tsx";
 import { ProjectAnimatedTooltipPage } from "@/pages/UI/ProjectAnimatedTooltipPage.tsx";
+import { ProjectExploreButtonPage } from "@/pages/Rive/ProjectExploreButtonPage.tsx";
 
 function App() {
   return (
@@ -65,6 +66,10 @@ function App() {
           <Route
             path="ui/file-explorer"
             element={<ProjectFileExplorerPage />}
+          />
+          <Route
+            path="ui/explore-button"
+            element={<ProjectExploreButtonPage />}
           />
           <Route path="*" element={<NoMatchPage />} />
         </Route>

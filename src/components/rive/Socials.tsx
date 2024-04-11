@@ -48,7 +48,7 @@ const Socials = () => {
     }
   }, [rive]);
 
-  return <RiveComponent style={{ width: "20rem", height: "7rem" }} />;
+  return <RiveComponent style={{ width: "18rem", height: "5rem" }} />;
 };
 
 export default Socials;

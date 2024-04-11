@@ -1,7 +1,5 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link, Element } from "react-scroll";
-import { AnimationCard } from "@components/Cards/AnimationCard";
-import { CssCard } from "@components/Cards/CssCard";
 import Cat from "@rive/Cat";
 import Plane from "@rive/Plane";
 import Socials from "@/components/rive/Socials";
@@ -9,14 +7,57 @@ import Background from "@/components/Background";
 import "../assets/styles/custom.css";
 import RiveFooter from "@rive/FooterWave.tsx";
 import HeaderWave from "@/components/HeaderWave";
-import Blackbird from "@rive/Blackbird.tsx";
-import { UICard } from "@components/Cards/UICard.tsx";
-// import useMediaQuery from "@/utils/useMediaBreakpoint.ts";
+import { ProjectList } from "@components/ProjectList.tsx";
+import { Intro } from "@components/Intro.tsx";
+
+import { useScroll, animated, useSpring } from "@react-spring/web";
+import { AnimatedSocials } from "@components/AnimatedSocials.tsx";
 
 export const HomePage = () => {
   const [catLoaded, setCatLoaded] = useState(false);
-  // const smQuery = useMediaQuery("only screen and (max-width: 768px)");
+  const plane = useRef<HTMLDivElement>(null!);
+  const text = useRef<HTMLDivElement>(null);
 
+  const [socialStyles, socialApi] = useSpring(() => ({
+    transform: "translateY(-100vh)",
+  }));
+  const [textStyles, textApi] = useSpring(() => ({
+    opacity: "0",
+  }));
+
+  const {} = useScroll({
+    onChange: ({ value: { scrollYProgress } }) => {
+      if (!text.current || !plane.current) return;
+      if (scrollYProgress < 0.05) {
+        plane.current.style.transform = "translateX(100vw)";
+        text.current.style.transform = "translateX(100vw)";
+      } else {
+        const percent = calculatePercentage(scrollYProgress);
+        plane.current.style.transform = `translateX(${percent}vw)`;
+      }
+      if (scrollYProgress > 0.2 && scrollYProgress < 0.5) {
+        const textPercent = 100 - ((scrollYProgress - 0.2) / 0.18) * 100;
+        if (textPercent > 0) {
+          socialApi.start({ transform: "translateY(-100vh)" });
+        }
+        if (textPercent > -25) {
+          text.current.style.transform = `translateX(${textPercent}vw)`;
+          textApi.start({ opacity: "1" });
+        } else {
+          text.current.style.transform = `translateX(-25vw)`;
+          socialApi.start({ transform: "translateY(0vh)" });
+        }
+      } else {
+        const textPercent = ((scrollYProgress - 0.5) / 0.17) * 100;
+        text.current.style.transform = `translateX(-25vw) translateY(${-textPercent}vh)`;
+        socialApi.start({ transform: "translateY(-100vh)" });
+      }
+    },
+  });
+
+  const calculatePercentage = (scrollProgress: number) => {
+    return 100 - ((scrollProgress - 0.05) / 0.2) * 100;
+  };
   return (
     <div className="homepage relative flex flex-col items-center overflow-x-hidden">
       <div
@@ -69,216 +110,33 @@ export const HomePage = () => {
       <div className="overflow-x-hidden">
         <HeaderWave background={catLoaded ? "#333333" : "#0F0F0F"}></HeaderWave>
       </div>
-      <div className="plane-section xl:justify-space-between flex w-full flex-col items-center justify-center pl-20 pr-20 lg:mt-16 xl:mt-20 xl:flex-row">
-        <div className=" xl:w-9rem sm:display-block display-none mt-[10rem] h-[20rem] w-[100vw] max-w-3xl md:h-[20rem] md:w-[45vw] lg:mt-0 xl:mt-[5rem]">
-          <Element name="section1"></Element>
+      <div className="plane-section xl:justify-space-between relative flex h-[700vh] w-full flex-col items-center justify-center pl-20 pr-20 lg:mt-16 xl:mt-20 xl:flex-row">
+        <animated.div
+          style={socialStyles}
+          className="fixed right-[-200px] top-0"
+        >
+          <AnimatedSocials></AnimatedSocials>
+        </animated.div>
+        <animated.div
+          ref={plane}
+          className="plane xl:w-9rem sm:display-block display-none fixed top-20 mt-[10rem] h-[20rem] w-[100vw] max-w-3xl md:h-[20rem] md:w-[45vw] lg:mt-0 xl:mt-[5rem]"
+        >
+          {/*<Element name="section1"></Element>*/}
           <Plane />
-        </div>
-        <div className="flex max-w-5xl flex-col items-center text-center lg:w-[45vw] xl:mt-56 xl:pl-20 xl:text-left">
-          <div className="mb-6 text-xl">
-            <p className="mb-12">
-              My name's Mikaela. <br></br>
-              <br></br> I'm a frontend developer based in foggy San Francisco.
-              Here you'll find some of my CSS and animation experiments and
-              mini-projects.
-            </p>
-            <p className="mb-12">
-              I love creating clean, flexible UIs and playful interactions for
-              users to enjoy. I've had the pleasure of collaborating with
-              designers and developers to launch new products and reimagine
-              existing features. I've also worked on design systems and
-              component libraries to streamline development across engineering
-              teams.
-            </p>
-            <p className="mb-12">
-              As an artist I'm addicted to detail. Check out my{" "}
-              <a
-                className="underline"
-                href={"https://www.facebook.com/mikaelaspencils/"}
-                target="_blank"
-              >
-                pencil
-              </a>{" "}
-              work or follow along as I learn to{" "}
-              <a
-                className="underline"
-                href={"https://www.instagram.com/mikaelisms/"}
-                target="_blank"
-              >
-                watercolor
-              </a>
-              .
-            </p>
-            I also have a{" "}
-            <a
-              className="underline"
-              href={"https://www.pixelsips.dev"}
-              target="_blank"
-            >
-              blog
-            </a>
-            , where I (very) occasionally write things!
-          </div>
-
-          <Socials></Socials>
-        </div>
+        </animated.div>
+        <animated.div
+          ref={text}
+          style={textStyles}
+          className="xl:items-left fixed top-10 flex max-w-5xl flex-col items-center text-center lg:w-[45vw] xl:p-8 xl:text-left xl:text-left"
+        >
+          <Intro></Intro>
+          {/*<Socials></Socials>*/}
+        </animated.div>
       </div>
 
       <Background />
       <div className="mt-32 flex w-full justify-center p-12">
-        <ul className="relative grid w-full max-w-7xl auto-rows-min grid-cols-projects grid-rows-projects justify-center gap-8 overflow-visible">
-          <li>
-            <CssCard
-              name="css-sword"
-              title="CSS Sword"
-              description="A sword made using only HTML and CSS"
-              src="./css-sword.png"
-              art
-            ></CssCard>
-          </li>
-          <li>
-            <CssCard
-              name="css-green-ball"
-              title="CSS Green Ball"
-              description="A ball made using only HTML and CSS"
-              src="./css-green-ball.png"
-              art
-            ></CssCard>
-          </li>
-          <li>
-            <CssCard
-              name="css-toucan"
-              title="CSS Toucan"
-              description="A toucan made using only HTML and CSS"
-              src="./css-toucan.png"
-              art
-            ></CssCard>
-          </li>
-          <li>
-            <CssCard
-              name="css-smiley"
-              title="Smiley"
-              description="A smiley made using only HTML and CSS"
-              src="./smiley.png"
-              art
-            ></CssCard>
-          </li>
-          <li>
-            <UICard
-              name="file-explorer"
-              title="File Explorer"
-              src="./file-explorer.png"
-              description="A simple react file explorer"
-            ></UICard>
-          </li>
-          <li>
-            <UICard
-              name="header-mirror"
-              title="Header Mirror"
-              src="./mirrored.gif"
-              description="Mirroring header effect"
-            ></UICard>
-          </li>
-          <li>
-            <UICard
-              name="text-hover-up"
-              title="Text hover animation"
-              description="Fun text hover animation"
-              src="./text-hover-up.gif"
-            ></UICard>
-          </li>
-          <li>
-            <UICard
-              name="text-hover-flip"
-              title="Text flip hover animation"
-              description="Fun text hover animation"
-              src="./text-hover-flip.gif"
-            ></UICard>
-          </li>
-          <li>
-            <UICard
-              name="animated-tooltip"
-              title="Animated tooltip"
-              description="Animated tooltip that unscrambles words"
-              src="./tooltip.gif"
-            ></UICard>
-          </li>
-          <li>
-            <UICard
-              name="explore-button"
-              title="Explore Button"
-              description="Animated button with mouse interaction"
-              src="./explore-button.gif"
-            ></UICard>
-          </li>
-          <li>
-            <AnimationCard
-              name="blackbird"
-              title="Blackbird"
-              description="Birb time"
-            >
-              <Blackbird></Blackbird>
-            </AnimationCard>
-          </li>
-          <li>
-            <AnimationCard
-              name="canvas-floating-boxes"
-              title="Floating"
-              description="Canvas interactive floating boxes animation"
-              src="./floating-boxes.gif"
-              js
-            ></AnimationCard>
-          </li>
-          <li>
-            <AnimationCard
-              name="magic-sky"
-              title="Magic Sky"
-              description="Salesforce's Trailhead homepage hero animation project"
-              src="./magic-sky.png"
-              js
-            ></AnimationCard>
-          </li>
-          <li>
-            <UICard
-              name="gooey-nav"
-              title="Gooey"
-              description="Gooey nav with html filter"
-              src="./gooey-nav.gif"
-            ></UICard>
-          </li>
-          <li>
-            <AnimationCard
-              name="san-francisco"
-              title="San Francisco"
-              description="An animated scene of San Francisco"
-              src="./san-francisco.png"
-            ></AnimationCard>
-          </li>
-          <li>
-            <AnimationCard
-              name="undersea-socials"
-              title="Undersea Socials"
-              description="A discarded idea for underwater social links"
-              src="./undersea-socials.png"
-            ></AnimationCard>
-          </li>
-          <li>
-            <AnimationCard
-              name="liquid"
-              title="Liquid"
-              description="Simple liquid Rive animation"
-              src="./liquid.gif"
-            ></AnimationCard>
-          </li>
-          <li>
-            <AnimationCard
-              name="bubbling-pot"
-              title="Bubbling Pot"
-              description="Bubbling pot animation"
-              src="./bubbling-pot.png"
-            ></AnimationCard>
-          </li>
-        </ul>
+        <ProjectList></ProjectList>
       </div>
       <div className="overflow-x-hidden">
         <RiveFooter></RiveFooter>

@@ -258,3 +258,42 @@
   }
 }
 
+
+/*.animatedSocials{*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*  position: fixed;*/
+/*  top: 0;*/
+/*  height: 100vh;*/
+/*  gap: 4rem;*/
+/*}*/
+
+/*.email {*/
+/*  transform: rotate(90deg);*/
+/*  position: relative;*/
+/*  letter-spacing: 4px;*/
+/*}*/
+
+/*.icon:after {*/
+/*  position: absolute;*/
+/*  content: "";*/
+/*  width: 5px;*/
+/*  height: 100px;*/
+/*  background: white;*/
+/*}*/
+
+/*.email:after {*/
+/*  position: absolute;*/
+/*  content: "";*/
+/*  background: white;*/
+/*  width: 100px;*/
+/*  height: 5px;*/
+/*  right: -110px;*/
+/*  bottom: 10px;*/
+/*}*/
+
+/*.icon {*/
+/*  position: relative;*/
+/*}*/

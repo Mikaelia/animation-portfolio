@@ -55,7 +55,12 @@ export const WelcomeSectionXL = () => {
     handleTextTransformation();
   };
 
-  useScroll({ onChange: handleScroll });
+  useScroll({
+    onChange: handleScroll,
+    default: {
+      immediate: true,
+    },
+  });
 
   return (
     <div className="plane-section xl:justify-space-between  relative z-0 flex h-[700vh] w-full flex-col items-center justify-center pl-20 pr-20 lg:mt-16 xl:mt-20 xl:flex-row">
@@ -71,7 +76,7 @@ export const WelcomeSectionXL = () => {
       <animated.div
         ref={text}
         style={textStyles}
-        className="xl:items-left fixed top-10 flex max-w-5xl flex-col items-center text-center lg:w-[45vw] xl:p-8 xl:text-left xl:text-left"
+        className="welcome-text xl:items-left fixed top-10 flex max-w-5xl flex-col items-center text-center lg:w-[45vw] xl:p-8 xl:text-left xl:text-left"
       >
         <Intro></Intro>
       </animated.div>

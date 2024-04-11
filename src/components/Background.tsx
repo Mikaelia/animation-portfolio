@@ -1,25 +1,10 @@
 import { useRef } from "react";
 import Birds from "./Birds";
+import useMediaQuery from "@/utils/useMediaBreakpoint.ts";
 
 export default function Background() {
+  const xlQuery = useMediaQuery("only screen and (max-width: 2000px)");
   const stickyElement = useRef<HTMLDivElement>(null);
-
-  // useEffect(() => {
-  // window.onscroll = function () { stickyFunction() };
-
-  //   function stickyFunction() {
-  //     if (stickyElement.current) {
-  //       const offsetTop = stickyElement.current.offsetTop;
-  //       if (window.scrollY >= offsetTop) {
-  //         stickyElement.current.classList.add("stick");
-  //       } else {
-  //         stickyElement.current.classList.remove("stick");
-  //       }
-  //     }
-  //   }
-
-  // }, [])
-
   return (
     <div
       ref={stickyElement}
@@ -81,7 +66,7 @@ export default function Background() {
           />
         </g>
       </svg>
-      <Birds></Birds>
+      {xlQuery && <Birds></Birds>}
     </div>
   );
 }

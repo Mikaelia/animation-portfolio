@@ -8,7 +8,9 @@ import "../assets/styles/custom.css";
 import useMediaQuery from "@/utils/useMediaBreakpoint.ts";
 
 export const HomePage = () => {
-  const xlQuery = useMediaQuery("only screen and (min-width: 1280px)");
+  const xlQuery = useMediaQuery(
+    "only screen and (min-width: 1280px) and (max-width: 2000px)",
+  );
 
   return (
     <div className="homepage relative flex flex-col items-center overflow-x-hidden">

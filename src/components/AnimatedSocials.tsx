@@ -1,7 +1,7 @@
 export const AnimatedSocials = () => {
   return (
     <div className="animatedSocials flex h-[110vh] flex-col items-center justify-center overflow-hidden ">
-      <div className="rect-1 h-full w-[2px] flex-1 bg-white"></div>
+      <div className="rect-1 h-full w-[1px] flex-1 bg-white"></div>
       <a
         href="https://github.com/Mikaelia"
         target="_blank"
@@ -21,7 +21,7 @@ export const AnimatedSocials = () => {
           />
         </svg>
       </a>
-      <div className="rect-2 w-[2px] flex-1 bg-white"></div>
+      <div className="rect-2 w-[1px] flex-1 bg-white"></div>
       <a
         href="https://www.linkedin.com/in/mikaela-gurney/"
         target="_blank"
@@ -41,7 +41,7 @@ export const AnimatedSocials = () => {
           />
         </svg>
       </a>
-      <div className="rect-3 w-[2px] flex-1 bg-white"></div>
+      <div className="rect-3 w-[1px] flex-1 bg-white"></div>
       <div className="email relative m-3 flex h-[500px] w-[500px] flex-1  translate-x-[-238px] justify-center text-white">
         <div className=" h-[500px] w-[500px] rotate-90 tracking-[5px]">
           <span>MIKAELAGURNEY@GMAIL.COM</span>

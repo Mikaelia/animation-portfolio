@@ -7,6 +7,15 @@ export const ProjectList = () => {
   return (
     <ul className="relative grid w-full max-w-7xl auto-rows-min grid-cols-projects grid-rows-projects justify-center gap-8 overflow-visible">
       <li>
+        <AnimationCard
+          name="magic-sky"
+          title="Magic Sky"
+          description="Salesforce's Trailhead homepage hero animation project"
+          src="./magic-sky.png"
+          js
+        ></AnimationCard>
+      </li>
+      <li>
         <CssCard
           name="css-sword"
           title="CSS Sword"
@@ -108,15 +117,7 @@ export const ProjectList = () => {
           js
         ></AnimationCard>
       </li>
-      <li>
-        <AnimationCard
-          name="magic-sky"
-          title="Magic Sky"
-          description="Salesforce's Trailhead homepage hero animation project"
-          src="./magic-sky.png"
-          js
-        ></AnimationCard>
-      </li>
+
       <li>
         <UICard
           name="gooey-nav"

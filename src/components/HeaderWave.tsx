@@ -5,8 +5,14 @@
 //     position: relative;
 //   }
 
-const Wave = ({ background }: { background: string }) => (
-  <div className="relative z-[-1] mt-[-33rem] w-[2000px] rotate-[180deg]">
+const Wave = ({
+  background,
+  className,
+}: {
+  background: string;
+  className?: string;
+}) => (
+  <div className={className}>
     <svg
       height="100%"
       width="100%"

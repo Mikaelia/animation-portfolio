@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import { Layout } from "./pages/Layout.tsx";
+import { ResumePage } from "./pages/ResumePage.tsx";
 import { HomePage } from "./pages/HomePage.tsx";
 import { NoMatchPage } from "./pages/NoMatchPage";
 import { PotPage } from "./pages/Rive/ProjectPotPage";
@@ -27,6 +28,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route path="/resume" element={<ResumePage />} />
           <Route index element={<HomePage />} />
           {/* // Tmp fix as Rive doesn't seem to play well with dynamic imports */}
           <Route path="animation/bubbling-pot" element={<PotPage />} />

@@ -24,10 +24,10 @@ export default {
         lpurple: "#DCC7EA",
       },
       fontFamily: {
-        display: [["Roboto slab", "sans-serif"]],
-        body: ["Roboto slab", "sans-serif"],
+        display: [["Oswald", "sans-serif"]],
+        body: ["Oxygen", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
-        handwriting: ["Oswald", "Poppins"],
+        handwriting: ["Oswald", "sans-serif"],
       },
       gridTemplateColumns: {
         projects: "repeat(auto-fit, minmax(300px, 1fr))",

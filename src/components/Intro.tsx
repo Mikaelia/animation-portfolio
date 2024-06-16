@@ -1,8 +1,8 @@
 export const Intro = () => (
   <div className="text-l flex h-full w-full text-black">
     <div className="text mb-8 ml-8 w-[40rem] self-end">
-      <h2 className="mb-4 text-xl font-bold">ABOUT</h2>
-      <p className="mb-4">
+      <h2 className="mb-4 font-display text-2xl font-medium">ABOUT</h2>
+      <p className="text-body mb-4">
         I'm a frontend developer based in foggy San Francisco. Here you'll find
         some of my CSS and animation experiments and mini-projects.
       </p>

@@ -62,9 +62,9 @@ export const WorkCard = ({
   return (
     <div
       ref={rectRef}
-      className="flex max-w-4xl rounded-b-sm py-3 text-sm text-black"
+      className="flex max-w-4xl rounded-b-sm py-8 text-sm text-black"
     >
-      <div className="date mr-4 whitespace-nowrap font-bold">
+      <div className="date text-l mr-4 whitespace-nowrap font-display font-semibold">
         <span>{date}</span>
       </div>
       <div className="detail">

@@ -2619,6 +2619,11 @@ typeface-oswald@^1.1.13:
   resolved "https://registry.yarnpkg.com/typeface-oswald/-/typeface-oswald-1.1.13.tgz#eab53dd11e31c011ac2b5570bcfcf64989cfbbd2"
   integrity sha512-s11l1JHGzN5qjWGlunIxaa9wemc3eA2oObnU4qcFGq62ij8XJ5T2YNeKxOuqv599kAP2ny8zN3liCETkHWqE1g==
 
+typeface-oxygen@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-oxygen/-/typeface-oxygen-1.1.13.tgz#05b33008227cca46a7bc4a0ee351672819ae352e"
+  integrity sha512-HvAveSoDs5qWT76zYH3rUU9prIqum3vzNQw6ONqcWykVMW4r3uXyGEj0MCBbdWyGNgnBe9b8be1JjpC4HWo3hA==
+
 typeface-poppins@^1.1.13:
   version "1.1.13"
   resolved "https://registry.yarnpkg.com/typeface-poppins/-/typeface-poppins-1.1.13.tgz#a80b6f14a2a70624eb2eb833fe5559507a8f5651"

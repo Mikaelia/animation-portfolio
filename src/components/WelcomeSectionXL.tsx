@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import Plane from "@rive/Plane";
 import "../assets/styles/custom.css";
 import { Intro } from "@components/Intro.tsx";
@@ -175,7 +176,7 @@ export const WelcomeSectionXL = () => {
               <div className="relative z-10 flex h-full">
                 <Intro></Intro>
 
-                <div className="work-section m-8 mt-3 flex flex-col justify-start ">
+                <div className="work-section m-12 mt-3 flex flex-col justify-start ">
                   <WorkCard
                     bgRef={bgRef}
                     date="JAN 2021 - JAN 2024"
@@ -212,10 +213,14 @@ collection of 30+ components."
                     ]}
                   ></WorkCard>
 
-                  <button className="mx-auto mt-auto flex align-middle font-bold text-black">
+                  <Link
+                    to="/resume"
+                    target="_blank"
+                    className="mx-auto mt-auto flex align-middle font-bold text-black"
+                  >
                     <span className="text-nowrap">Full Resume</span>
                     <AngleArrowIcon className={"h-6 pb-[3px]"} />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

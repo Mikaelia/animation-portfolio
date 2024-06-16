@@ -4,7 +4,7 @@ import { ReactLenis } from "@studio-freight/react-lenis";
 export const Layout = () => {
   return (
     <ReactLenis root>
-      <div className="relative h-full font-poppins">
+      <div className="relative h-full font-body">
         <Outlet />
       </div>
     </ReactLenis>

@@ -7,6 +7,7 @@ import { useScroll, animated, useSpring } from "@react-spring/web";
 import { AnimatedSocials } from "@components/AnimatedSocials.tsx";
 import { WorkCard } from "@components/WorkCard.tsx";
 import { AngleArrowIcon } from "@components/AngleArrowIcon.tsx";
+import HeaderWave from "@components/HeaderWave.tsx";
 
 export const WelcomeSectionXL = () => {
   const plane = useRef<HTMLDivElement>(null!);
@@ -19,7 +20,7 @@ export const WelcomeSectionXL = () => {
   }));
 
   const bgRef = useRef<SVGSVGElement>(null);
-
+  const frontWaveRef = useRef<SVGSVGElement>(null);
   const handleScroll = ({
     value: { scrollYProgress },
   }: {
@@ -38,21 +39,28 @@ export const WelcomeSectionXL = () => {
     };
 
     const handleTextTransformation = () => {
-      if (scrollYProgress > 0.2 && scrollYProgress < 0.5) {
+      frontWaveRef.current.style.display = "block";
+      if (scrollYProgress > 0.2) {
         const textPercent = 100 - ((scrollYProgress - 0.2) / 0.18) * 100;
         if (textPercent > 0) {
           socialApi.start({ transform: "translateY(-100vh)" });
         }
-        if (textPercent > -60) {
-          text.current!.style.transform = `translateX(${textPercent}vw)`;
+        if (textPercent > -61.5) {
+          text.current!.style.transform = `translateX(${textPercent}vw) translateY(0)`;
           textApi.start({ opacity: "1" });
         } else {
-          text.current!.style.transform = `translateX(-60vw)`;
-          socialApi.start({ transform: "translateY(0vh)" });
+          frontWaveRef.current.style.display = "none";
+          text.current!.style.transform = `translateX(${-61.5}vw) translateY(${textPercent + 61.5}vh)`;
+
+          // const progress = textPercent + 60;
+          // const current = text.current.style.transform + textPercent + 60;
+          // text.current!.style.transform = `translateX(-60vw) translateY(${current}vh)`;
+          //textPercent
+          // socialApi.start({ transform: `translateY(${textPercent - 60}vh)` });
         }
         // } else {
         //   const textPercent = ((scrollYProgress - 0.5) / 0.17) * 100;
-        //   text.current!.style.transform = `translateX(-25vw) translateY(${-textPercent}vh)`;
+        //   text.current!.style.transform = `translateX(-25vw)  translateY(${-textPercent}vh)`;
         // }
       }
     };
@@ -96,6 +104,7 @@ export const WelcomeSectionXL = () => {
               viewBox="0 0 405 1068"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              ref={frontWaveRef}
             >
               <g>
                 <path
@@ -114,7 +123,7 @@ export const WelcomeSectionXL = () => {
                 </clipPath>
               </defs>
             </svg>
-            <div className="absolute left-[10rem] top-0 h-screen max-h-[1067px] w-screen bg-white">
+            <div className="absolute left-[10rem] top-0 h-screen max-h-[1067px] w-[100vw] bg-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="100%"
@@ -179,6 +188,7 @@ export const WelcomeSectionXL = () => {
                 <div className="work-section m-12 mt-3 flex flex-col justify-start ">
                   <WorkCard
                     bgRef={bgRef}
+                    url="https://www.salesforce.com"
                     date="JAN 2021 - JAN 2024"
                     title="Software Engineer • Salesforce"
                     details="Built data-connected, flexible, and accessible components for Trailhead, marketing, and core platform UI libraries."
@@ -193,6 +203,7 @@ export const WelcomeSectionXL = () => {
                   ></WorkCard>
                   <WorkCard
                     bgRef={bgRef}
+                    url="https://garden.zendesk.com/"
                     date="DEC 2020 - JAN 2021"
                     title="Senior Technical Writer • Zendesk"
                     details="Made key documentation contributions across Zendesk’s Garden design system component set."
@@ -201,7 +212,7 @@ export const WelcomeSectionXL = () => {
                   <WorkCard
                     bgRef={bgRef}
                     date="MAR 2019 - APR 2020"
-                    title="Software Engineer • Zume"
+                    title="Software Engineer • Zume Inc."
                     details="Built Zume’s first component library (ZCL) from the ground up using Vue.js and Typescript, resulting in a
 collection of 30+ components."
                     skills={[
@@ -212,17 +223,22 @@ collection of 30+ components."
                       "Storybook",
                     ]}
                   ></WorkCard>
-
                   <Link
                     to="/resume"
                     target="_blank"
                     className="mx-auto mt-auto flex align-middle font-bold text-black"
                   >
-                    <span className="text-nowrap">Full Resume</span>
+                    <span className="text-l text-nowrap font-display font-bold">
+                      Full Resume
+                    </span>
                     <AngleArrowIcon className={"h-6 pb-[3px]"} />
                   </Link>
                 </div>
               </div>
+              <HeaderWave
+                background="white"
+                className="relative z-[-1] mt-[-33rem]  w-[2000px] rotate-[180deg]"
+              />
             </div>
           </div>
         </animated.div>

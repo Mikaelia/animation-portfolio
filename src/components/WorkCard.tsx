@@ -1,4 +1,5 @@
 import { RefObject, useEffect, useRef } from "react";
+import { AngleArrowIcon } from "@components/AngleArrowIcon.tsx";
 
 export const Pill = ({ text }: { text: string }) => {
   return (
@@ -13,6 +14,7 @@ export const WorkCard = ({
   title,
   details,
   skills,
+  url,
   bgRef,
 }: {
   date: string;
@@ -20,6 +22,7 @@ export const WorkCard = ({
   details: string;
   skills: string[];
   className: string;
+  url?: string;
   bgRef: RefObject<HTMLDivElement>;
 }) => {
   const rectRef = useRef<HTMLDivElement>(null);
@@ -32,7 +35,6 @@ export const WorkCard = ({
       const handleMouseEnter = () => {
         const rectMeasurements = rect.getBoundingClientRect();
         const parentMeasurements = overlay.getBoundingClientRect();
-        console.log(parentMeasurements);
 
         if (parentMeasurements) {
           const top = rectMeasurements.top - parentMeasurements.top;
@@ -60,22 +62,51 @@ export const WorkCard = ({
   }, [bgRef]);
 
   return (
-    <div
-      ref={rectRef}
-      className="flex max-w-4xl rounded-b-sm py-8 text-sm text-black"
-    >
-      <div className="date text-l mr-4 whitespace-nowrap font-display font-semibold">
-        <span>{date}</span>
-      </div>
-      <div className="detail">
-        <h3 className="mb-2 font-bold">{title}</h3>
-        <p className="mb-2">{details}</p>
-        <div className="pill-container flex flex-wrap gap-2">
-          {skills.map((v: string) => (
-            <Pill key={v} text={v} />
-          ))}
+    <>
+      {url ? (
+        <a href={url} target="_blank" className="no-underline">
+          <div
+            ref={rectRef}
+            className="link-non flex max-w-4xl rounded-b-sm py-8 text-sm text-black"
+          >
+            <div className="date text-l mr-4 whitespace-nowrap font-display font-semibold">
+              <span>{date}</span>
+            </div>
+            <div className="detail">
+              <h3 className="mb-2 flex font-bold">
+                <span>{title}</span>
+                <span>
+                  <AngleArrowIcon className={"ml-1 mt-[2px] h-4"} />
+                </span>
+              </h3>
+              <p className="mb-2 font-normal">{details}</p>
+              <div className="pill-container flex flex-wrap gap-2">
+                {skills.map((v: string) => (
+                  <Pill key={v} text={v} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </a>
+      ) : (
+        <div
+          ref={rectRef}
+          className="flex max-w-4xl rounded-b-sm py-8 text-sm text-black"
+        >
+          <div className="date text-l mr-4 whitespace-nowrap font-display font-semibold">
+            <span>{date}</span>
+          </div>
+          <div className="detail">
+            <h3 className="mb-2 font-bold">{title}</h3>
+            <p className="mb-2">{details}</p>
+            <div className="pill-container flex flex-wrap gap-2">
+              {skills.map((v: string) => (
+                <Pill key={v} text={v} />
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };

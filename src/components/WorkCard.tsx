@@ -1,11 +1,30 @@
 import { RefObject, useEffect, useRef } from "react";
 import { AngleArrowIcon } from "@components/AngleArrowIcon.tsx";
 
-export const Pill = ({ text }: { text: string }) => {
+export const Pill = ({
+  text,
+  callback,
+  isButton,
+}: {
+  text: string;
+  callback?: () => void;
+  isButton?: boolean;
+}) => {
   return (
-    <span className="w-auto rounded-3xl bg-black px-4 py-1 text-xs text-white">
-      {text}
-    </span>
+    <>
+      {isButton ? (
+        <button
+          onClick={callback}
+          className="w-auto rounded-3xl bg-white px-4 py-1 text-xs text-black"
+        >
+          {text}
+        </button>
+      ) : (
+        <span className="w-auto rounded-3xl bg-black px-4 py-1 text-xs text-white">
+          {text}
+        </span>
+      )}
+    </>
   );
 };
 
@@ -15,21 +34,21 @@ export const WorkCard = ({
   details,
   skills,
   url,
-  bgRef,
+  backgroundRef,
 }: {
   date: string;
   title: string;
   details: string;
   skills: string[];
-  className: string;
+  className?: string;
   url?: string;
-  bgRef: RefObject<HTMLDivElement>;
+  backgroundRef: RefObject<HTMLDivElement>;
 }) => {
   const rectRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const rect = rectRef.current;
-    const overlay = bgRef.current;
+    const overlay = backgroundRef.current;
 
     if (rect && overlay) {
       const handleMouseEnter = () => {
@@ -59,7 +78,7 @@ export const WorkCard = ({
         rect.removeEventListener("mouseleave", handleMouseLeave);
       };
     }
-  }, [bgRef]);
+  }, [backgroundRef]);
 
   return (
     <>

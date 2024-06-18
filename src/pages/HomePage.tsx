@@ -15,18 +15,19 @@ export const HomePage = () => {
   return (
     <div className="homepage relative flex flex-col items-center overflow-x-hidden">
       <HeaderSection></HeaderSection>
-      {xlQuery ? (
-        <WelcomeSectionXL></WelcomeSectionXL>
-      ) : (
-        <WelcomeSection></WelcomeSection>
-      )}
+      <WelcomeSectionXL></WelcomeSectionXL>
+      {/*{xlQuery ? (*/}
+      {/*  <WelcomeSectionXL></WelcomeSectionXL>*/}
+      {/*) : (*/}
+      {/*  <WelcomeSection></WelcomeSection>*/}
+      {/*)}*/}
       <Background />
-      <div className="mt-32 flex w-full justify-center p-12">
-        <ProjectList></ProjectList>
-      </div>
-      <div className="z-10 overflow-x-hidden">
-        <RiveFooter></RiveFooter>
-      </div>
+      {/*<div className="mt-32 flex w-full justify-center p-12">*/}
+      {/*  <ProjectList></ProjectList>*/}
+      {/*</div>*/}
+      {/*<div className="z-10 overflow-x-hidden">*/}
+      {/*  <RiveFooter></RiveFooter>*/}
+      {/*</div>*/}
     </div>
   );
 };

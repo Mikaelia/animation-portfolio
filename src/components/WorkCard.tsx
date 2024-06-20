@@ -20,7 +20,7 @@ export const Pill = ({
           {text}
         </button>
       ) : (
-        <span className="w-auto rounded-3xl bg-black px-4 py-1 text-xs text-white">
+        <span className="w-auto rounded-3xl bg-black px-4 py-1 text-xs font-normal text-white">
           {text}
         </span>
       )}
@@ -83,19 +83,19 @@ export const WorkCard = ({
   return (
     <>
       {url ? (
-        <a href={url} target="_blank" className="no-underline">
+        <a href={url} target="_blank" className="work-card no-underline">
           <div
             ref={rectRef}
-            className="link-non flex max-w-4xl rounded-b-sm py-8 text-sm text-black"
+            className="link-non flex max-w-4xl rounded-b-sm py-6 text-sm text-black"
           >
-            <div className="date text-l mr-4 whitespace-nowrap font-display font-semibold">
+            <div className="date  mr-4 whitespace-nowrap font-display font-semibold">
               <span>{date}</span>
             </div>
             <div className="detail">
               <h3 className="mb-2 flex font-bold">
                 <span>{title}</span>
                 <span>
-                  <AngleArrowIcon className={"ml-1 mt-[2px] h-4"} />
+                  <AngleArrowIcon className={"arrow-icon ml-1 mt-[2px] h-4"} />
                 </span>
               </h3>
               <p className="mb-2 font-normal">{details}</p>
@@ -110,13 +110,13 @@ export const WorkCard = ({
       ) : (
         <div
           ref={rectRef}
-          className="flex max-w-4xl rounded-b-sm py-8 text-sm text-black"
+          className="flex max-w-4xl rounded-b-sm py-6 text-sm text-black"
         >
-          <div className="date text-l mr-4 whitespace-nowrap font-display font-semibold">
+          <div className="date mr-4 whitespace-nowrap font-display font-semibold">
             <span>{date}</span>
           </div>
           <div className="detail">
-            <h3 className="mb-2 font-bold">{title}</h3>
+            <h3 className="text-l mb-2 font-black">{title}</h3>
             <p className="mb-2">{details}</p>
             <div className="pill-container flex flex-wrap gap-2">
               {skills.map((v: string) => (

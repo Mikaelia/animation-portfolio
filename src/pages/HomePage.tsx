@@ -22,11 +22,8 @@ export const HomePage = () => {
       {/*  <WelcomeSection></WelcomeSection>*/}
       {/*)}*/}
       <Background />
-      {/*<div className="mt-32 flex w-full justify-center p-12">*/}
-      {/*  <ProjectList></ProjectList>*/}
-      {/*</div>*/}
       {/*<div className="z-10 overflow-x-hidden">*/}
-      {/*  <RiveFooter></RiveFooter>*/}
+      {/*<RiveFooter></RiveFooter>*/}
       {/*</div>*/}
     </div>
   );

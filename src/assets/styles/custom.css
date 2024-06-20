@@ -148,7 +148,7 @@ html {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   /*backdrop-filter: blur(10px);*/
   /*-webkit-backdrop-filter: blur(5px);*/
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  /*border: 1px solid rgba(255, 255, 255, 0.3);*/
 }
 .card:hover {
   /*background: rgba(255, 255, 255, 0.37);*/
@@ -279,4 +279,18 @@ html {
   transition: clip-path .3s ease;
   z-index: 1;
   clip-path: inset(100%);
+}
+
+
+.about-top-wave {
+  transform: rotateY(180deg);
+}
+
+.arrow-icon, .work-card {
+   transition: transform .2s ease;
+}
+
+
+.resume-button:hover .arrow-icon, .work-card:hover .arrow-icon {
+  transform: translateX(5px) translateY(-5px);
 }

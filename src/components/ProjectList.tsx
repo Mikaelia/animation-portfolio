@@ -30,13 +30,12 @@ const MouseoverLogic = ({ bgRef, rectRefs }) => {
       const rect = rectRef.current;
       const overlay = bgRef?.current;
 
+      const throttledResetClipPath = throttle(() => {
+        overlay.style.clipPath = "inset(100%)";
+      }, 100);
+
       if (rect && overlay) {
-        let timer;
-        window.addEventListener("scroll", () => {
-          //   throttle(() => handleMouseEnter(rect, overlay), 0, { leading: true });
-          // });
-          handleMouseEnter(rect, overlay);
-        });
+        window.addEventListener("scroll", throttledResetClipPath);
 
         rect.addEventListener("mouseenter", () =>
           handleMouseEnter(rect, overlay),
@@ -77,7 +76,7 @@ const MouseoverLogic = ({ bgRef, rectRefs }) => {
 
 export default MouseoverLogic;
 
-export const ProjectList = ({ projBgRef }) => {
+export const ProjectList = ({ projBgRef, visibleProjects }) => {
   const rectRefs = [
     useRef(),
     useRef(),

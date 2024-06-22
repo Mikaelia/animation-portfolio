@@ -66,7 +66,6 @@ export const WelcomeSectionXL = () => {
     const handlePlaneTransformation = () => {
       const headerHeight = viewportHeight + 229.3;
       if (scrollPosition >= headerHeight) {
-        console.log("ping");
         // subtract the distance already traveled to create new zero.
         //
         const percentOfContainerScrolled =
@@ -214,10 +213,10 @@ export const WelcomeSectionXL = () => {
           />
         </div>
 
-        <div className="projects-container relative z-[-2] mb-[30rem] mt-[-20rem] flex w-screen  flex-col items-center justify-center pt-[30rem]">
+        <div className="projects-container relative z-[-2] mt-[-20rem] flex w-screen  flex-col items-center justify-center pt-[30rem]">
           <div className="flex w-full justify-between">
             <div className="text ml-12 flex flex-col items-start justify-center">
-              <h2 className="mb-4 font-display text-2xl font-semibold">
+              <h2 className="mb-4 font-display text-5xl font-normal">
                 PROJECTS
               </h2>
               <p>A collection of animation and mini-projects.</p>
@@ -233,6 +232,10 @@ export const WelcomeSectionXL = () => {
               projBgRef={projBgRef}
             ></ProjectList>
           </div>
+          <HeaderWave
+            className="projects-bottom-wave relative z-[-3] mt-[-23rem]  w-[2000px] rotate-[180deg]"
+            background="black"
+          />
         </div>
       </div>
       <div

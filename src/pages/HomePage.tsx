@@ -6,6 +6,7 @@ import { ProjectList } from "@components/ProjectList.tsx";
 import RiveFooter from "@rive/FooterWave.tsx";
 import "../assets/styles/custom.css";
 import useMediaQuery from "@/utils/useMediaBreakpoint.ts";
+import BlogList from "@components/BlogList";
 
 export const HomePage = () => {
   const xlQuery = useMediaQuery(
@@ -16,6 +17,10 @@ export const HomePage = () => {
     <div className="homepage relative flex flex-col items-center overflow-x-hidden">
       <HeaderSection></HeaderSection>
       <WelcomeSectionXL></WelcomeSectionXL>
+      <div className="blog-section mt-[-30rem] flex w-screen bg-white p-12 pt-[40rem]">
+        <BlogList></BlogList>
+      </div>
+
       {/*{xlQuery ? (*/}
       {/*  <WelcomeSectionXL></WelcomeSectionXL>*/}
       {/*) : (*/}

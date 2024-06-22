@@ -1,9 +1,20 @@
 /** @type {import('tailwindcss').Config} */
+import typographyPlugin from "@tailwindcss/typography";
 
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            pre: {
+              backgroundColor: "",
+              padding: 0,
+            },
+          },
+        },
+      },
       colors: {
         black: "#0F0F0F",
         white: "#FFFFFF",
@@ -40,7 +51,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [typographyPlugin],
   safelist: [
     {
       pattern: /bg-green/,

@@ -1,8 +1,5 @@
 TO DO:
 
-- dynamic imports
-- script for adding new pages
-- animate gradients on tags
-- buttons need to work on mobile
 - fix bird flying off page
-- Clean up css and homepage
+- Fix hover issue on last three project items
+- Could move journal alongside the other content to continue with the overlay effect

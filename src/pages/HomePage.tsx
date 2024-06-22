@@ -28,7 +28,7 @@ export const HomePage = () => {
       {/*)}*/}
       <Background />
       {/*<div className="z-10 overflow-x-hidden">*/}
-      {/*<RiveFooter></RiveFooter>*/}
+      {/*  <RiveFooter></RiveFooter>*/}
       {/*</div>*/}
     </div>
   );

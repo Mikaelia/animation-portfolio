@@ -1,7 +1,7 @@
 ---
 title: What Actually Happens When you Enter a URL
 date: "2018-08-05"
-description: "Domain names, servers, and beyond"
+description: "Domain names, servers, and beyond."
 published: true
 ---
 
@@ -34,9 +34,9 @@ DNS resolvers are part of the DNS (Domain Name System), which comprises a massiv
 
 ### Anatomy of a Domain Name:
 Let’s break down the domain name a little more. Domain names consist of multiple parts:
-<br/>
-<img src="./static/bp-url-2.png" alt="domain name image"/>
-<br/>
+
+![domain name image](./static/bp-url-2.png)
+
 - The last dot-separated portion is called the top-level domain (.com, .online, .org etc.).
 
 - Each word-and-dot combination that precedes the top-level domain indicates a new level in the domain structure. In www.example.com, ‘example’ would be considered the second-level domain).
@@ -44,9 +44,9 @@ Let’s break down the domain name a little more. Domain names consist of multip
 - The left-most part of the domain name, (www) is referred to as the host name or subdomain.
 
 ### Where are you?
-<br/>
-<img src="./static/bp-url-3.png" alt="dns lookup image"/>
-<br/>
+
+![dns lookup image](./static/bp-url-3.png)
+
 To locate an IP address, the resolver begins by querying the root DNS server (represented by the invisible ‘.’ at the end of a domain name: www.example.com.←)
 
 Root servers hold the locations of all of the top-level domain servers, which will be queried next, followed by the second-level servers.
@@ -54,31 +54,30 @@ Root servers hold the locations of all of the top-level domain servers, which wi
 After the second-level domain servers are queried, the DNS resolver will be directed to the authoritative name server, which will return the IP address of “www.example.com.” to the browser. The browser will store this address in its cache for a specified amount of time to speed lookup when that particular URL is called again.
 
 ## Making a Connection
-<br/>
-<img src="./static/bp-url-4.png" alt="connection image"/>
-<br/>
+
+![connection image](./static/bp-url-4.png)
+
 TCP/IP (Transmission Control Protocol/Internet Protocol) is a set of procedures and rules for regulating how data is broken up, and exchanged between a client (in this case, your browser) and a server (such as example.com’s). With an IP address, your browser will attempt to initiate a TCP connection with the indicated server in order to send and receive information.
 
 ### Connection Security
-<br/>
-<img src="./static/bp-url-5.png" alt="connection image"/>
-<br/>
+
+![connection image](./static/bp-url-5.png)
+
 In the beginning of this article, I mentioned that https:// was the protocol for www.example.com. HTTPS stands for Hyper Text Transfer Protocol Secure. It is the secure version of HTTP, which is the protocol that defines how messages are formatted and transmitted across the web, and what actions web servers and browsers should perform in response to various commands.
 
 HTTPS increases the security of a connection via SSL(Secured Sockets Layer), a standard security protocol for establishing encrypted links between the client and server via the use of public and private keys. Without SSL, any computer on any other networks between you and the web server can access your connection.
 Firewalls also increase security by restricting traffic and preventing unwanted port connections.
 
 ### Load Balancers
-<br/>
-<img src="./static/bp-url-6.png" alt="load balancer"/>
-<br/>
+
+![load balancer](./static/bp-url-6.png)
 
 Another piece of technology that your request might encounter en route to a web server is a load balancer. Load balancers distribute requests across server systems to increase the reliability, efficiency, and availability of the queried application or website.
 
 ### Web, Application, and Database Servers
-<br/>
-<img src="./static/bp-url-7.jpg" alt="connection image"/>
-<br/>
+
+![connection image](./static/bp-url-7.jpg)
+
 Once your request has reached www.example.com’s web server, the web server serves up a HTML file to your browser.
 
 In order to process dynamic content, such as a Javascript file, the web sever must communicate with an application server, which will run the dynamic content, translate the results into static HTML, and return it to the web server.

@@ -28,12 +28,14 @@ Having the freedom to write JSX into my markdown sounded great, and it would ope
 
 In addition, I had recently come across `react-gist`. This package provides the user with a gist component. This would serve as a perfect use-case for a MDX file, and would solve my gist rendering problem.
 
-Once I had `gatsby-plugin-mdx` set up properly, all I needed to do was import, and include my gist components wherever I needed them:
+Once I had `gatsby-plugin-mdx` set up properly, all I needed to do was import, and include my gist components wherever I needed them in my mdx files:
 
+``` javascript
 import Gist from "react-gist"
 
-<script src="https://gist.github.com/mikaelia/fb695cda0d12970e932d105a83c79d91"></script>
+<Gist id="fb695cda0d12970e932d105a83c79d91"></Gist>
 
+```
 Easy!
 
 

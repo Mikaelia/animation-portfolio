@@ -16,7 +16,7 @@ export default defineConfig({
     {
       name: "markdown-loader",
       transform(code, id) {
-        if (id.slice(-3) === ".md") {
+        if (id.slice(-3) === "javascript-function-argument.md") {
           return `export default ${JSON.stringify(code)};`;
         }
       },

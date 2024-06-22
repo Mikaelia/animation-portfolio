@@ -14,13 +14,13 @@ const BlogList = () => {
   }, []);
 
   return (
-    <div className="text-black">
+    <div className="max-w-[500px] text-black">
       <h2 className="mb-12 font-display text-5xl font-normal ">JOURNAL</h2>
       <ul>
         {posts.map((post) => (
           <li className=" group mb-12" key={post.path}>
             <Link className="font-normal no-underline" to={post.path}>
-              <h3 className="text-l mb-4 font-bold transition duration-300 group-hover:text-pink">
+              <h3 className="text-l mb-2 font-bold transition duration-300 group-hover:text-pink">
                 {post.title}
               </h3>
               <p className="no-underline">{post.description}</p>

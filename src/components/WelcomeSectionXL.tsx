@@ -95,7 +95,7 @@ export const WelcomeSectionXL = () => {
     const handleTextTransformation = () => {
       // frontWaveRef.current.style.display = "block";
       blackBgRef.current.style.display = "none";
-      if (scrollYProgress > 0.47) {
+      if (percent > 5 * vhPercent) {
         blackBgRef.current.style.display = "block";
       }
       //

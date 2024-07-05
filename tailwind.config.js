@@ -1,9 +1,20 @@
 /** @type {import('tailwindcss').Config} */
+import typographyPlugin from "@tailwindcss/typography";
 
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            pre: {
+              backgroundColor: "",
+              padding: 0,
+            },
+          },
+        },
+      },
       colors: {
         black: "#0F0F0F",
         white: "#FFFFFF",
@@ -24,10 +35,10 @@ export default {
         lpurple: "#DCC7EA",
       },
       fontFamily: {
-        display: [["Roboto slab", "sans-serif"]],
-        body: ["Roboto slab", "sans-serif"],
+        display: [["Oswald", "sans-serif"]],
+        body: ["Oxygen", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
-        handwriting: ["Nanum Pen Script", "sans-serif"],
+        handwriting: ["Oswald", "sans-serif"],
       },
       gridTemplateColumns: {
         projects: "repeat(auto-fit, minmax(300px, 1fr))",
@@ -40,7 +51,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [typographyPlugin],
   safelist: [
     {
       pattern: /bg-green/,

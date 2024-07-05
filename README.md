@@ -1,8 +1,14 @@
 TO DO:
 
-- dynamic imports
-- script for adding new pages
-- animate gradients on tags
-- buttons need to work on mobile
+- Fix responsiveness on large and small screens
+- Fix blog code styles 
+- Fix scroll issues with back button and styles
+- fix ordering of blog posts
+- fix show/hiding of the black background when screen is small
+- Add plane out and footer
 - fix bird flying off page
-- Clean up css and homepage
+- Fix hover issue on last three project items
+- Could move journal alongside the other content to continue with the overlay effect
+- Fix home button
+- Fix rendering at bottom of blog posts
+- Loading screen

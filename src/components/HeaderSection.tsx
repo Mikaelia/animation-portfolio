@@ -8,19 +8,19 @@ export const HeaderSection = () => {
   return (
     <>
       <div
-        className={` z-1 header flex h-screen w-full max-w-[2000px] items-center duration-1000 ${catLoaded ? " bg-gray3" : "bg-black"}`}
+        className={` z-1 header flex h-screen w-full max-w-[2000px] items-center duration-1000 ${catLoaded ? " bg-white" : "bg-black"}`}
       >
         <div
-          className={`rive-projects relative flex w-full flex-col items-center pb-20 pt-20 text-center duration-1000 ${catLoaded ? "text-white" : "text-black"}`}
+          className={`rive-projects relative flex w-full flex-col items-center pb-20 pt-20 text-center text-black duration-1000`}
         >
-          <h1 className="mt-[-15rem] font-handwriting text-7xl sm:mt-[-10rem] sm:text-8xl lg:text-9xl">
+          <h1 className="mt-[-15rem] font-display text-7xl sm:mt-[-10rem] sm:text-8xl lg:text-9xl xl:ml-[12rem]">
             MIKAELA GURNEY
           </h1>
-          <p className="mb-20 pt-6 font-handwriting md:text-xl lg:text-2xl">
+          <p className="mb-20 pt-6 font-body md:text-xl lg:text-2xl">
             Let's do fun web stuff.
           </p>
-          <div className="absolute left-[-1.75rem] flex h-[500px] w-full items-center overflow-hidden sm:bottom-[-18rem] xl:left-[-18rem] xl:top-[-16rem]">
-            <div className="cat h-[500px] w-full xl:pr-[17rem] ">
+          <div className="absolute left-[-1.75rem] flex h-[500px] w-full items-center overflow-hidden sm:bottom-[-18rem] xl:left-[-310px] xl:top-[-240px]">
+            <div className="cat h-[500px] w-full pr-12 xl:pr-[17rem]">
               <Cat handleWakeUp={() => setCatLoaded(true)}></Cat>
             </div>
           </div>
@@ -55,7 +55,10 @@ export const HeaderSection = () => {
         )}
       </div>
       <div className="overflow-x-hidden">
-        <HeaderWave background={catLoaded ? "#333333" : "#0F0F0F"}></HeaderWave>
+        <HeaderWave
+          className="relative z-[-1] mt-[-33rem] w-[2000px] rotate-[180deg]"
+          background={catLoaded ? "white" : "#0F0F0F"}
+        ></HeaderWave>
       </div>
     </>
   );

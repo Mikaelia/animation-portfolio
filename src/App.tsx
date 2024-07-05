@@ -1,6 +1,6 @@
-import { Routes, Route } from "react-router-dom";
-
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Layout } from "./pages/Layout.tsx";
+import { ResumePage } from "./pages/ResumePage.tsx";
 import { HomePage } from "./pages/HomePage.tsx";
 import { NoMatchPage } from "./pages/NoMatchPage";
 import { PotPage } from "./pages/Rive/ProjectPotPage";
@@ -21,14 +21,23 @@ import { ProjectSmileyPage } from "./pages/CSS/ProjectSmileyPage.tsx";
 import { ProjectFileExplorerPage } from "./pages/UI/ProjectFileExplorerPage.tsx";
 import { ProjectAnimatedTooltipPage } from "@/pages/UI/ProjectAnimatedTooltipPage.tsx";
 import { ProjectExploreButtonPage } from "@/pages/Rive/ProjectExploreButtonPage.tsx";
+import { Suspense } from "react";
+import { Loading } from "@/pages/LoadingPage.tsx";
+import BlogPostPage from "@/pages/BlogPostPage.tsx";
+import { usePosts } from "@/contexts/PostsContext.tsx";
+import { BlogListPage } from "@/pages/BlogListPage.tsx";
 
 function App() {
+  const posts = usePosts();
+
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route path="/blog-list" element={<BlogListPage />} />
+          <Route path="/resume" element={<ResumePage />} />
           <Route index element={<HomePage />} />
-          {/* // Tmp fix as Rive doesn't seem to play well with dynamic imports */}
+          {/* Tmp fix as Rive doesn't seem to play well with dynamic imports */}
           <Route path="animation/bubbling-pot" element={<PotPage />} />
           <Route path="animation/liquid" element={<ProjectWaterPage />} />
           <Route
@@ -71,10 +80,19 @@ function App() {
             path="ui/explore-button"
             element={<ProjectExploreButtonPage />}
           />
+
+          {posts.map((post) => (
+            <Route
+              key={post.path}
+              path={post.path}
+              element={<BlogPostPage post={post} />}
+            />
+          ))}
+
           <Route path="*" element={<NoMatchPage />} />
         </Route>
       </Routes>
-    </>
+    </Suspense>
   );
 }
 

@@ -5,6 +5,8 @@
 @import 'typeface-roboto-slab';
 @import 'typeface-poppins';
 @import '@fontsource/nanum-pen-script';
+@import 'typeface-oswald';
+@import 'typeface-oxygen';
 
 :root {
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */

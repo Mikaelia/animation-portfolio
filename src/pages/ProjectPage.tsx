@@ -31,7 +31,7 @@ export const ProjectPage = ({
     <div className="project-page relative overflow-x-hidden">
       <nav className=" mb-3  border-b border-gray5 bg-gray4 font-semibold ">
         <ul className="ml-3 flex items-center gap-5 p-2">
-          <li className="nav inline-block bg-white bg-clip-text font-handwriting text-2xl duration-500 ease-in-out">
+          <li className="nav inline-block bg-white bg-clip-text font-display text-2xl duration-500 ease-in-out">
             <Link to="/">{smQuery ? "Home" : <HomeButton></HomeButton>}</Link>
           </li>
         </ul>

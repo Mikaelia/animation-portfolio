@@ -20,6 +20,5 @@ export const loadMarkdownFiles = async () => {
       };
     }),
   );
-  console.log(posts);
   return posts;
 };

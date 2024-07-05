@@ -1,38 +1,29 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Plane from "@rive/Plane";
 import "../assets/styles/custom.css";
 import { Intro } from "@components/Intro";
-import { useScroll, animated, useSpring } from "@react-spring/web";
-import { AnimatedSocials } from "@components/AnimatedSocials";
+import { useScroll, animated } from "@react-spring/web";
 import { WorkCard } from "@components/WorkCard";
 import { AngleArrowIcon } from "@components/AngleArrowIcon";
 import HeaderWave from "@components/HeaderWave";
 import { ProjectList } from "@components/ProjectList.tsx";
 import { Filters } from "@components/Filters.tsx";
-import { LeftWaveSVG } from "@components/LeftWaveSVG.tsx";
 import { BackgroundSVG } from "@components/BackgroundSVG.tsx";
 
 export const WelcomeSectionXL = ({ linksRef }) => {
   const [visibleProjects, setVisibleProjects] = useState("All");
   const plane = useRef<HTMLDivElement>(null);
-  const text = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<SVGSVGElement>(null);
   const projBgRef = useRef<SVGSVGElement>(null);
-  const frontWaveRef = useRef<SVGSVGElement>(null);
   const blackBgRef = useRef<SVGSVGElement>(null);
 
-  // header 1vh + 229.3px
   const handleScroll = ({
     value: { scrollYProgress },
   }: {
     value: { scrollYProgress: number };
   }) => {
-    // if (!text.current || !plane.current) return;
-
     const viewportHeight = Math.round(window.innerHeight);
-    const pageHeight = Math.round(document.documentElement.scrollHeight);
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
     plane.current.style.transform = `translateX(100vw)`;
@@ -41,7 +32,6 @@ export const WelcomeSectionXL = ({ linksRef }) => {
     function calculateVHPercentage() {
       const viewportHeight = window.innerHeight;
       const totalPageHeight = document.documentElement.scrollHeight;
-      // console.log(totalPageHeight);
       // subtract header svg
       const vhPercentage = viewportHeight / totalPageHeight;
       return vhPercentage * 100;
@@ -49,12 +39,6 @@ export const WelcomeSectionXL = ({ linksRef }) => {
 
     const percent = scrollYProgress * 100;
     const vhPercent = calculateVHPercentage();
-
-    // console.log(
-    //   "height should be:",
-    //   (5 * vhPercent * document.documentElement.scrollHeight + 229.3) / 100,
-    //   document.documentElement.scrollHeight,
-    // );
 
     const handlePlaneTransformation = () => {
       const headerHeight = viewportHeight + 229.3;
@@ -103,16 +87,10 @@ export const WelcomeSectionXL = ({ linksRef }) => {
   return (
     <>
       <div className="plane-section xl:justify-space-between relative z-0 flex w-full flex-col items-center justify-center pl-20 pr-20">
-        {/*<animated.div*/}
-        {/*  style={socialStyles}*/}
-        {/*  className="fixed right-[-230px] top-0"*/}
-        {/*>*/}
-        {/*  <AnimatedSocials></AnimatedSocials>*/}
-        {/*</animated.div>*/}
         <div className="plane-sizing-section relative flex h-[250vh] w-screen items-center">
           <animated.div
             ref={plane}
-            className="plane-section-animated fixed left-0 top-[20%] h-[20rem] w-[42rem]"
+            className="plane-section-animated fixed left-0 top-[20%] h-[20rem] w-[42rem] opacity-0"
           >
             <Plane />
           </animated.div>

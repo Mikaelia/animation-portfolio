@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { HeaderSection } from "@components/HeaderSection.tsx";
 import { WelcomeSectionXL } from "@/components/WelcomeSectionXL.tsx";
 import { WelcomeSection } from "@/components/WelcomeSection.tsx";
@@ -7,29 +8,65 @@ import RiveFooter from "@rive/FooterWave.tsx";
 import "../assets/styles/custom.css";
 import useMediaQuery from "@/utils/useMediaBreakpoint.ts";
 import BlogList from "@components/BlogList";
+import { useLenis } from "@/hooks/useLenis.tsx";
+import HeaderWave from "@components/HeaderWave.tsx";
 
 export const HomePage = () => {
+  const linksRef = useRef(null);
+
   const xlQuery = useMediaQuery(
     "only screen and (min-width: 1280px) and (max-width: 2000px)",
   );
 
+  const handleScrollTo = useLenis();
+
   return (
     <div className="homepage relative flex flex-col items-center overflow-x-hidden">
-      <HeaderSection></HeaderSection>
-      <WelcomeSectionXL></WelcomeSectionXL>
-      <div className="blog-section mt-[-30rem] flex w-screen bg-white p-12 pt-[40rem]">
-        <BlogList></BlogList>
+      <div
+        ref={linksRef}
+        className="anchor-links fixed right-0 top-0 z-[1000] flex translate-x-full gap-4 rounded-bl border-b border-l border-black bg-white p-1 font-display font-semibold text-black duration-300 ease-in-out hover:text-pink"
+      >
+        <a
+          className="no-underline hover:text-black"
+          onClick={() => handleScrollTo("#about")}
+        >
+          ABOUT
+        </a>
+        <a
+          className="no-underline hover:text-black"
+          onClick={() => handleScrollTo("#projects")}
+        >
+          PROJECTS
+        </a>
+        <a
+          className="no-underline hover:text-black"
+          onClick={() => handleScrollTo("#journal")}
+        >
+          JOURNAL
+        </a>
+      </div>
+      <HeaderSection />
+      <WelcomeSectionXL linksRef={linksRef} />
+      <div className="blog-section flex w-screen max-w-[2000px] flex-col items-center bg-white px-12 ">
+        <HeaderWave
+          id="wave"
+          className="about-top-wave z-[-1] mb-[-20rem] mt-[-20rem] w-[2000px]"
+          background="white"
+        />
+        <div className="blog self-start">
+          <BlogList />
+        </div>
       </div>
 
-      {/*{xlQuery ? (*/}
-      {/*  <WelcomeSectionXL></WelcomeSectionXL>*/}
-      {/*) : (*/}
-      {/*  <WelcomeSection></WelcomeSection>*/}
-      {/*)}*/}
+      {/*{xlQuery ? (
+        <WelcomeSectionXL />
+      ) : (
+        <WelcomeSection />
+      )}*/}
       <Background />
-      {/*<div className="z-10 overflow-x-hidden">*/}
-      {/*  <RiveFooter></RiveFooter>*/}
-      {/*</div>*/}
+      <div className="z-[100] overflow-x-hidden bg-white">
+        <RiveFooter />
+      </div>
     </div>
   );
 };

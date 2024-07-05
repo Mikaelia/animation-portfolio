@@ -294,3 +294,7 @@ html {
 .resume-button:hover .arrow-icon, .work-card:hover .arrow-icon {
   transform: translateX(5px) translateY(-5px);
 }
+
+#wave {
+  /*transform: scaleX(-1);*/
+}

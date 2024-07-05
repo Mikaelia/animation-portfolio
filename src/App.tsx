@@ -24,6 +24,7 @@ import { ProjectExploreButtonPage } from "@/pages/Rive/ProjectExploreButtonPage.
 import { loadMarkdownFiles } from "@/utils/posts";
 import { useEffect, useState, Suspense } from "react";
 import { BlogPostPage } from "@/pages/BlogPostPage.tsx";
+import ScrollToTop from "@components/ScrollToTop.tsx";
 
 const Loading = () => <div>Loading...</div>;
 

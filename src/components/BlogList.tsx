@@ -15,7 +15,9 @@ const BlogList = () => {
 
   return (
     <div className="max-w-[500px] text-black">
-      <h2 className="mb-12 font-display text-5xl font-normal ">JOURNAL</h2>
+      <h2 id="journal" className="mb-12 font-display text-5xl font-normal ">
+        JOURNAL
+      </h2>
       <ul>
         {posts.map((post) => (
           <li className=" group mb-12" key={post.path}>

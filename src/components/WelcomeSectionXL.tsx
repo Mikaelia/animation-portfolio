@@ -13,7 +13,7 @@ import { Filters } from "@components/Filters.tsx";
 import { LeftWaveSVG } from "@components/LeftWaveSVG.tsx";
 import { BackgroundSVG } from "@components/BackgroundSVG.tsx";
 
-export const WelcomeSectionXL = () => {
+export const WelcomeSectionXL = ({ linksRef }) => {
   const [visibleProjects, setVisibleProjects] = useState("All");
   const plane = useRef<HTMLDivElement>(null);
   const text = useRef<HTMLDivElement>(null);
@@ -22,13 +22,6 @@ export const WelcomeSectionXL = () => {
   const projBgRef = useRef<SVGSVGElement>(null);
   const frontWaveRef = useRef<SVGSVGElement>(null);
   const blackBgRef = useRef<SVGSVGElement>(null);
-  const [socialStyles, socialApi] = useSpring(() => ({
-    transform: "translateY(-100vh)",
-  }));
-
-  const [textStyles, textApi] = useSpring(() => ({
-    opacity: "1",
-  }));
 
   // header 1vh + 229.3px
   const handleScroll = ({
@@ -43,7 +36,7 @@ export const WelcomeSectionXL = () => {
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
     plane.current.style.transform = `translateX(100vw)`;
-    // text.current.style.transform = `translateX(calc(100vw + 450px))`;
+    plane.current.style.opacity = "0";
 
     function calculateVHPercentage() {
       const viewportHeight = window.innerHeight;
@@ -66,6 +59,7 @@ export const WelcomeSectionXL = () => {
     const handlePlaneTransformation = () => {
       const headerHeight = viewportHeight + 229.3;
       if (scrollPosition >= headerHeight) {
+        plane.current.style.opacity = "1";
         // subtract the distance already traveled to create new zero.
         //
         const percentOfContainerScrolled =
@@ -81,40 +75,20 @@ export const WelcomeSectionXL = () => {
       // lasts 2vh
       // need percent that 100vh is
     };
-    const handleContentTransformation = () => {
-      if (percent > 4 * vhPercent && percent < 6 * vhPercent) {
-        const sectionPercent = (percent - 4 * vhPercent) / (2 * vhPercent);
-        const translationPerCurrentPercentScrolled = sectionPercent * 100;
-        text.current.style.transform = `translateX(calc(${100 - translationPerCurrentPercentScrolled}vw + 450px))`;
-      } else {
-        text.current.style.transform = `translateX(calc(100vw + 450px))`;
-      }
-      // percent needs to be greater than the height of plane container -
-    };
 
     const handleTextTransformation = () => {
       // frontWaveRef.current.style.display = "block";
       blackBgRef.current.style.display = "none";
-      if (percent > 5 * vhPercent) {
+      linksRef.current.style.transform = "translateX(100%)";
+      if (percent > 4 * vhPercent) {
+        linksRef.current.style.transform = "translateX(0)";
+      }
+      if (percent > 4.5 * vhPercent) {
+        plane.current.style.opacity = "0";
         blackBgRef.current.style.display = "block";
       }
-      //
-      // text.current!.style.transform = `translateX(calc(100vw + 204px))`;
-      // if (scrollYProgress > 0.2) {
-      //   let svgPercentage = (200 / window.innerWidth) * 100;
-      //   const percent = 100 - ((scrollYProgress - 0.2) / 0.18) * 100;
-      //   // at zero percent, the thing plus svg is in view
-      //   if (Math.round(percent) < -Math.round(svgPercentage)) {
-      //     frontWaveRef.current.style.display = "none";
-      //     blackBgRef.current.style.display = "block";
-      //     // percent is not
-      //     text.current!.style.transform = `translateX(0)`;
-      //   } else
-      //     text.current!.style.transform = `translateX(calc(${percent}vw + 204px))`;
-      // }
     };
-    //
-    // handleContentTransformation();
+
     handlePlaneTransformation();
     handleTextTransformation();
   };
@@ -135,7 +109,7 @@ export const WelcomeSectionXL = () => {
         {/*>*/}
         {/*  <AnimatedSocials></AnimatedSocials>*/}
         {/*</animated.div>*/}
-        <div className="plane-sizing-section relative flex h-[300vh] w-screen items-center">
+        <div className="plane-sizing-section relative flex h-[250vh] w-screen items-center">
           <animated.div
             ref={plane}
             className="plane-section-animated fixed left-0 top-[20%] h-[20rem] w-[42rem]"
@@ -144,12 +118,15 @@ export const WelcomeSectionXL = () => {
           </animated.div>
         </div>
 
-        <div className="about-section z-1 w-screen">
+        <div className="about-section z-1 flex w-screen flex-col items-center">
           <HeaderWave
             className="about-top-wave z-[-1] mb-[-30rem] w-[2000px] "
             background="white"
           />
-          <div className="relative h-screen w-full bg-white p-8">
+          <div
+            id="about"
+            className="relative h-screen w-full max-w-[2000px] bg-white p-8"
+          >
             <div className="about-text-container relative z-10 flex h-full justify-between">
               <Intro></Intro>
               <div className="about-work-section ml-8 flex h-full max-w-[30rem] flex-col justify-start self-start">
@@ -213,10 +190,13 @@ export const WelcomeSectionXL = () => {
           />
         </div>
 
-        <div className="projects-container relative z-[-2] mt-[-20rem] flex w-screen  flex-col items-center justify-center pt-[30rem]">
-          <div className="flex w-full justify-between">
+        <div className="projects-container relative z-[-2] mt-[-20rem] flex w-screen flex-col  items-center justify-center pb-[30rem] pt-[30rem]">
+          <div className="flex w-full max-w-[2000px] justify-between">
             <div className="text ml-12 flex flex-col items-start justify-center">
-              <h2 className="mb-4 font-display text-5xl font-normal">
+              <h2
+                id="projects"
+                className="mb-4 font-display text-5xl font-normal"
+              >
                 PROJECTS
               </h2>
               <p>A collection of animation and mini-projects.</p>
@@ -226,16 +206,12 @@ export const WelcomeSectionXL = () => {
               callback={(val: string) => setVisibleProjects(val)}
             ></Filters>
           </div>
-          <div className="container z-10 mt-36">
+          <div className="container z-10 mt-36 flex flex-col items-center">
             <ProjectList
               visibleProjects={visibleProjects}
               projBgRef={projBgRef}
             ></ProjectList>
           </div>
-          <HeaderWave
-            className="projects-bottom-wave relative z-[-3] mt-[-23rem]  w-[2000px] rotate-[180deg]"
-            background="black"
-          />
         </div>
       </div>
       <div

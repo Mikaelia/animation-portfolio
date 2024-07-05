@@ -10,6 +10,8 @@ import useMediaQuery from "@/utils/useMediaBreakpoint.ts";
 import BlogList from "@components/BlogList";
 import { useLenis } from "@/hooks/useLenis.tsx";
 import HeaderWave from "@components/HeaderWave.tsx";
+import { Link } from "react-router-dom";
+import { AngleArrowIcon } from "@components/AngleArrowIcon.tsx";
 
 export const HomePage = () => {
   const linksRef = useRef(null);
@@ -53,8 +55,23 @@ export const HomePage = () => {
           className="about-top-wave z-[-1] mb-[-20rem] mt-[-20rem] w-[2000px]"
           background="white"
         />
-        <div className="blog self-start">
-          <BlogList />
+        <div className="blog flex flex-col self-start">
+          <h2
+            id="journal"
+            className="mb-12 font-display text-5xl font-normal text-black "
+          >
+            JOURNAL
+          </h2>
+          <BlogList number={3} newTab />
+          <Link
+            to="/blog-list"
+            className="resume-button mt-12 flex self-start align-middle font-bold text-black"
+          >
+            <span className="text-l mr-auto text-nowrap font-display font-bold text-black">
+              View More
+            </span>
+            <AngleArrowIcon className={"arrow-icon h-6"} />
+          </Link>
         </div>
       </div>
 

@@ -1,6 +1,7 @@
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { tomorrow } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { useEffect } from "react";
 
 const BlogPost = ({
   markdown,
@@ -16,6 +17,12 @@ const BlogPost = ({
     const options = { month: "long", day: "numeric", year: "numeric" };
     return new Intl.DateTimeFormat("en-US", options).format(date);
   };
+
+  useEffect(() => {
+    if (markdown && date && title) {
+      window.scrollTo(0, 0);
+    }
+  }, [markdown, date, title]);
 
   return (
     <article className="prose w-full bg-white">

@@ -21,30 +21,20 @@ import { ProjectSmileyPage } from "./pages/CSS/ProjectSmileyPage.tsx";
 import { ProjectFileExplorerPage } from "./pages/UI/ProjectFileExplorerPage.tsx";
 import { ProjectAnimatedTooltipPage } from "@/pages/UI/ProjectAnimatedTooltipPage.tsx";
 import { ProjectExploreButtonPage } from "@/pages/Rive/ProjectExploreButtonPage.tsx";
-import { loadMarkdownFiles } from "@/utils/posts";
-import { useEffect, useState, lazy, Suspense } from "react";
+import { Suspense } from "react";
 import { Loading } from "@/pages/LoadingPage.tsx";
-const BlogPostPage = lazy(() => import("@/pages/BlogPostPage.tsx"));
+import BlogPostPage from "@/pages/BlogPostPage.tsx";
+import { usePosts } from "@/contexts/PostsContext.tsx";
+import { BlogListPage } from "@/pages/BlogListPage.tsx";
 
 function App() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const posts = await loadMarkdownFiles();
-      setPosts(posts);
-      setLoading(false);
-    };
-    fetchPosts();
-  }, []);
-
-  if (loading) return <Loading />;
+  const posts = usePosts();
 
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route path="/blog-list" element={<BlogListPage />} />
           <Route path="/resume" element={<ResumePage />} />
           <Route index element={<HomePage />} />
           {/* Tmp fix as Rive doesn't seem to play well with dynamic imports */}

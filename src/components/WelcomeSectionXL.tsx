@@ -11,12 +11,16 @@ import { ProjectList } from "@components/ProjectList.tsx";
 import { Filters } from "@components/Filters.tsx";
 import { BackgroundSVG } from "@components/BackgroundSVG.tsx";
 
-export const WelcomeSectionXL = ({ linksRef }) => {
+export const WelcomeSectionXL = ({
+  linksRef,
+}: {
+  linksRef: React.RefObject<HTMLDivElement>;
+}) => {
   const [visibleProjects, setVisibleProjects] = useState("All");
   const plane = useRef<HTMLDivElement>(null);
   const bgRef = useRef<SVGSVGElement>(null);
   const projBgRef = useRef<SVGSVGElement>(null);
-  const blackBgRef = useRef<SVGSVGElement>(null);
+  const blackBgRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = ({
     value: { scrollYProgress },
@@ -25,6 +29,8 @@ export const WelcomeSectionXL = ({ linksRef }) => {
   }) => {
     const viewportHeight = Math.round(window.innerHeight);
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    if (!plane.current) return;
 
     plane.current.style.transform = `translateX(100vw)`;
     plane.current.style.opacity = "0";
@@ -42,7 +48,7 @@ export const WelcomeSectionXL = ({ linksRef }) => {
 
     const handlePlaneTransformation = () => {
       const headerHeight = viewportHeight + 229.3;
-      if (scrollPosition >= headerHeight) {
+      if (scrollPosition >= headerHeight && plane.current) {
         plane.current.style.opacity = "1";
         // subtract the distance already traveled to create new zero.
         //
@@ -61,12 +67,17 @@ export const WelcomeSectionXL = ({ linksRef }) => {
     };
 
     const handleTextTransformation = () => {
-      // frontWaveRef.current.style.display = "block";
+      if (!blackBgRef.current) return;
+      if (!linksRef.current) return;
+      if (!plane.current) return;
+
       blackBgRef.current.style.display = "none";
       linksRef.current.style.transform = "translateX(100%)";
+
       if (percent > 4 * vhPercent) {
         linksRef.current.style.transform = "translateX(0)";
       }
+
       if (percent > 4.5 * vhPercent) {
         plane.current.style.opacity = "0";
         blackBgRef.current.style.display = "block";

@@ -1,5 +1,10 @@
 import { forwardRef } from "react";
-export const BackgroundSVG = forwardRef(
+
+interface BackgroundSVGProps {
+  className: string;
+}
+
+export const BackgroundSVG = forwardRef<SVGSVGElement, BackgroundSVGProps>(
   (
     {
       className,

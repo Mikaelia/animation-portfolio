@@ -1,12 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { HeaderSection } from "@components/HeaderSection.tsx";
 import { WelcomeSectionXL } from "@/components/WelcomeSectionXL.tsx";
-import { WelcomeSection } from "@/components/WelcomeSection.tsx";
 import Background from "@/components/Background";
-import { ProjectList } from "@components/ProjectList.tsx";
 import RiveFooter from "@rive/FooterWave.tsx";
 import "../assets/styles/custom.css";
-import useMediaQuery from "@/utils/useMediaBreakpoint.ts";
+// import useMediaQuery from "@/utils/useMediaBreakpoint.ts";
 import BlogList from "@components/BlogList";
 import { useLenis } from "@/hooks/useLenis.tsx";
 import HeaderWave from "@components/HeaderWave.tsx";
@@ -16,9 +14,9 @@ import { AngleArrowIcon } from "@components/AngleArrowIcon.tsx";
 export const HomePage = () => {
   const linksRef = useRef(null);
 
-  const xlQuery = useMediaQuery(
-    "only screen and (min-width: 1280px) and (max-width: 2000px)",
-  );
+  // const xlQuery = useMediaQuery(
+  //   "only screen and (min-width: 1280px) and (max-width: 2000px)",
+  // );
 
   const handleScrollTo = useLenis();
 
@@ -51,7 +49,6 @@ export const HomePage = () => {
       <WelcomeSectionXL linksRef={linksRef} />
       <div className="blog-section flex w-screen max-w-[2000px] flex-col items-center bg-white px-12 ">
         <HeaderWave
-          id="wave"
           className="about-top-wave z-[-1] mb-[-20rem] mt-[-20rem] w-[2000px]"
           background="white"
         />

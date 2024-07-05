@@ -42,7 +42,7 @@ export const WorkCard = ({
   skills: string[];
   className?: string;
   url?: string;
-  backgroundRef: RefObject<HTMLDivElement>;
+  backgroundRef: RefObject<SVGSVGElement>;
 }) => {
   const rectRef = useRef<HTMLDivElement>(null);
 

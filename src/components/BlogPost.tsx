@@ -12,9 +12,13 @@ const BlogPost = ({
   date: string;
   title: string;
 }) => {
-  const formatDate = (dateString) => {
+  const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    const options = { month: "long", day: "numeric", year: "numeric" };
+    const options: Intl.DateTimeFormatOptions = {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    };
     return new Intl.DateTimeFormat("en-US", options).format(date);
   };
 

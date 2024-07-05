@@ -1,4 +1,4 @@
-import { loadMarkdownFiles } from "@/utils/posts";
+import { loadMarkdownFiles } from "@/utils/posts.ts";
 
 let cachedPosts: any[] = [];
 

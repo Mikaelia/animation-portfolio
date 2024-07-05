@@ -1,11 +1,19 @@
 import matter from "gray-matter";
 import { Buffer } from "buffer";
 
-export const loadMarkdownFiles = async () => {
+interface Post {
+  path: string;
+  date: string;
+  title: string;
+  description: string;
+  content: string;
+}
+
+export const loadMarkdownFiles = async (): Promise<Post[]> => {
   const markdownFiles = import.meta.glob("../posts/*.md", {
-    query: "?raw",
-    import: "default",
-  });
+    as: "raw",
+  }) as Record<string, () => Promise<string>>;
+
   const posts = await Promise.all(
     Object.keys(markdownFiles).map(async (filePath) => {
       const content = await markdownFiles[filePath]();

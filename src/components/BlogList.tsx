@@ -1,31 +1,38 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { loadMarkdownFiles } from "@/utils/posts";
+import { loadMarkdownFiles } from "@/utils/posts.js";
 
-const BlogList = ({
-  number,
-  newTab,
-}: {
+interface Post {
+  path: string;
+  title: string;
+  description: string;
+}
+
+interface BlogListProps {
   number?: number;
   newTab?: boolean;
-}) => {
-  const [posts, setPosts] = useState([]);
+}
+
+const BlogList = ({ number, newTab }: BlogListProps) => {
+  const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const posts = await loadMarkdownFiles();
-      if (number) {
+      const posts: Post[] = await loadMarkdownFiles();
+      if (number && posts) {
         setPosts(posts.slice(0, number));
-      } else setPosts(posts);
+      } else {
+        setPosts(posts);
+      }
     };
     fetchPosts();
-  }, []);
+  }, [number]);
 
   return (
     <div className="max-w-[500px] text-black">
       <ul>
         {posts.map((post) => (
-          <li className=" group mb-12" key={post.path}>
+          <li className="group mb-12" key={post.path}>
             <Link
               target={newTab ? "_blank" : ""}
               className="font-normal no-underline"

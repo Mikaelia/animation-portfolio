@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import useMediaQuery from "@/utils/useMediaBreakpoint";
 import HomeButton from "@rive/HomeButton.tsx";
+import { useNavigate } from "react-router-dom";
 
 export const ProjectPage = ({
   children,
@@ -17,7 +17,7 @@ export const ProjectPage = ({
   const [showSidePanel, setShowSidePanel] = useState(true);
   const [absoluteSidepanel, setAbsoluteSidepanel] = useState(false);
   const smQuery = useMediaQuery("only screen and (max-width: 768px)");
-
+  const navigate = useNavigate();
   const toggleSidePanel = () => {
     setShowSidePanel(!showSidePanel);
   };
@@ -32,7 +32,9 @@ export const ProjectPage = ({
       <nav className=" mb-3  border-b border-gray5 bg-gray4 font-semibold ">
         <ul className="ml-3 flex items-center gap-5 p-2">
           <li className="nav inline-block bg-white bg-clip-text font-display text-2xl duration-500 ease-in-out">
-            <Link to="/">{smQuery ? "Home" : <HomeButton></HomeButton>}</Link>
+            <button onClick={() => navigate(-1)}>
+              {smQuery ? "Home" : <HomeButton></HomeButton>}
+            </button>
           </li>
         </ul>
       </nav>

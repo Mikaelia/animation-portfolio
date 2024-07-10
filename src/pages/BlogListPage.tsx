@@ -1,17 +1,15 @@
 import BlogList from "@components/BlogList.tsx";
 import { useNavigate } from "react-router-dom";
-import HomeButton from "@rive/HomeButton.tsx";
+// import HomeButton from "@rive/HomeButton.tsx";
 
 export const BlogListPage = () => {
   const navigate = useNavigate();
   return (
     <>
-      <nav className="fixed w-screen border-b border-gray5 bg-gray4 font-semibold">
+      <nav className="fixed w-screen bg-white font-semibold text-black">
         <ul className="ml-3 flex items-center gap-5 p-2">
           <li className="nav inline-block bg-white bg-clip-text font-display  duration-500 ease-in-out">
-            <button onClick={() => navigate(-1)}>
-              <HomeButton></HomeButton>
-            </button>
+            <button onClick={() => navigate(-1)}>HOME</button>
           </li>
         </ul>
       </nav>

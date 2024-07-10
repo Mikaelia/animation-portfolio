@@ -59,7 +59,7 @@ export const HomePage = () => {
           >
             JOURNAL
           </h2>
-          <BlogList number={3} newTab />
+          <BlogList number={3} />
           <Link
             to="/blog-list"
             className="resume-button mt-12 flex self-start align-middle font-bold text-black"

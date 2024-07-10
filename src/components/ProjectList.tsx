@@ -114,7 +114,7 @@ export const ProjectList = ({
 
   return (
     <>
-      <ul className="relative grid w-full max-w-7xl auto-rows-min grid-cols-projects grid-rows-projects justify-center gap-8 overflow-visible">
+      <ul className="relative grid w-full max-w-7xl auto-rows-min grid-cols-projects grid-rows-projects justify-center overflow-visible ">
         <MouseoverLogic bgRef={projBgRef} rectRefs={rectRefs} />
         <li ref={rectRefs[0]}>
           <AnimationCard

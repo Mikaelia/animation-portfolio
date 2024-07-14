@@ -45,7 +45,7 @@ export const HomePage = () => {
           JOURNAL
         </a>
       </div>
-      <HeaderSection />
+      <HeaderSection handleScrollTo={handleScrollTo} />
       <WelcomeSectionXL linksRef={linksRef} />
       <div className="blog-section flex w-screen max-w-[2000px] flex-col items-center bg-white px-12 ">
         <HeaderWave

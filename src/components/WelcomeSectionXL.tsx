@@ -10,6 +10,7 @@ import HeaderWave from "@components/HeaderWave";
 import { ProjectList } from "@components/ProjectList.tsx";
 import { Filters } from "@components/Filters.tsx";
 import { BackgroundSVG } from "@components/BackgroundSVG.tsx";
+import { AnimatedPlane } from "@components/AnimatedPlane.tsx";
 
 export const WelcomeSectionXL = ({
   linksRef,
@@ -17,7 +18,6 @@ export const WelcomeSectionXL = ({
   linksRef: React.RefObject<HTMLDivElement>;
 }) => {
   const [visibleProjects, setVisibleProjects] = useState("All");
-  const plane = useRef<HTMLDivElement>(null);
   const bgRef = useRef<SVGSVGElement>(null);
   const projBgRef = useRef<SVGSVGElement>(null);
   const blackBgRef = useRef<HTMLDivElement>(null);
@@ -27,14 +27,6 @@ export const WelcomeSectionXL = ({
   }: {
     value: { scrollYProgress: number };
   }) => {
-    const viewportHeight = Math.round(window.innerHeight);
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-
-    if (!plane.current) return;
-
-    plane.current.style.transform = `translateX(100vw)`;
-    plane.current.style.opacity = "0";
-
     function calculateVHPercentage() {
       const viewportHeight = window.innerHeight;
       const totalPageHeight = document.documentElement.scrollHeight;
@@ -46,30 +38,9 @@ export const WelcomeSectionXL = ({
     const percent = scrollYProgress * 100;
     const vhPercent = calculateVHPercentage();
 
-    const handlePlaneTransformation = () => {
-      const headerHeight = viewportHeight + 229.3;
-      if (scrollPosition >= headerHeight && plane.current) {
-        plane.current.style.opacity = "1";
-        // subtract the distance already traveled to create new zero.
-        //
-        const percentOfContainerScrolled =
-          (scrollPosition - headerHeight) / (3 * viewportHeight);
-
-        const totalTranslateValueNeeded = 200;
-        const translationPerCurrentPercentScrolled =
-          percentOfContainerScrolled * totalTranslateValueNeeded;
-        // want to get from translate 100 to translate 0, 3vh should be zero
-        plane.current.style.transform = `translateX(${100 - translationPerCurrentPercentScrolled}vw)`;
-      }
-      // start when 100vh scrolled
-      // lasts 2vh
-      // need percent that 100vh is
-    };
-
     const handleTextTransformation = () => {
       if (!blackBgRef.current) return;
       if (!linksRef.current) return;
-      if (!plane.current) return;
 
       blackBgRef.current.style.display = "none";
       linksRef.current.style.transform = "translateX(100%)";
@@ -79,12 +50,10 @@ export const WelcomeSectionXL = ({
       }
 
       if (percent > 4.5 * vhPercent) {
-        plane.current.style.opacity = "0";
         blackBgRef.current.style.display = "block";
       }
     };
 
-    handlePlaneTransformation();
     handleTextTransformation();
   };
 
@@ -98,27 +67,20 @@ export const WelcomeSectionXL = ({
   return (
     <>
       <div className="plane-section xl:justify-space-between relative z-0 flex w-full flex-col items-center justify-center pl-20 pr-20">
-        <div className="plane-sizing-section relative flex h-[250vh] w-screen items-center">
-          <animated.div
-            ref={plane}
-            className="plane-section-animated fixed left-0 top-[20%] h-[20rem] w-[42rem] opacity-0"
-          >
-            <Plane />
-          </animated.div>
-        </div>
-
-        <div className="about-section z-1 flex w-screen flex-col items-center">
+        <div className="plane-sizing-section relative flex h-[250vh] w-screen items-center"></div>
+        <AnimatedPlane />
+        <div className="about-section z-1 flex w-screen flex-col items-center ">
           <HeaderWave
             className="about-top-wave z-[-1] mb-[-30rem] w-[2000px] "
             background="white"
           />
           <div
             id="about"
-            className="relative h-screen w-full max-w-[2000px] bg-white p-8"
+            className="relative w-full max-w-[2000px] bg-white p-8 lg:h-screen"
           >
-            <div className="about-text-container relative z-10 flex h-full justify-between">
+            <div className="about-text-container relative z-10 flex h-full justify-between px-12 sm:flex-col sm:items-center lg:flex-row">
               <Intro></Intro>
-              <div className="about-work-section ml-8 flex h-full max-w-[30rem] flex-col justify-start self-start">
+              <div className="about-work-section flex h-full max-w-[30rem] flex-col lg:ml-8 lg:justify-start lg:self-start">
                 <WorkCard
                   backgroundRef={bgRef}
                   url="https://www.salesforce.com"
@@ -159,7 +121,7 @@ export const WelcomeSectionXL = ({
                 <Link
                   to="/resume"
                   target="_blank"
-                  className="resume-button mx-auto mt-auto flex align-middle font-bold text-black"
+                  className="resume-button mx-auto mt-12 flex align-middle font-bold text-black lg:mt-auto"
                 >
                   <span className="text-l text-nowrap font-display font-bold">
                     Full Resume

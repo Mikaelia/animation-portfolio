@@ -10,6 +10,7 @@ import { useLenis } from "@/hooks/useLenis.tsx";
 import HeaderWave from "@components/HeaderWave.tsx";
 import { Link } from "react-router-dom";
 import { AngleArrowIcon } from "@components/AngleArrowIcon.tsx";
+import { AnchorLinks } from "@components/AnchorLinks.tsx";
 
 export const HomePage = () => {
   const linksRef = useRef(null);
@@ -22,29 +23,7 @@ export const HomePage = () => {
 
   return (
     <div className="homepage relative flex flex-col items-center overflow-x-hidden">
-      <div
-        ref={linksRef}
-        className="anchor-links fixed right-0 top-0 z-[1000] flex translate-x-full gap-4 rounded-bl border-b border-l border-black bg-white p-1 font-display font-semibold text-black duration-300 ease-in-out hover:text-pink"
-      >
-        <a
-          className="no-underline hover:text-black"
-          onClick={() => handleScrollTo("#about")}
-        >
-          ABOUT
-        </a>
-        <a
-          className="no-underline hover:text-black"
-          onClick={() => handleScrollTo("#projects")}
-        >
-          PROJECTS
-        </a>
-        <a
-          className="no-underline hover:text-black"
-          onClick={() => handleScrollTo("#journal")}
-        >
-          JOURNAL
-        </a>
-      </div>
+      <AnchorLinks handleScrollTo={handleScrollTo} ref={linksRef} />
       <HeaderSection handleScrollTo={handleScrollTo} />
       <WelcomeSectionXL linksRef={linksRef} />
       <div className="blog-section flex w-screen max-w-[2000px] flex-col items-center bg-white px-12 ">

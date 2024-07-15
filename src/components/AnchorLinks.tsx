@@ -1,14 +1,39 @@
-import { forwardRef } from "react";
+import { forwardRef, useRef } from "react";
+import { calculateVHPercentage } from "@/utils/viewportUtils.ts";
+import { useScroll } from "@react-spring/web";
 
 export const AnchorLinks = forwardRef(
-  (
-    {
-      handleScrollTo,
+  ({ handleScrollTo }: { handleScrollTo: (arg: string) => void }) => {
+    const ref: React.Ref<HTMLDivElement> = useRef(null);
+
+    const handleScroll = ({
+      value: { scrollYProgress },
     }: {
-      handleScrollTo: (arg: string) => void;
-    },
-    ref: React.Ref<HTMLDivElement>,
-  ) => {
+      value: { scrollYProgress: number };
+    }) => {
+      const vhPercent = calculateVHPercentage();
+
+      const handleAnchorLinks = () => {
+        const linksStyle = ref.current?.style;
+        if (!linksStyle) return;
+
+        linksStyle.transform = "translateX(100%)";
+
+        if (scrollYProgress > 4 * vhPercent) {
+          linksStyle.transform = "translateX(0)";
+        }
+      };
+
+      handleAnchorLinks();
+    };
+
+    useScroll({
+      onChange: handleScroll,
+      default: {
+        immediate: true,
+      },
+    });
+
     return (
       <div
         ref={ref}

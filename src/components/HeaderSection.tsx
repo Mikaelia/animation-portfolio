@@ -57,7 +57,7 @@ export const HeaderSection = ({
       </div>
       <div className="overflow-x-hidden">
         <HeaderWave
-          className="relative z-[-1] mt-[-33rem] w-[2000px] rotate-[180deg]"
+          className="relative z-[-1] mt-[-33rem] hidden w-[2000px] rotate-[180deg] md:block"
           background={catLoaded ? "white" : "#0F0F0F"}
         ></HeaderWave>
       </div>

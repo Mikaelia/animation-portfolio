@@ -1,11 +1,10 @@
 TO DO:
 
-- Fix responsiveness on large and small screens
 - Fix ordering of blog posts
-- Fix show/hiding of the black background when screen is small
+- Check styles on large screen
 - Add plane out and footer
-- fix bird flying off page
-- Fix home button
+- Fix bird flying off page
+- Fix home font
 - Loading screen
 - Page transitions
 - Blog navigation and filtering / liking 

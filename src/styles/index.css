@@ -2,8 +2,6 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import 'typeface-roboto-slab';
-@import 'typeface-poppins';
 @import '@fontsource/nanum-pen-script';
 @import 'typeface-oswald';
 @import 'typeface-oxygen';

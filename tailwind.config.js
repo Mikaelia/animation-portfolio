@@ -37,7 +37,6 @@ export default {
       fontFamily: {
         display: [["Oswald", "sans-serif"]],
         body: ["Oxygen", "sans-serif"],
-        poppins: ["Poppins", "sans-serif"],
         handwriting: ["Oswald", "sans-serif"],
       },
       gridTemplateColumns: {

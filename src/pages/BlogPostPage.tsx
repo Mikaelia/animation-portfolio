@@ -22,7 +22,7 @@ const BlogPostPage = ({ post }: { post: Post }) => {
         </ul>
       </nav>
       <div className="relative flex flex-col items-center bg-white">
-        <div className="p-12 pb-20 pt-40">
+        <div className="px-4 pb-20 pt-40 md:px-12">
           <BlogPost
             markdown={post.content}
             title={post.title}

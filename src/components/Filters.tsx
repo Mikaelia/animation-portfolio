@@ -7,7 +7,7 @@ export const Filters = ({
   callback: (val: string) => void;
 }) => {
   return (
-    <div className={`filters ${className} flex flex-col items-start`}>
+    <div className={`filters ${className} flex flex-col md:mr-12`}>
       <h3 className="text-l mb-4 font-display font-medium">CATEGORIES</h3>
       <div className="pill-container flex flex-wrap gap-2">
         <Pill

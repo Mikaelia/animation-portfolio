@@ -29,7 +29,7 @@ const BlogList = ({ number, newTab }: BlogListProps) => {
   }, [number]);
 
   return (
-    <div className="max-w-[500px] text-black">
+    <div className="max-w-[500px]  text-black">
       <ul>
         {posts.map((post) => (
           <li className="group mb-12" key={post.path}>

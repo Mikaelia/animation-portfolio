@@ -86,7 +86,7 @@ export const WorkCard = ({
         <a href={url} target="_blank" className="work-card no-underline">
           <div
             ref={rectRef}
-            className="link-non flex max-w-4xl rounded-b-sm py-6 text-sm text-black"
+            className="link-non flex max-w-4xl flex-col rounded-b-sm py-6 text-sm text-black md:flex-row"
           >
             <div className="date  mr-4 whitespace-nowrap font-display font-semibold">
               <span>{date}</span>
@@ -110,7 +110,7 @@ export const WorkCard = ({
       ) : (
         <div
           ref={rectRef}
-          className="flex max-w-4xl rounded-b-sm py-6 text-sm text-black"
+          className="flex max-w-4xl flex-col rounded-b-sm py-6 text-sm text-black md:flex-row"
         >
           <div className="date mr-4 whitespace-nowrap font-display font-semibold">
             <span>{date}</span>

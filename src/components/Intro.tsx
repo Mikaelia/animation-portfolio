@@ -4,17 +4,17 @@ export const Intro = () => (
       ABOUT
     </h2>
     <p className="text-body mb-4">
-      I'm a frontend developer based in foggy San Francisco. Here you'll find
-      some of my CSS and animation experiments and mini-projects.
+      I'm a frontend developer based in foggy San Francisco. I enjoy CSS,
+      Javacript, UI development, and discovering new techniques for creating
+      interesting web interactions and effects.
     </p>
     <p className="mb-4">
-      I love creating clean, flexible UIs and playful interactions for users to
-      enjoy. I've had the pleasure of collaborating with designers and
-      developers to launch new products and reimagine existing features. I've
-      also worked on design systems and component libraries to streamline
-      development across engineering teams.
+      I've had the pleasure of collaborating with designers and developers to
+      launch new products and reimagine existing features. I've worked on design
+      systems and built component libraries to streamline development across
+      engineering teams.
     </p>
-    <p>
+    <p className="mb-4">
       As an artist I'm addicted to detail. Check out my{" "}
       <a
         className="underline"
@@ -33,5 +33,6 @@ export const Intro = () => (
       </a>
       .
     </p>
+    <p>Thanks for stopping by!</p>
   </div>
 );

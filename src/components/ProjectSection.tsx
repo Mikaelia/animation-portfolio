@@ -14,7 +14,7 @@ export const ProjectSection = () => {
           <h2 id="projects" className="mb-4 font-display text-5xl font-normal">
             PROJECTS
           </h2>
-          <p>A collection of animation and mini-projects.</p>
+          <p>A collection of cool effects, animations, and mini-projects.</p>
         </div>
         <Filters
           className="hidden md:block"

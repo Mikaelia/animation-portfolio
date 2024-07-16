@@ -170,20 +170,20 @@ export const ProjectList = ({
             description="Technique for applying a glow cast to text"
           ></UICard>
         </li>
-        <li ref={rectRefs[5]}>
-          <UICard
-            name="file-explorer"
-            title="File Explorer"
-            src="./file-explorer.png"
-            description="A simple react file explorer"
-          ></UICard>
-        </li>
         <li ref={rectRefs[6]}>
           <UICard
             name="header-mirror"
             title="Header Mirror"
             src="./mirrored.gif"
             description="Mirroring header effect"
+          ></UICard>
+        </li>
+        <li ref={rectRefs[5]}>
+          <UICard
+            name="file-explorer"
+            title="File Explorer"
+            src="./file-explorer.png"
+            description="A simple react file explorer"
           ></UICard>
         </li>
         <li ref={rectRefs[7]}>

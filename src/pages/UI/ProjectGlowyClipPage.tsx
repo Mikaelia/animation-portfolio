@@ -17,16 +17,16 @@ export const ProjectGlowyClipPage = () => {
 
         <p>
           On the SVG itself, the I needed to convert the <b>clipPathUnits</b>{" "}
-          property <b>'userSpaceOnUse'</b>
+          property <b>'userSpaceOnUse' </b>
           to <b>'objectBoundingBox'</b> using{" "}
           <a
             className="underline"
             href={"https://yoksel.github.io/relative-clip-path/"}
             target="_blank"
           >
-            an online tool{" "}
-          </a>
-          .
+            this
+          </a>{" "}
+          online tool.
         </p>
         <p>
           When clipPathUnits is set to userSpaceOnUse, the coordinates within

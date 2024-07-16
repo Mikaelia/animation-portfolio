@@ -5,7 +5,6 @@ TO DO:
 - [ ] Check styles on large screen
 - [ ] Add plane out and footer
 - [ ] Fix bird flying off page
-- [ ] Fix home font
 - [ ] Loading screen
 - [ ] Page transitions
 - [ ] Blog navigation and filtering / liking 

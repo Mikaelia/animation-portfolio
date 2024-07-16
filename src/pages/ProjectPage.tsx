@@ -52,7 +52,7 @@ export const ProjectPage = ({
           className={`${!showSidePanel ? "minimized" : ""} ${absoluteSidepanel ? "absolute left-0 ml-0 w-full" : "relative ml-3"} ${absoluteSidepanel && !showSidePanel && "hidden"} side-panel w-1/3 rounded-bl-md rounded-tl-md border border-r-0 border-gray5 bg-gray4 p-8 text-xl font-semibold`}
         >
           <h1 className="title mb-6">{title}</h1>
-          <p className="h-[95%] overflow-y-scroll text-sm font-light leading-6">
+          <p className="scrollbar-hide h-[95%] overflow-y-scroll text-sm font-light leading-6">
             {instructions}
           </p>
           <button className="hide-button" onClick={toggleSidePanel}>

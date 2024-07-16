@@ -23,7 +23,7 @@ export const HeaderSection = ({
             Let's do fun web stuff.
           </p>
           <div className="absolute left-[-1.75rem] flex h-[500px] w-full items-center overflow-hidden sm:bottom-[-18rem] xl:left-[-310px] xl:top-[-240px]">
-            <div className="cat mt-24 h-[500px] w-full md:mt-0 md:pr-12 xl:pr-[17rem]">
+            <div className="cat mt-24 h-[500px] w-full md:mt-[-1.5rem] md:pr-12 xl:pr-[17rem]">
               <Cat handleWakeUp={() => setCatLoaded(true)}></Cat>
             </div>
           </div>

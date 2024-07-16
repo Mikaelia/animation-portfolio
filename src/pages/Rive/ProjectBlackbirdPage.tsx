@@ -26,7 +26,7 @@ export const ProjectBlackbirdPage = () => {
             key={id}
             className={`${
               isActive === id && "active"
-            } select-button relative mt-6 w-full max-w-60 grow cursor-pointer rounded-xl border pr-12 border-l${color} bg-${color} p-2 pl-4`}
+            } select-button relative mt-6 w-full max-w-60  grow cursor-pointer whitespace-nowrap rounded-xl border pr-12 border-l${color} bg-${color} p-2 pl-4`}
             onClick={() => handleClick(id)}
           >
             {label}

@@ -161,14 +161,14 @@ export const ProjectList = ({
             art
           ></CssCard>
         </li>
-        <li ref={rectRefs[4]}>
-          <CssCard
-            name="css-smiley"
-            title="Smiley"
-            description="A smiley made using only HTML and CSS"
-            src="./smiley.png"
-            art
-          ></CssCard>
+        <li ref={rectRefs[11]}>
+          <AnimationCard
+            name="blackbird"
+            title="Blackbird"
+            description="Birb time"
+          >
+            <Blackbird></Blackbird>
+          </AnimationCard>
         </li>
         <li ref={rectRefs[6]}>
           <UICard
@@ -186,6 +186,15 @@ export const ProjectList = ({
             description="A simple react file explorer"
             isComponent
           ></UICard>
+        </li>
+        <li ref={rectRefs[4]}>
+          <CssCard
+            name="css-smiley"
+            title="Smiley"
+            description="A smiley made using only HTML and CSS"
+            src="./smiley.png"
+            art
+          ></CssCard>
         </li>
         <li ref={rectRefs[7]}>
           <UICard
@@ -218,15 +227,6 @@ export const ProjectList = ({
             description="Animated button with mouse interaction"
             src="./explore-button.gif"
           ></UICard>
-        </li>
-        <li ref={rectRefs[11]}>
-          <AnimationCard
-            name="blackbird"
-            title="Blackbird"
-            description="Birb time"
-          >
-            <Blackbird></Blackbird>
-          </AnimationCard>
         </li>
         <li ref={rectRefs[12]}>
           <AnimationCard

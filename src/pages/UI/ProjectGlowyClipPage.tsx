@@ -16,9 +16,29 @@ export const ProjectGlowyClipPage = () => {
         </p>
 
         <p>
-          Positioning the blurred element inside of the clipped container allows
-          you to create the appearance of a glow that shines through the
-          letters.
+          On the SVG itself, the I needed to convert the clip path using{" "}
+          <a
+            className="underline"
+            href={"https://yoksel.github.io/relative-clip-path/"}
+            target="_blank"
+          >
+            an online tool{" "}
+          </a>
+          so that the value would be relative to the size of the element being
+          clipped.
+        </p>
+        <p>
+          For this, <b>clipPathUnits="objectBoundingBox"</b> is used. Now, path
+          coordinates represent a fraction of the bounding box dimensions. For
+          example, M0,0 means the top-left corner of the bounding box, and
+          H0.013 means a horizontal line to 1.3% of the width of the bounding
+          box. This relative coordinate system ensures that the clipping path
+          scales with the size of the element it is applied to.
+        </p>
+        <p>
+          Finally, positioning the blurred element inside of the clipped
+          container allows you to create the appearance of a glow that shines
+          through the letters.
         </p>
         <p>
           Check out the code{" "}

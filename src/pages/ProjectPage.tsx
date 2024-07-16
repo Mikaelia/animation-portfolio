@@ -28,8 +28,8 @@ export const ProjectPage = ({
   }, [smQuery]);
 
   return (
-    <div className="project-page relative overflow-x-hidden">
-      <nav className=" mb-3  border-b border-gray5 bg-gray4 font-semibold ">
+    <div className="project-page relative overflow-hidden">
+      <nav className=" mb-3 border-b border-gray5 bg-gray4 font-semibold ">
         <ul className="ml-3 flex items-center gap-5 p-2">
           <li className="nav inline-block bg-white bg-clip-text font-display text-2xl duration-500 ease-in-out">
             <button onClick={() => navigate(-1)}>
@@ -41,18 +41,20 @@ export const ProjectPage = ({
       <div
         className="home flex justify-between pb-3 "
         style={{
-          height: "calc(100vh - 55px)",
+          height: "calc(100vh - 65px)",
           overflowY: "hidden",
         }}
       >
-        <div className="child-container  h-full w-full overflow-hidden rounded-br-md rounded-tr-md border border-l-0 border-gray5 bg-gray4 p-3">
+        <div className="child-container h-full w-full overflow-hidden rounded-br-md rounded-tr-md border border-l-0 border-gray5 bg-gray4 p-3">
           {children}
         </div>
         <div
           className={`${!showSidePanel ? "minimized" : ""} ${absoluteSidepanel ? "absolute left-0 ml-0 w-full" : "relative ml-3"} ${absoluteSidepanel && !showSidePanel && "hidden"} side-panel w-1/3 rounded-bl-md rounded-tl-md border border-r-0 border-gray5 bg-gray4 p-8 text-xl font-semibold`}
         >
           <h1 className="title mb-6">{title}</h1>
-          <p className="text-sm font-light leading-6">{instructions}</p>
+          <p className="h-[95%] overflow-y-scroll text-sm font-light leading-6">
+            {instructions}
+          </p>
           <button className="hide-button" onClick={toggleSidePanel}>
             <svg
               className="open-svg h-8 w-8"

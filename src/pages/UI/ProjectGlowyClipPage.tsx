@@ -16,7 +16,9 @@ export const ProjectGlowyClipPage = () => {
         </p>
 
         <p>
-          On the SVG itself, the I needed to convert the clip path using{" "}
+          On the SVG itself, the I needed to convert the <b>clipPathUnits</b>{" "}
+          property <b>'userSpaceOnUse'</b>
+          to <b>'objectBoundingBox'</b> using{" "}
           <a
             className="underline"
             href={"https://yoksel.github.io/relative-clip-path/"}
@@ -24,16 +26,21 @@ export const ProjectGlowyClipPage = () => {
           >
             an online tool{" "}
           </a>
-          so that the value would be relative to the size of the element being
-          clipped.
+          .
         </p>
         <p>
-          For this, <b>clipPathUnits="objectBoundingBox"</b> is used. Now, path
-          coordinates represent a fraction of the bounding box dimensions. For
-          example, M0,0 means the top-left corner of the bounding box, and
-          H0.013 means a horizontal line to 1.3% of the width of the bounding
-          box. This relative coordinate system ensures that the clipping path
-          scales with the size of the element it is applied to.
+          When clipPathUnits is set to userSpaceOnUse, the coordinates within
+          the &lt;clipPath&gt; element are relative to the entire SVG canvas.
+          This means that the clipping path will not change its position or
+          scale relative to the element it is applied to, even if the element
+          moves or is resized.
+        </p>
+        <p>
+          When clipPathUnits is set to objectBoundingBox, the coordinates within
+          the &lt;clipPath&gt; element are relative to the bounding box of the
+          element the clipping path is applied to. This means the coordinates
+          are normalized between 0 and 1, representing the width and height of
+          the element.
         </p>
         <p>
           Finally, positioning the blurred element inside of the clipped
@@ -51,6 +58,7 @@ export const ProjectGlowyClipPage = () => {
           </a>
           !
         </p>
+        <small>* Astro image from rawpixel.com</small>
       </>
     );
   };

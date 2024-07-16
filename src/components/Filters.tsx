@@ -19,7 +19,12 @@ export const Filters = ({
         <Pill
           isButton
           callback={() => callback("UI Elements")}
-          text="UI Elements"
+          text="UI Effect"
+        />
+        <Pill
+          isButton
+          callback={() => callback("UI Elements")}
+          text="UI Component"
         />
         <Pill
           isButton

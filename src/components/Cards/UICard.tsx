@@ -8,7 +8,8 @@ export const UICard: React.FC<{
   title: string;
   description: string;
   src?: string;
-}> = ({ children, name, title, description, src }) => (
+  isComponent?: boolean;
+}> = ({ children, name, title, description, src, isComponent }) => (
   <Card>
     <Link to={`ui/${name}`}>
       <div className="child-container w-100 mb-6 h-52 overflow-hidden rounded-xl bg-[white] bg-opacity-30 sm:h-80 xl:h-80">
@@ -29,9 +30,15 @@ export const UICard: React.FC<{
       <p className="text-gray1 text-opacity-65 duration-500 group-hover:text-opacity-100">
         {description}
       </p>
-      <div className="pill absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 border-lpurple bg-purple p-3 text-white">
-        UI Elements
-      </div>
+      {isComponent ? (
+        <div className="pill absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 border-white bg-black p-3 text-white">
+          UI Component
+        </div>
+      ) : (
+        <div className="pill absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 border-lpurple bg-purple p-3 text-white">
+          UI Effect
+        </div>
+      )}
     </Link>
   </Card>
 );

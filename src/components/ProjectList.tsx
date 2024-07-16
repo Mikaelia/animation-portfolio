@@ -184,6 +184,7 @@ export const ProjectList = ({
             title="File Explorer"
             src="./file-explorer.png"
             description="A simple react file explorer"
+            isComponent
           ></UICard>
         </li>
         <li ref={rectRefs[7]}>

@@ -126,6 +126,14 @@ export const ProjectList = ({
             js
           ></AnimationCard>
         </li>
+        <li ref={rectRefs[18]}>
+          <UICard
+            name="glowy-clip"
+            title="Glowy Clip Text"
+            src="./glowy-clip.gif"
+            description="Technique for applying a glow cast to text"
+          ></UICard>
+        </li>
         <li ref={rectRefs[1]}>
           <CssCard
             name="css-sword"
@@ -161,14 +169,6 @@ export const ProjectList = ({
             src="./smiley.png"
             art
           ></CssCard>
-        </li>
-        <li ref={rectRefs[18]}>
-          <UICard
-            name="glowy-clip"
-            title="Glowy Clip Text"
-            src="./glowy-clip.gif"
-            description="Technique for applying a glow cast to text"
-          ></UICard>
         </li>
         <li ref={rectRefs[6]}>
           <UICard

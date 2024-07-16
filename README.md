@@ -13,7 +13,6 @@ TO DO:
 - [ ] Add socials
 - [ ] Add blog site to project list
 - [ ] Website for art
-- [ ] Add analytics
 - [ ] Project filtering
 - [ ] Blog posts for in depth individual effects
 - [ ] Blog post for magic sky case study - include images 

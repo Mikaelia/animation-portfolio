@@ -17,3 +17,4 @@ TO DO:
 - [ ] Project filtering
 - [ ] Blog posts for in depth individual effects
 - [ ] Blog post for magic sky case study - include images 
+- [ ] Link to different versions of site, v1.mikaelagurney.dev deprecate mikaelagurney.com

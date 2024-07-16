@@ -105,6 +105,7 @@ export const ProjectList = ({
     useRef<HTMLLIElement>(null),
     useRef<HTMLLIElement>(null),
     useRef<HTMLLIElement>(null),
+    useRef<HTMLLIElement>(null),
   ];
 
   useEffect(() => {
@@ -160,6 +161,14 @@ export const ProjectList = ({
             src="./smiley.png"
             art
           ></CssCard>
+        </li>
+        <li ref={rectRefs[18]}>
+          <UICard
+            name="glowy-clip"
+            title="Glowy Clip Text"
+            src="./glowy-clip.gif"
+            description="Technique for applying a glow cast to text"
+          ></UICard>
         </li>
         <li ref={rectRefs[5]}>
           <UICard

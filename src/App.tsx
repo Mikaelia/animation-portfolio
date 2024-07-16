@@ -20,6 +20,7 @@ import { ProjectGooeyPage } from "./pages/UI/ProjectGooeyPage.tsx";
 import { ProjectSmileyPage } from "./pages/CSS/ProjectSmileyPage.tsx";
 import { ProjectFileExplorerPage } from "./pages/UI/ProjectFileExplorerPage.tsx";
 import { ProjectAnimatedTooltipPage } from "@/pages/UI/ProjectAnimatedTooltipPage.tsx";
+import { ProjectGlowyClipPage } from "@/pages/UI/ProjectGlowyClipPage.tsx";
 import { ProjectExploreButtonPage } from "@/pages/Rive/ProjectExploreButtonPage.tsx";
 import { Suspense } from "react";
 import { Loading } from "@/pages/LoadingPage.tsx";
@@ -56,6 +57,7 @@ function App() {
           <Route path="css/css-green-ball" element={<ProjectBallPage />} />
           <Route path="css/css-toucan" element={<ProjectToucanPage />} />
           <Route path="css/css-smiley" element={<ProjectSmileyPage />} />
+          <Route path="ui/glowy-clip" element={<ProjectGlowyClipPage />} />
           <Route path="ui/text-hover-up" element={<ProjectTextHoverUp />} />
           <Route path="ui/header-mirror" element={<ProjectMirroredPage />} />
           <Route path="ui/text-hover-flip" element={<ProjectTextHoverFlip />} />

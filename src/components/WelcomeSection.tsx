@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import Plane from "@rive/Plane";
 import "../assets/styles/custom.css";
@@ -16,7 +16,7 @@ export const WelcomeSectionXL = ({
 }: {
   linksRef: React.RefObject<HTMLDivElement>;
 }) => {
-  const [visibleProjects, setVisibleProjects] = useState("All");
+  // const [visibleProjects, setVisibleProjects] = useState("All");
   const plane = useRef<HTMLDivElement>(null);
   const bgRef = useRef<SVGSVGElement>(null);
   const projBgRef = useRef<SVGSVGElement>(null);
@@ -190,14 +190,11 @@ export const WelcomeSectionXL = ({
               </h2>
               <p>A collection of animation and mini-projects.</p>
             </div>
-            <Filters
-              className="mr-12"
-              callback={(val: string) => setVisibleProjects(val)}
-            ></Filters>
+            <Filters className="mr-12" callback={() => null}></Filters>
           </div>
           <div className="container z-10 mt-36 flex flex-col items-center">
             <ProjectList
-              visibleProjects={visibleProjects}
+              // visibleProjects={visibleProjects}
               projBgRef={projBgRef}
             ></ProjectList>
           </div>

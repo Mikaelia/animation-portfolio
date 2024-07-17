@@ -2,7 +2,7 @@ import { CssCard } from "@components/Cards/CssCard.tsx";
 import { UICard } from "@components/Cards/UICard.tsx";
 import { AnimationCard } from "@components/Cards/AnimationCard.tsx";
 import Blackbird from "@rive/Blackbird.tsx";
-import { MutableRefObject, useEffect, useRef } from "react";
+import { MutableRefObject, useEffect, useRef, useState } from "react";
 // import { useProjectVisibility } from "@/contexts/ProjectsContext.tsx";
 // import throttle from "lodash.throttle";
 // Define the types for MouseoverLogic props
@@ -51,8 +51,8 @@ const MouseoverLogic = ({ bgRef, rectRefs }: MouseoverLogicProps) => {
 
         const enterHandler = () => handleMouseEnter(rect, overlay);
         const leaveHandler = () => handleMouseLeave(overlay);
-
-        // rect.addEventListener("mouseenter", enterHandler);
+        //
+        // rect.addEventListener("mouseover", enterHandler);
         // rect.addEventListener("mouseleave", leaveHandler);
 
         // Cleanup event listeners on component unmount
@@ -69,7 +69,7 @@ const MouseoverLogic = ({ bgRef, rectRefs }: MouseoverLogicProps) => {
         const rect = rectRef.current;
         const overlay = bgRef.current;
         if (rect && overlay) {
-          rect.removeEventListener("mouseenter", () =>
+          rect.removeEventListener("mouseover", () =>
             handleMouseEnter(rect, overlay),
           );
           rect.removeEventListener("mouseleave", () =>
@@ -90,6 +90,10 @@ export const ProjectList = ({
 }: {
   projBgRef: React.RefObject<SVGSVGElement>;
 }) => {
+  const [targetElement, setTargetElement] = useState<HTMLLIElement | null>(
+    null,
+  );
+  const borderRef: React.RefObject<HTMLDivElement> = useRef(null);
   const listRef: React.RefObject<HTMLUListElement> = useRef(null);
   const rectRefs: React.RefObject<HTMLLIElement>[] = [
     useRef<HTMLLIElement>(null),
@@ -112,6 +116,29 @@ export const ProjectList = ({
     useRef<HTMLLIElement>(null),
     useRef<HTMLLIElement>(null),
   ];
+
+  useEffect(() => {
+    if (targetElement && borderRef.current && listRef.current) {
+      const rect = (targetElement as HTMLElement).getBoundingClientRect();
+      const containerRect = listRef.current.getBoundingClientRect();
+      const offsetX = rect.left - containerRect.left;
+      const offsetY = rect.top - containerRect.top;
+      borderRef.current.style.opacity = "0.3";
+      borderRef.current.style.width = `${rect.width}px`;
+      borderRef.current.style.height = `${rect.height}px`;
+      borderRef.current.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+    }
+  }, [targetElement]);
+
+  useEffect(() => {
+    rectRefs.forEach((ref) => {
+      if (ref.current) {
+        ref.current.addEventListener("mouseover", () =>
+          setTargetElement(ref.current),
+        );
+      }
+    });
+  }, []);
 
   // const [maxChildren, setMaxChildren] = useState(16);
   // const { visibleProjects, setVisibleProjects } = useProjectVisibility();
@@ -148,6 +175,10 @@ export const ProjectList = ({
         ref={listRef}
         className="relative grid w-full max-w-7xl auto-rows-min grid-cols-projects grid-rows-projects justify-center overflow-visible "
       >
+        <div
+          ref={borderRef}
+          className="bg-red absolute left-0 top-0 rounded-xl border-[5px] bg-white opacity-0  duration-500 ease-in-out "
+        ></div>
         <MouseoverLogic bgRef={projBgRef} rectRefs={rectRefs} />
         <li ref={rectRefs[0]}>
           <AnimationCard

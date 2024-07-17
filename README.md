@@ -1,5 +1,6 @@
 TO DO:
 
+- [ ] Fix mobile styles and non-functioning buttons
 - [ ] Update all project copy
 - [ ] Fix ordering of blog posts
 - [ ] Check styles on large screen

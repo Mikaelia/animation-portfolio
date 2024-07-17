@@ -8,17 +8,17 @@ import { AboutSection } from "@components/AboutSection.tsx";
 import { ProjectSection } from "@components/ProjectSection.tsx";
 import { JournalSection } from "@components/JournalSection.tsx";
 // import { ReactLenis, useLenis } from "lenis/react";
-// import { useLenis } from "@/hooks/useLenis.tsx";
+import { useLenis } from "@/hooks/useLenis.tsx";
 
 import "../assets/styles/custom.css";
-import FancyScroll from "@components/FancyScroll.tsx";
+// import FancyScroll from "@components/FancyScroll.tsx";
 
 export const HomePage = () => {
-  const handleScrollTo = () => null;
+  const handleScrollTo = useLenis();
 
   return (
     <div className="homepage relative flex flex-col items-center overflow-x-hidden">
-      <FancyScroll></FancyScroll>
+      {/*<FancyScroll></FancyScroll>*/}
       <AnchorLinks handleScrollTo={handleScrollTo} />
       <HeaderSection handleScrollTo={handleScrollTo} />
       <div className="xl:justify-space-between relative z-0 flex w-full flex-col items-center justify-center px-20">

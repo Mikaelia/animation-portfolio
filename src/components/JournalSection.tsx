@@ -5,7 +5,7 @@ import { AngleArrowIcon } from "@components/AngleArrowIcon.tsx";
 
 export const JournalSection = () => {
   return (
-    <div className="blog-section z-[1000] flex w-screen max-w-[2000px] flex-col items-center bg-white px-4 md:px-12 ">
+    <div className="blog-section z-[1000] flex w-screen max-w-[2000px] flex-col items-center bg-white px-4  md:px-12 ">
       )
       <HeaderWave
         className="about-top-wave z-[-1] mb-[-20rem] mt-[-20rem] w-[2000px]"
@@ -23,8 +23,8 @@ export const JournalSection = () => {
           to="/blog-list"
           className="resume-button mt-12 flex align-middle font-bold text-black md:self-start"
         >
-          <span className="text-l text-nowrap font-display font-bold text-black ">
-            View More
+          <span className="text-nowrap font-display text-sm font-bold text-black ">
+            VIEW MORE
           </span>
           <AngleArrowIcon className={"arrow-icon h-6"} />
         </Link>

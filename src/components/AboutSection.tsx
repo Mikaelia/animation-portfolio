@@ -20,7 +20,7 @@ export const AboutSection = () => {
         id="about"
         className="relative w-full max-w-[2000px] bg-white p-8 lg:h-screen"
       >
-        <div className="about-text-container relative z-10 flex h-full flex-col items-center justify-between md:px-12 lg:flex-row">
+        <div className="about-text-container relative z-10 flex h-full flex-col items-center justify-between pt-20 md:px-12 lg:flex-row">
           <Intro></Intro>
           <div className="about-work-section flex h-full max-w-[30rem] flex-col lg:ml-8 lg:justify-start lg:self-start">
             <WorkCard
@@ -63,12 +63,12 @@ export const AboutSection = () => {
             <Link
               to="/resume"
               target="_blank"
-              className="resume-button mx-auto mt-12 flex align-middle font-bold text-black lg:mt-auto"
+              className="resume-button mr-auto mt-12 flex align-middle font-bold text-black lg:mt-8"
             >
-              <span className="text-l text-nowrap font-display font-bold">
-                Full Resume
+              <span className="text-nowrap font-display text-sm font-bold">
+                FULL RESUME
               </span>
-              <AngleArrowIcon className={"arrow-icon h-6"} />
+              <AngleArrowIcon className={"arrow-icon ml-1 mt-[2px] h-4"} />
             </Link>
           </div>
         </div>
@@ -78,7 +78,7 @@ export const AboutSection = () => {
         />
       </div>
       <HeaderWave
-        className="about-bottom-wave relative z-[-1] mt-[-23rem]  w-[2000px] rotate-[180deg]"
+        className="about-bottom-wave relative z-[-1] mt-[-30rem]  w-[2000px] rotate-[180deg]"
         background="white"
       />
     </div>

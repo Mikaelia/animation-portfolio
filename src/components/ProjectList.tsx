@@ -3,6 +3,7 @@ import { UICard } from "@components/Cards/UICard.tsx";
 import { AnimationCard } from "@components/Cards/AnimationCard.tsx";
 import Blackbird from "@rive/Blackbird.tsx";
 import { MutableRefObject, useEffect, useRef } from "react";
+// import { useProjectVisibility } from "@/contexts/ProjectsContext.tsx";
 // import throttle from "lodash.throttle";
 // Define the types for MouseoverLogic props
 type MouseoverLogicProps = {
@@ -86,11 +87,10 @@ export default MouseoverLogic;
 
 export const ProjectList = ({
   projBgRef,
-  visibleProjects,
 }: {
   projBgRef: React.RefObject<SVGSVGElement>;
-  visibleProjects: string;
 }) => {
+  const listRef: React.RefObject<HTMLUListElement> = useRef(null);
   const rectRefs: React.RefObject<HTMLLIElement>[] = [
     useRef<HTMLLIElement>(null),
     useRef<HTMLLIElement>(null),
@@ -113,14 +113,41 @@ export const ProjectList = ({
     useRef<HTMLLIElement>(null),
   ];
 
-  useEffect(() => {
-    // placeholder for handling later
-    console.log("");
-  }, [visibleProjects]);
+  // const [maxChildren, setMaxChildren] = useState(16);
+  // const { visibleProjects, setVisibleProjects } = useProjectVisibility();
+
+  // useEffect(() => {
+  //   // placeholder for handling later
+  //   console.log("");
+  // }, [visibleProjects]);
+
+  // useEffect(() => {
+  //   const children = listRef.current?.children;
+  //   if (!children) return;
+  //   for (let i = 0; i < children.length; i++) {
+  //     if (i < visibleProjects) {
+  //       (children[i] as HTMLLIElement).style.display = "block"; // or 'inline', or '' depending on your layout
+  //     } else {
+  //       (children[i] as HTMLLIElement).style.display = "none";
+  //     }
+  //   }
+  // }, [visibleProjects]);
+
+  // useEffect(() => {
+  //   if (!listRef.current) return;
+  //   setMaxChildren(listRef.current.children.length);
+  // }, [listRef]);
+
+  // const showMore = () => {
+  //   setVisibleProjects(visibleProjects + 8);
+  // };
 
   return (
     <>
-      <ul className="relative grid w-full max-w-7xl auto-rows-min grid-cols-projects grid-rows-projects justify-center overflow-visible ">
+      <ul
+        ref={listRef}
+        className="relative grid w-full max-w-7xl auto-rows-min grid-cols-projects grid-rows-projects justify-center overflow-visible "
+      >
         <MouseoverLogic bgRef={projBgRef} rectRefs={rectRefs} />
         <li ref={rectRefs[0]}>
           <AnimationCard
@@ -284,6 +311,14 @@ export const ProjectList = ({
           ></AnimationCard>
         </li>
       </ul>
+      {/*{visibleProjects < maxChildren && (*/}
+      {/*  <button*/}
+      {/*    onClick={showMore}*/}
+      {/*    className="text-nowrap font-display text-sm font-bold text-white "*/}
+      {/*  >*/}
+      {/*    VIEW MORE*/}
+      {/*  </button>*/}
+      {/*)}*/}
     </>
   );
 };

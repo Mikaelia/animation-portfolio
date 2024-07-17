@@ -1,6 +1,5 @@
 import BlogPost from "@components/BlogPost.tsx";
 import { useNavigate } from "react-router-dom";
-
 interface Post {
   path: string;
   title: string;

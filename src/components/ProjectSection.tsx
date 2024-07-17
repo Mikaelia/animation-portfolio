@@ -1,10 +1,11 @@
 import { Filters } from "@components/Filters.tsx";
 import { ProjectList } from "@components/ProjectList.tsx";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { BackgroundSVG } from "@components/BackgroundSVG.tsx";
+import { ProjectVisibilityProvider } from "@/contexts/ProjectsContext.tsx";
 
 export const ProjectSection = () => {
-  const [visibleProjects, setVisibleProjects] = useState("All");
+  // const [visibleProjects, setVisibleProjects] = useState("All");
   const projBgRef = useRef<SVGSVGElement>(null);
 
   return (
@@ -22,13 +23,12 @@ export const ProjectSection = () => {
           </div>
           <Filters
             className="ml-auto mr-6 hidden max-w-[24.25rem] md:block"
-            callback={(val: string) => setVisibleProjects(val)}
+            callback={(val: string) => val}
           ></Filters>
         </div>
-        <ProjectList
-          visibleProjects={visibleProjects}
-          projBgRef={projBgRef}
-        ></ProjectList>
+        <ProjectVisibilityProvider>
+          <ProjectList projBgRef={projBgRef}></ProjectList>
+        </ProjectVisibilityProvider>
       </div>
       <BackgroundSVG
         className="clip-image project-svg fixed left-0 top-0  z-[-1] min-w-[2000px] max-w-[2000px]"

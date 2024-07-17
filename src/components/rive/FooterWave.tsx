@@ -29,7 +29,6 @@ const RiveFooter = () => {
   return (
     <RiveComponent
       style={{
-        marginTop: "-24rem",
         width: isScreenLarge ? "2000px" : "1500px",
         height: isScreenLarge ? "1200px" : "1000px",
       }}

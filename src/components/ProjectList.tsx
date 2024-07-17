@@ -3,8 +3,7 @@ import { UICard } from "@components/Cards/UICard.tsx";
 import { AnimationCard } from "@components/Cards/AnimationCard.tsx";
 import Blackbird from "@rive/Blackbird.tsx";
 import { MutableRefObject, useEffect, useRef } from "react";
-import throttle from "lodash.throttle";
-
+// import throttle from "lodash.throttle";
 // Define the types for MouseoverLogic props
 type MouseoverLogicProps = {
   bgRef: React.RefObject<SVGSVGElement | null>; // Changed to MutableRefObject
@@ -12,32 +11,39 @@ type MouseoverLogicProps = {
 };
 
 const MouseoverLogic = ({ bgRef, rectRefs }: MouseoverLogicProps) => {
+  // let activeRef = null;
+  //
+  // window.addEventListener(
+  //   "scroll",
+  //   throttle(() => handleMouseEnter(activeRef, bgRef.current), 0),
+  // );
+
+  const handleMouseEnter = (rect: HTMLLIElement, overlay: SVGSVGElement) => {
+    // console.log("ping");
+    // activeRef = rect;
+    if (!rect || !overlay) return;
+
+    // can I get the scroll position and add it to the rect?
+    const rectMeasurements = rect.getBoundingClientRect();
+    const parentMeasurements = overlay.getBoundingClientRect();
+
+    const top = rectMeasurements.top - parentMeasurements.top;
+    const left = rectMeasurements.left - parentMeasurements.left;
+    const bottom = parentMeasurements.bottom - rectMeasurements.bottom;
+    const right = parentMeasurements.right - rectMeasurements.right;
+
+    overlay.style.clipPath = `inset(${top}px ${right}px ${bottom}px ${left}px round 24px)`;
+  };
+
   useEffect(() => {
-    const handleMouseEnter = (rect: HTMLLIElement, overlay: SVGSVGElement) => {
-      const rectMeasurements = rect.getBoundingClientRect();
-      const parentMeasurements = overlay.getBoundingClientRect();
-
-      const top = rectMeasurements.top - parentMeasurements.top;
-      const left = rectMeasurements.left - parentMeasurements.left;
-      const bottom = parentMeasurements.bottom - rectMeasurements.bottom;
-      const right = parentMeasurements.right - rectMeasurements.right;
-
-      overlay.style.clipPath = `inset(${top}px ${right}px ${bottom}px ${left}px round 24px)`;
-    };
-
     const handleMouseLeave = (overlay: SVGSVGElement) => {
       overlay.style.clipPath = "inset(100%)";
+      // activeRef = null;
     };
 
     rectRefs.forEach((rectRef) => {
       const rect = rectRef.current;
       const overlay = bgRef.current;
-
-      const throttledResetClipPath = throttle(() => {
-        if (overlay) {
-          overlay.style.clipPath = "inset(100%)";
-        }
-      }, 100);
 
       if (rect && overlay) {
         // window.addEventListener("scroll", throttledResetClipPath);
@@ -45,14 +51,13 @@ const MouseoverLogic = ({ bgRef, rectRefs }: MouseoverLogicProps) => {
         const enterHandler = () => handleMouseEnter(rect, overlay);
         const leaveHandler = () => handleMouseLeave(overlay);
 
-        rect.addEventListener("mouseenter", enterHandler);
-        rect.addEventListener("mouseleave", leaveHandler);
+        // rect.addEventListener("mouseenter", enterHandler);
+        // rect.addEventListener("mouseleave", leaveHandler);
 
         // Cleanup event listeners on component unmount
         return () => {
           rect.removeEventListener("mouseenter", enterHandler);
           rect.removeEventListener("mouseleave", leaveHandler);
-          window.removeEventListener("scroll", throttledResetClipPath);
         };
       }
     });

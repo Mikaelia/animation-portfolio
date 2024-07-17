@@ -40,7 +40,7 @@ const MouseoverLogic = ({ bgRef, rectRefs }: MouseoverLogicProps) => {
       }, 100);
 
       if (rect && overlay) {
-        window.addEventListener("scroll", throttledResetClipPath);
+        // window.addEventListener("scroll", throttledResetClipPath);
 
         const enterHandler = () => handleMouseEnter(rect, overlay);
         const leaveHandler = () => handleMouseLeave(overlay);

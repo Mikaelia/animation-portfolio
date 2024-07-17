@@ -21,7 +21,7 @@ export const ProjectSection = () => {
             <p>A collection of cool effects, animations, and mini-projects.</p>
           </div>
           <Filters
-            className="ml-auto mr-6 hidden md:block "
+            className="ml-auto mr-6 hidden max-w-[24.25rem] md:block"
             callback={(val: string) => setVisibleProjects(val)}
           ></Filters>
         </div>

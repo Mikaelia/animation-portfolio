@@ -19,7 +19,7 @@ export const HeaderSection = ({
           <h1 className="mt-[-15rem] font-display text-7xl sm:mt-[-10rem] sm:text-8xl lg:text-9xl xl:ml-[12rem]">
             MIKAELA GURNEY
           </h1>
-          <p className="mb-20 pt-6 font-body text-xl lg:text-2xl">
+          <p className="mb-20 pt-6 font-body text-xl lg:text-[2.25rem]">
             Let's do fun web stuff.
           </p>
           <div className="absolute left-[-1.75rem] flex h-[500px] w-full items-center overflow-hidden sm:bottom-[-18rem] xl:left-[-310px] xl:top-[-240px]">

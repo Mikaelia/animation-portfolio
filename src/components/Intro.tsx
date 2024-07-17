@@ -1,5 +1,5 @@
 export const Intro = () => (
-  <div className="text-l text mb-12 flex flex-col text-black md:w-[40rem] lg:mb-0 lg:self-end">
+  <div className="text-l text mb-12 flex flex-col text-black md:w-[40rem] lg:mb-0 lg:mt-6 lg:self-start">
     <h2 className="mb-12 text-center font-display text-5xl font-normal lg:mb-4 lg:text-left">
       ABOUT
     </h2>

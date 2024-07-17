@@ -14,7 +14,7 @@ export const ProjectSection = () => {
           <div className="text flex flex-col items-center justify-center md:mx-6">
             <h2
               id="projects"
-              className="mb-4 self-start font-display text-5xl font-normal"
+              className="mb-12 self-center font-display text-5xl font-normal md:mb-4 md:self-start"
             >
               PROJECTS
             </h2>

@@ -16,10 +16,7 @@ export const AboutSection = () => {
         className="about-top-wave z-[-1] mb-[-30rem] hidden w-[2000px] md:block"
         background="white"
       />
-      <div
-        id="about"
-        className="relative w-full max-w-[2000px] bg-white p-8 lg:h-screen"
-      >
+      <div className="relative w-full max-w-[2000px] bg-white p-8 lg:h-screen">
         <div className="about-text-container relative z-10 flex h-full flex-col items-center justify-between pt-20 md:px-12 lg:flex-row">
           <Intro></Intro>
           <div className="about-work-section flex h-full max-w-[30rem] flex-col lg:ml-8 lg:justify-start lg:self-start">

@@ -22,9 +22,10 @@ export const JournalSection = () => {
           <BlogList number={3} />
           <Link
             to="/blog-list"
-            className="resume-button mt-12 flex align-middle md:self-start"
+            target=""
+            className="resume-button mt-12 flex align-middle font-bold text-black md:self-start"
           >
-            <span className="text-nowrap font-display text-sm font-bold text-black ">
+            <span className="text-nowrap font-display text-sm font-bold ">
               VIEW MORE
             </span>
             <AngleArrowIcon className={"arrow-icon ml-1 mt-[2px] h-4"} />

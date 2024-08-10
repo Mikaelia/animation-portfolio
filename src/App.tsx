@@ -27,73 +27,79 @@ import { Loading } from "@/pages/LoadingPage.tsx";
 import BlogPostPage from "@/pages/BlogPostPage.tsx";
 import { usePosts } from "@/contexts/PostsContext.tsx";
 import { BlogListPage } from "@/pages/BlogListPage.tsx";
+import { LenisProvider } from "@/contexts/LenisContext.tsx";
 
 function App() {
   const posts = usePosts();
 
   return (
     <Suspense fallback={<Loading />}>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/blog-list" element={<BlogListPage />} />
-          <Route path="/resume" element={<ResumePage />} />
-          <Route index element={<HomePage />} />
-          {/* Tmp fix as Rive doesn't seem to play well with dynamic imports */}
-          <Route path="animation/bubbling-pot" element={<PotPage />} />
-          <Route path="animation/liquid" element={<ProjectWaterPage />} />
-          <Route
-            path="animation/undersea-socials"
-            element={<ProjectSharkSubPage />}
-          />
-          <Route
-            path="animation/san-francisco"
-            element={<ProjectSanFranciscoPage />}
-          />
-          <Route
-            path="animation/blackbird"
-            element={<ProjectBlackbirdPage />}
-          />
-          <Route path="css/css-sword" element={<ProjectSwordPage />} />
-          <Route path="css/css-green-ball" element={<ProjectBallPage />} />
-          <Route path="css/css-toucan" element={<ProjectToucanPage />} />
-          <Route path="css/css-smiley" element={<ProjectSmileyPage />} />
-          <Route path="ui/glowy-clip" element={<ProjectGlowyClipPage />} />
-          <Route path="ui/text-hover-up" element={<ProjectTextHoverUp />} />
-          <Route path="ui/header-mirror" element={<ProjectMirroredPage />} />
-          <Route path="ui/text-hover-flip" element={<ProjectTextHoverFlip />} />
-          <Route
-            path="ui/animated-tooltip"
-            element={<ProjectAnimatedTooltipPage />}
-          />
-          <Route path="ui/gooey-nav" element={<ProjectGooeyPage />} />
-          <Route
-            path="animation/js/magic-sky"
-            element={<ProjectMagicSkyPage />}
-          />
-          <Route
-            path="animation/js/canvas-floating-boxes"
-            element={<ProjectFloatingBoxesPage />}
-          />
-          <Route
-            path="ui/file-explorer"
-            element={<ProjectFileExplorerPage />}
-          />
-          <Route
-            path="ui/explore-button"
-            element={<ProjectExploreButtonPage />}
-          />
-
-          {posts.map((post) => (
+      <LenisProvider>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="/blog-list" element={<BlogListPage />} />
+            <Route path="/resume" element={<ResumePage />} />
+            <Route index element={<HomePage />} />
+            {/* Tmp fix as Rive doesn't seem to play well with dynamic imports */}
+            <Route path="animation/bubbling-pot" element={<PotPage />} />
+            <Route path="animation/liquid" element={<ProjectWaterPage />} />
             <Route
-              key={post.path}
-              path={post.path}
-              element={<BlogPostPage post={post} />}
+              path="animation/undersea-socials"
+              element={<ProjectSharkSubPage />}
             />
-          ))}
+            <Route
+              path="animation/san-francisco"
+              element={<ProjectSanFranciscoPage />}
+            />
+            <Route
+              path="animation/blackbird"
+              element={<ProjectBlackbirdPage />}
+            />
+            <Route path="css/css-sword" element={<ProjectSwordPage />} />
+            <Route path="css/css-green-ball" element={<ProjectBallPage />} />
+            <Route path="css/css-toucan" element={<ProjectToucanPage />} />
+            <Route path="css/css-smiley" element={<ProjectSmileyPage />} />
+            <Route path="ui/glowy-clip" element={<ProjectGlowyClipPage />} />
+            <Route path="ui/text-hover-up" element={<ProjectTextHoverUp />} />
+            <Route path="ui/header-mirror" element={<ProjectMirroredPage />} />
+            <Route
+              path="ui/text-hover-flip"
+              element={<ProjectTextHoverFlip />}
+            />
+            <Route
+              path="ui/animated-tooltip"
+              element={<ProjectAnimatedTooltipPage />}
+            />
+            <Route path="ui/gooey-nav" element={<ProjectGooeyPage />} />
+            <Route
+              path="animation/js/magic-sky"
+              element={<ProjectMagicSkyPage />}
+            />
+            <Route
+              path="animation/js/canvas-floating-boxes"
+              element={<ProjectFloatingBoxesPage />}
+            />
+            <Route
+              path="ui/file-explorer"
+              element={<ProjectFileExplorerPage />}
+            />
+            <Route
+              path="ui/explore-button"
+              element={<ProjectExploreButtonPage />}
+            />
 
-          <Route path="*" element={<NoMatchPage />} />
-        </Route>
-      </Routes>
+            {posts.map((post) => (
+              <Route
+                key={post.path}
+                path={post.path}
+                element={<BlogPostPage post={post} />}
+              />
+            ))}
+
+            <Route path="*" element={<NoMatchPage />} />
+          </Route>
+        </Routes>
+      </LenisProvider>
     </Suspense>
   );
 }

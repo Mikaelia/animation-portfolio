@@ -1,12 +1,10 @@
 import Cat from "@rive/Cat";
 import HeaderWave from "@components/HeaderWave.tsx";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { LenisContext } from "@/contexts/LenisContext.tsx";
 
-export const HeaderSection = ({
-  handleScrollTo,
-}: {
-  handleScrollTo: (arg: string) => void;
-}) => {
+export const HeaderSection = () => {
+  const handleScrollTo = useContext(LenisContext);
   const [catLoaded, setCatLoaded] = useState(false);
   return (
     <>

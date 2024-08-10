@@ -1,0 +1,66 @@
+import {
+  createContext,
+  ReactNode,
+  useEffect,
+  useRef,
+  useCallback,
+} from "react";
+import Lenis from "lenis";
+import { useLocation } from "react-router-dom";
+
+// Define the context type
+type LenisContextType = (selector: string) => void;
+
+// Create the context with default undefined value
+export const LenisContext = createContext<LenisContextType>(() => {});
+
+interface LenisProviderProps {
+  children: ReactNode;
+}
+
+export const LenisProvider = ({ children }: LenisProviderProps) => {
+  const lenisRef = useRef<Lenis | null>(null);
+
+  useEffect(() => {
+    lenisRef.current = new Lenis({
+      duration: 1.2,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      touchMultiplier: 2,
+      infinite: false,
+    });
+
+    function raf(time: number) {
+      lenisRef.current?.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      if (lenisRef.current) {
+        lenisRef.current.destroy();
+      }
+    };
+  }, []);
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    lenisRef.current?.scrollTo(0, { immediate: true });
+  }, [pathname]);
+
+  const handleScrollTo = useCallback((selector: string) => {
+    const element = document.querySelector(selector);
+    if (element && lenisRef.current) {
+      const elementTop = element.getBoundingClientRect().top + window.scrollY;
+      const position = elementTop - 100;
+      lenisRef.current.scrollTo(position);
+    }
+  }, []);
+
+  return (
+    <LenisContext.Provider value={handleScrollTo}>
+      {children}
+    </LenisContext.Provider>
+  );
+};

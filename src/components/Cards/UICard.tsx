@@ -31,11 +31,11 @@ export const UICard: React.FC<{
         {description}
       </p>
       {isComponent ? (
-        <div className="pill absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 border-white bg-black p-3 text-white">
+        <div className="pill absolute right-0 top-3 rounded-bl-xl rounded-tl-xl border border-r-0 border-white bg-black p-3 text-white duration-500 group-hover:border-black group-hover:bg-white group-hover:text-black">
           UI Component
         </div>
       ) : (
-        <div className="pill absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 border-lpurple bg-purple p-3 text-white">
+        <div className="pill absolute right-0 top-3 rounded-bl-xl rounded-tl-xl border border-r-0 border-white bg-black p-3 text-white duration-500 group-hover:border-black group-hover:bg-white group-hover:text-black">
           UI Effect
         </div>
       )}

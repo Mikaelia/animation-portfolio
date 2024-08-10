@@ -31,12 +31,12 @@ export const AnimationCard: React.FC<{
         {description}
       </p>
       {js ? (
-        <div className="pill absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 border-lgreen bg-green p-3">
+        <div className="pill absolute right-0 top-3 rounded-bl-xl rounded-tl-xl border border-r-0 border-white bg-black p-3 duration-500 group-hover:border-black group-hover:bg-white group-hover:text-black">
           JS Animation
         </div>
       ) : (
-        <div className="pill absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 border-lpink bg-pink p-3">
-          Animation
+        <div className="pill absolute right-0 top-3 rounded-bl-xl rounded-tl-xl border border-r-0 border-white bg-black p-3 duration-500 group-hover:border-black group-hover:bg-white group-hover:text-black">
+          Rive Animation
         </div>
       )}
     </Link>

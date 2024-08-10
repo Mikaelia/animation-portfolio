@@ -28,11 +28,11 @@ export const CssCard: React.FC<{
           {description}
         </p>
         {art ? (
-          <div className="pill absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 border-lblue bg-blue p-3">
+          <div className="pill absolute right-0 top-3 rounded-bl-xl rounded-tl-xl border border-r-0 border-white bg-black p-3 duration-500 group-hover:border-black group-hover:bg-white group-hover:text-black">
             CSS Art
           </div>
         ) : (
-          <div className="pill border-lpurple bg-purple absolute right-0 top-5 rounded-bl-xl rounded-tl-xl border-2 border-r-0 p-3">
+          <div className="pill absolute right-0 top-3 rounded-bl-xl rounded-tl-xl border border-r-0 border-white bg-black p-3 duration-500 group-hover:border-black group-hover:bg-white group-hover:text-black">
             CSS Animation
           </div>
         )}

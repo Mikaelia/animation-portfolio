@@ -21,7 +21,11 @@ interface LenisProviderProps {
 export const LenisProvider = ({ children }: LenisProviderProps) => {
   const lenisRef = useRef<Lenis | null>(null);
 
-  useEffect(() => {
+  const initializeLenis = useCallback(() => {
+    if (lenisRef.current) {
+      lenisRef.current.destroy();
+    }
+
     lenisRef.current = new Lenis({
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -35,19 +39,23 @@ export const LenisProvider = ({ children }: LenisProviderProps) => {
     }
 
     requestAnimationFrame(raf);
+  }, []);
+
+  useEffect(() => {
+    initializeLenis();
 
     return () => {
       if (lenisRef.current) {
         lenisRef.current.destroy();
       }
     };
-  }, []);
+  }, [initializeLenis]);
 
   const { pathname } = useLocation();
 
   useEffect(() => {
-    lenisRef.current?.scrollTo(0, { immediate: true });
-  }, [pathname]);
+    initializeLenis();
+  }, [pathname, initializeLenis]);
 
   const handleScrollTo = useCallback((selector: string) => {
     const element = document.querySelector(selector);

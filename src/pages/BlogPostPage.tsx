@@ -14,7 +14,7 @@ const BlogPostPage = ({ post }: { post: Post }) => {
       <nav className="fixed z-10 w-screen bg-white font-semibold text-black">
         <ul className="ml-3 flex items-center gap-5 p-2">
           <li className="nav inline-block bg-white bg-clip-text font-display duration-500 ease-in-out">
-            <button className="tracking-wide " onClick={() => navigate(-1)}>
+            <button className="tracking-wide" onClick={() => navigate(-1)}>
               BACK
             </button>
           </li>

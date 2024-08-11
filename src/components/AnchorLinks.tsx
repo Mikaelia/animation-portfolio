@@ -6,7 +6,7 @@ import { LenisContext } from "../contexts/LenisContext.tsx";
 export const AnchorLinks = forwardRef(() => {
   const ref: React.Ref<HTMLDivElement> = useRef(null);
 
-  const handleScrollTo = useContext(LenisContext);
+  const { handleScrollTo } = useContext(LenisContext);
   const handleScroll = ({
     value: { scrollYProgress },
   }: {

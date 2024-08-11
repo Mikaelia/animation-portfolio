@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { LenisContext } from "@/contexts/LenisContext.tsx";
 
 export const HeaderSection = () => {
-  const handleScrollTo = useContext(LenisContext);
+  const { handleScrollTo } = useContext(LenisContext);
   const [catLoaded, setCatLoaded] = useState(false);
   return (
     <>

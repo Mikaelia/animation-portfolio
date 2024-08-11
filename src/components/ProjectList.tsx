@@ -2,97 +2,17 @@ import { CssCard } from "@components/Cards/CssCard.tsx";
 import { UICard } from "@components/Cards/UICard.tsx";
 import { AnimationCard } from "@components/Cards/AnimationCard.tsx";
 import Blackbird from "@rive/Blackbird.tsx";
-import { MutableRefObject, useEffect, useRef, useState } from "react";
-// import { useProjectVisibility } from "@/contexts/ProjectsContext.tsx";
-// import throttle from "lodash.throttle";
-// Define the types for MouseoverLogic props
-type MouseoverLogicProps = {
-  bgRef: React.RefObject<SVGSVGElement | null>; // Changed to MutableRefObject
-  rectRefs: MutableRefObject<HTMLLIElement | null>[]; // Changed to MutableRefObject array
-};
+import { useContext, useEffect, useRef, useState } from "react";
+import { LenisContext } from "@/contexts/LenisContext.tsx";
+import { AngleArrowIcon } from "@components/AngleArrowIcon.tsx";
 
-const MouseoverLogic = ({ bgRef, rectRefs }: MouseoverLogicProps) => {
-  // let activeRef = null;
-  //
-  // window.addEventListener(
-  //   "scroll",
-  //   throttle(() => handleMouseEnter(activeRef, bgRef.current), 0),
-  // );
-
-  const handleMouseEnter = (rect: HTMLLIElement, overlay: SVGSVGElement) => {
-    // console.log("ping");
-    // activeRef = rect;
-    if (!rect || !overlay) return;
-
-    // can I get the scroll position and add it to the rect?
-    const rectMeasurements = rect.getBoundingClientRect();
-    const parentMeasurements = overlay.getBoundingClientRect();
-
-    const top = rectMeasurements.top - parentMeasurements.top;
-    const left = rectMeasurements.left - parentMeasurements.left;
-    const bottom = parentMeasurements.bottom - rectMeasurements.bottom;
-    const right = parentMeasurements.right - rectMeasurements.right;
-
-    overlay.style.clipPath = `inset(${top}px ${right}px ${bottom}px ${left}px round 24px)`;
-  };
-
-  useEffect(() => {
-    const handleMouseLeave = (overlay: SVGSVGElement) => {
-      overlay.style.clipPath = "inset(100%)";
-      // activeRef = null;
-    };
-
-    rectRefs.forEach((rectRef) => {
-      const rect = rectRef.current;
-      const overlay = bgRef.current;
-
-      if (rect && overlay) {
-        // window.addEventListener("scroll", throttledResetClipPath);
-
-        const enterHandler = () => handleMouseEnter(rect, overlay);
-        const leaveHandler = () => handleMouseLeave(overlay);
-        //
-        // rect.addEventListener("mouseover", enterHandler);
-        // rect.addEventListener("mouseleave", leaveHandler);
-
-        // Cleanup event listeners on component unmount
-        return () => {
-          rect.removeEventListener("mouseenter", enterHandler);
-          rect.removeEventListener("mouseleave", leaveHandler);
-        };
-      }
-    });
-
-    // Ensure cleanup for all event listeners
-    return () => {
-      rectRefs.forEach((rectRef) => {
-        const rect = rectRef.current;
-        const overlay = bgRef.current;
-        if (rect && overlay) {
-          rect.removeEventListener("mouseover", () =>
-            handleMouseEnter(rect, overlay),
-          );
-          rect.removeEventListener("mouseleave", () =>
-            handleMouseLeave(overlay),
-          );
-        }
-      });
-    };
-  }, [bgRef, rectRefs]);
-
-  return null; // Or render your component's content here
-};
-
-export default MouseoverLogic;
-
-export const ProjectList = ({
-  projBgRef,
-}: {
-  projBgRef: React.RefObject<SVGSVGElement>;
-}) => {
+export const ProjectList = () => {
   const [targetElement, setTargetElement] = useState<HTMLLIElement | null>(
     null,
   );
+  const [defaultVisible, setDefaultVisible] = useState(12);
+  const [totalChildren, setTotalChildren] = useState(0);
+
   const borderRef: React.RefObject<HTMLDivElement> = useRef(null);
   const listRef: React.RefObject<HTMLUListElement> = useRef(null);
   const rectRefs: React.RefObject<HTMLLIElement>[] = [
@@ -117,13 +37,15 @@ export const ProjectList = ({
     useRef<HTMLLIElement>(null),
   ];
 
+  const { initializeLenis } = useContext(LenisContext);
+
   useEffect(() => {
     if (targetElement && borderRef.current && listRef.current) {
       const rect = (targetElement as HTMLElement).getBoundingClientRect();
       const containerRect = listRef.current.getBoundingClientRect();
       const offsetX = rect.left - containerRect.left;
       const offsetY = rect.top - containerRect.top;
-      borderRef.current.style.opacity = "0.3";
+      borderRef.current.style.opacity = ".3";
       borderRef.current.style.width = `${rect.width}px`;
       borderRef.current.style.height = `${rect.height}px`;
       borderRef.current.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
@@ -138,36 +60,34 @@ export const ProjectList = ({
         );
       }
     });
-  }, []);
+  }, [rectRefs]);
 
-  // const [maxChildren, setMaxChildren] = useState(16);
-  // const { visibleProjects, setVisibleProjects } = useProjectVisibility();
+  useEffect(() => {
+    const children = listRef.current?.children;
+    if (!children) return;
 
-  // useEffect(() => {
-  //   // placeholder for handling later
-  //   console.log("");
-  // }, [visibleProjects]);
+    for (let i = 0; i < children.length; i++) {
+      const child = children[i] as HTMLLIElement;
+      if (child.tagName !== "DIV") {
+        if (i <= defaultVisible) {
+          child.style.display = "block";
+          child.classList.add("fade-in");
+        } else {
+          child.style.display = "none";
+        }
+      }
+    }
+    initializeLenis();
+  }, [initializeLenis, defaultVisible]);
 
-  // useEffect(() => {
-  //   const children = listRef.current?.children;
-  //   if (!children) return;
-  //   for (let i = 0; i < children.length; i++) {
-  //     if (i < visibleProjects) {
-  //       (children[i] as HTMLLIElement).style.display = "block"; // or 'inline', or '' depending on your layout
-  //     } else {
-  //       (children[i] as HTMLLIElement).style.display = "none";
-  //     }
-  //   }
-  // }, [visibleProjects]);
+  useEffect(() => {
+    if (!listRef.current) return;
+    setTotalChildren(listRef.current.children.length);
+  }, [listRef]);
 
-  // useEffect(() => {
-  //   if (!listRef.current) return;
-  //   setMaxChildren(listRef.current.children.length);
-  // }, [listRef]);
-
-  // const showMore = () => {
-  //   setVisibleProjects(visibleProjects + 8);
-  // };
+  const showMore = () => {
+    setDefaultVisible(defaultVisible + 8);
+  };
 
   return (
     <>
@@ -177,9 +97,8 @@ export const ProjectList = ({
       >
         <div
           ref={borderRef}
-          className="bg-red absolute left-0 top-0 rounded-xl border-[5px] bg-white opacity-0  duration-500 ease-in-out "
+          className="absolute left-0 top-0 rounded-xl border-[5px] bg-white opacity-0  duration-500 ease-in-out "
         ></div>
-        <MouseoverLogic bgRef={projBgRef} rectRefs={rectRefs} />
         <li ref={rectRefs[0]}>
           <AnimationCard
             name="magic-sky"
@@ -342,14 +261,20 @@ export const ProjectList = ({
           ></AnimationCard>
         </li>
       </ul>
-      {/*{visibleProjects < maxChildren && (*/}
-      {/*  <button*/}
-      {/*    onClick={showMore}*/}
-      {/*    className="text-nowrap font-display text-sm font-bold text-white "*/}
-      {/*  >*/}
-      {/*    VIEW MORE*/}
-      {/*  </button>*/}
-      {/*)}*/}
+      {defaultVisible < totalChildren && (
+        <button
+          onClick={showMore}
+          className="group mt-10 flex text-nowrap font-display text-sm font-bold text-white"
+        >
+          <span>SHOW MORE</span>
+          <AngleArrowIcon
+            className={
+              "arrow-icon ml-1 mt-[4px] h-4 rotate-[135deg] group-hover:translate-y-1"
+            }
+            color="white"
+          />
+        </button>
+      )}
     </>
   );
 };

@@ -1,12 +1,9 @@
 import { Filters } from "@components/Filters.tsx";
 import { ProjectList } from "@components/ProjectList.tsx";
-import { useRef } from "react";
-import { BackgroundSVG } from "@components/BackgroundSVG.tsx";
 import { ProjectVisibilityProvider } from "@/contexts/ProjectsContext.tsx";
 
 export const ProjectSection = () => {
   // const [visibleProjects, setVisibleProjects] = useState("All");
-  const projBgRef = useRef<SVGSVGElement>(null);
 
   return (
     <div className="projects-container relative z-[-2] mt-[-20rem] flex w-screen flex-col items-center  justify-center bg-black pb-[30rem] pt-[30rem]">
@@ -27,13 +24,9 @@ export const ProjectSection = () => {
           ></Filters>
         </div>
         <ProjectVisibilityProvider>
-          <ProjectList projBgRef={projBgRef}></ProjectList>
+          <ProjectList></ProjectList>
         </ProjectVisibilityProvider>
       </div>
-      <BackgroundSVG
-        className="clip-image project-svg fixed left-0 top-0  z-[-1] min-w-[2000px] max-w-[2000px]"
-        ref={projBgRef}
-      />
     </div>
   );
 };

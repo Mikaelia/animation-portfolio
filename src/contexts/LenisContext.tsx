@@ -9,10 +9,16 @@ import Lenis from "lenis";
 import { useLocation } from "react-router-dom";
 
 // Define the context type
-type LenisContextType = (selector: string) => void;
+type LenisContextType = {
+  handleScrollTo: (selector: string) => void;
+  initializeLenis: () => void;
+};
 
 // Create the context with default undefined value
-export const LenisContext = createContext<LenisContextType>(() => {});
+export const LenisContext = createContext<LenisContextType>({
+  handleScrollTo: () => {},
+  initializeLenis: () => {},
+});
 
 interface LenisProviderProps {
   children: ReactNode;
@@ -67,7 +73,7 @@ export const LenisProvider = ({ children }: LenisProviderProps) => {
   }, []);
 
   return (
-    <LenisContext.Provider value={handleScrollTo}>
+    <LenisContext.Provider value={{ handleScrollTo, initializeLenis }}>
       {children}
     </LenisContext.Provider>
   );

@@ -19,3 +19,4 @@ TO DO:
 - [ ] Blog post for magic sky case study - include images 
 - [ ] Link to different versions of site, v1.mikaelagurney.dev deprecate mikaelagurney.com
 - [ ] Refactor / clean up
+- [ ] Have max projects visible and fade in

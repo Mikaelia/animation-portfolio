@@ -3,7 +3,7 @@ import { useRive, Layout, Alignment, Fit } from "@rive-app/react-canvas";
 const STATE_MACHINE = "State Machine 1";
 const Plane = () => {
   const { RiveComponent } = useRive({
-    src: `/plane-test.riv`,
+    src: `/plane-with-cat-2.riv`,
     stateMachines: STATE_MACHINE,
     layout: new Layout({
       fit: Fit.Contain,

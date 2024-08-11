@@ -58,7 +58,7 @@ export const AnimatedPlane = () => {
     <>
       <animated.div
         ref={plane}
-        className="plane-section-animated fixed left-0 top-[20%] hidden h-[20rem] w-[42rem] opacity-0 md:block"
+        className="plane-section-animated fixed left-0 top-[20%] hidden h-[20rem] w-[50rem] opacity-0 md:block"
       >
         <Plane />
       </animated.div>

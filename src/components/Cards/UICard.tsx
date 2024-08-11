@@ -12,7 +12,7 @@ export const UICard: React.FC<{
 }> = ({ children, name, title, description, src, isComponent }) => (
   <Card>
     <Link to={`ui/${name}`}>
-      <div className="child-container w-100 mb-6 h-52 overflow-hidden rounded-xl bg-[white] bg-opacity-30 sm:h-80 xl:h-80">
+      <div className="child-container w-100 mb-6 h-52 overflow-hidden rounded-xl sm:h-80 xl:h-80">
         {src ? (
           <div
             className="h-full bg-cover"
@@ -27,18 +27,10 @@ export const UICard: React.FC<{
       <h4 className="mb-2 font-bold text-white text-opacity-80 duration-500 ease-in-out group-hover:text-opacity-100">
         {title}
       </h4>
-      <p className="text-gray1 text-opacity-65 duration-500 group-hover:text-opacity-100">
-        {description}
-      </p>
-      {isComponent ? (
-        <div className="pill absolute right-0 top-3 rounded-bl-xl rounded-tl-xl border border-r-0 border-white bg-black p-3 text-white duration-500 group-hover:border-black group-hover:bg-white group-hover:text-black">
-          UI Component
-        </div>
-      ) : (
-        <div className="pill absolute right-0 top-3 rounded-bl-xl rounded-tl-xl border border-r-0 border-white bg-black p-3 text-white duration-500 group-hover:border-black group-hover:bg-white group-hover:text-black">
-          UI Effect
-        </div>
-      )}
+      <div className="pill absolute right-0 top-3 rounded-bl-xl rounded-tl-xl border border-r-0 border-white bg-black p-3 text-white duration-500 group-hover:border-black group-hover:bg-white group-hover:text-black">
+        {isComponent ? <span>UI Component</span> : <span>UI Effect</span>}
+      </div>
+      <p className="text-gray1 duration-500 ">{description}</p>
     </Link>
   </Card>
 );

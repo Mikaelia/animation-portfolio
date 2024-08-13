@@ -2,6 +2,7 @@ import HeaderWave from "@components/HeaderWave.tsx";
 import BlogList from "@components/BlogList.tsx";
 import { Link } from "react-router-dom";
 import { AngleArrowIcon } from "@components/AngleArrowIcon.tsx";
+import SleepCat from "@rive/SleepCat.tsx";
 
 export const JournalSection = () => {
   return (
@@ -12,13 +13,16 @@ export const JournalSection = () => {
           className="about-top-wave z-[-1] mb-[-20rem] mt-[-20rem] w-[2000px]"
           background="white"
         />
-        <div className="blog mx-auto flex flex-col items-center self-start md:mx-0 md:items-start">
+        <div className="blog relative mx-auto flex flex-col items-center self-start md:mx-0 md:items-start">
           <h2
             id="journal"
             className="mb-12 mt-[-10rem] font-display text-5xl font-normal text-black md:mt-0 "
           >
             JOURNAL
           </h2>
+          <div className="absolute left-[-5.6rem] top-[-12.1rem] mt-auto h-[20rem] w-[30rem]">
+            <SleepCat></SleepCat>
+          </div>
           <BlogList number={3} />
           <Link
             to="/blog-list"

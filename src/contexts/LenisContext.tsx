@@ -26,8 +26,18 @@ interface LenisProviderProps {
 
 export const LenisProvider = ({ children }: LenisProviderProps) => {
   const lenisRef = useRef<Lenis | null>(null);
+  const { pathname } = useLocation();
 
   const initializeLenis = useCallback(() => {
+    // Only initialize Lenis if the pathname does not start with "project"
+    if (pathname.startsWith("/project")) {
+      if (lenisRef.current) {
+        lenisRef.current.destroy();
+        lenisRef.current = null;
+      }
+      return;
+    }
+
     if (lenisRef.current) {
       lenisRef.current.destroy();
     }
@@ -45,7 +55,7 @@ export const LenisProvider = ({ children }: LenisProviderProps) => {
     }
 
     requestAnimationFrame(raf);
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     initializeLenis();
@@ -57,20 +67,22 @@ export const LenisProvider = ({ children }: LenisProviderProps) => {
     };
   }, [initializeLenis]);
 
-  const { pathname } = useLocation();
-
   useEffect(() => {
     initializeLenis();
   }, [pathname, initializeLenis]);
 
-  const handleScrollTo = useCallback((selector: string) => {
-    const element = document.querySelector(selector);
-    if (element && lenisRef.current) {
-      const elementTop = element.getBoundingClientRect().top + window.scrollY;
-      const position = elementTop - 100;
-      lenisRef.current.scrollTo(position);
-    }
-  }, []);
+  const handleScrollTo = useCallback(
+    (selector: string) => {
+      if (pathname.startsWith("/project")) return; // Skip if on "project" page
+      const element = document.querySelector(selector);
+      if (element && lenisRef.current) {
+        const elementTop = element.getBoundingClientRect().top + window.scrollY;
+        const position = elementTop - 100;
+        lenisRef.current.scrollTo(position);
+      }
+    },
+    [pathname],
+  );
 
   return (
     <LenisContext.Provider value={{ handleScrollTo, initializeLenis }}>

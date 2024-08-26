@@ -11,7 +11,7 @@ export const UICard: React.FC<{
   isComponent?: boolean;
 }> = ({ children, name, title, description, src, isComponent }) => (
   <Card>
-    <Link to={`ui/${name}`}>
+    <Link to={`project/ui/${name}`}>
       <div className="child-container w-100 mb-6 h-52 overflow-hidden rounded-xl sm:h-80 xl:h-80">
         {src ? (
           <div

@@ -11,7 +11,7 @@ export const AnimationCard: React.FC<{
   js?: boolean;
 }> = ({ children, name, title, description, src, js }) => (
   <Card>
-    <Link to={`animation/${js ? "js/" : ""}${name}`}>
+    <Link to={`project/animation/${js ? "js/" : ""}${name}`}>
       <div className="child-container w-100 mb-6 h-52 overflow-hidden rounded-xl bg-[white] bg-opacity-30 sm:h-80 xl:h-80">
         {src ? (
           <div

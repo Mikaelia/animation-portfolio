@@ -41,50 +41,77 @@ function App() {
             <Route path="/resume" element={<ResumePage />} />
             <Route index element={<HomePage />} />
             {/* Tmp fix as Rive doesn't seem to play well with dynamic imports */}
-            <Route path="animation/bubbling-pot" element={<PotPage />} />
-            <Route path="animation/liquid" element={<ProjectWaterPage />} />
             <Route
-              path="animation/undersea-socials"
+              path="project/animation/bubbling-pot"
+              element={<PotPage />}
+            />
+            <Route
+              path="project/animation/liquid"
+              element={<ProjectWaterPage />}
+            />
+            <Route
+              path="project/animation/undersea-socials"
               element={<ProjectSharkSubPage />}
             />
             <Route
-              path="animation/san-francisco"
+              path="project/animation/san-francisco"
               element={<ProjectSanFranciscoPage />}
             />
             <Route
-              path="animation/blackbird"
+              path="project/animation/blackbird"
               element={<ProjectBlackbirdPage />}
             />
-            <Route path="css/css-sword" element={<ProjectSwordPage />} />
-            <Route path="css/css-green-ball" element={<ProjectBallPage />} />
-            <Route path="css/css-toucan" element={<ProjectToucanPage />} />
-            <Route path="css/css-smiley" element={<ProjectSmileyPage />} />
-            <Route path="ui/glowy-clip" element={<ProjectGlowyClipPage />} />
-            <Route path="ui/text-hover-up" element={<ProjectTextHoverUp />} />
-            <Route path="ui/header-mirror" element={<ProjectMirroredPage />} />
             <Route
-              path="ui/text-hover-flip"
+              path="project/css/css-sword"
+              element={<ProjectSwordPage />}
+            />
+            <Route
+              path="project/css/css-green-ball"
+              element={<ProjectBallPage />}
+            />
+            <Route
+              path="project/css/css-toucan"
+              element={<ProjectToucanPage />}
+            />
+            <Route
+              path="project/css/css-smiley"
+              element={<ProjectSmileyPage />}
+            />
+            <Route
+              path="project/ui/glowy-clip"
+              element={<ProjectGlowyClipPage />}
+            />
+            <Route
+              path="project/ui/text-hover-up"
+              element={<ProjectTextHoverUp />}
+            />
+            <Route
+              path="project/ui/header-mirror"
+              element={<ProjectMirroredPage />}
+            />
+            <Route
+              path="project/ui/text-hover-flip"
               element={<ProjectTextHoverFlip />}
             />
             <Route
-              path="ui/animated-tooltip"
+              path="project/ui/animated-tooltip"
               element={<ProjectAnimatedTooltipPage />}
             />
-            <Route path="ui/gooey-nav" element={<ProjectGooeyPage />} />
+            <Route path="project/ui/gooey-nav" element={<ProjectGooeyPage />} />
             <Route
-              path="animation/js/magic-sky"
+              path="project/animation/js/magic-sky"
               element={<ProjectMagicSkyPage />}
             />
             <Route
-              path="animation/js/canvas-floating-boxes"
+              path="project/animation/js/canvas-floating-boxes"
               element={<ProjectFloatingBoxesPage />}
             />
             <Route
-              path="ui/file-explorer"
+              path="project/ui/file-explorer"
               element={<ProjectFileExplorerPage />}
             />
             <Route
-              path="ui/explore-button"
+              path="project/ui/explore-button"
               element={<ProjectExploreButtonPage />}
             />
 

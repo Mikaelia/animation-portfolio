@@ -4,8 +4,8 @@ import { useState } from "react";
 
 const buttonsConfig = [
   { id: 0, label: "Happy Step", color: "green" },
-  { id: 1, label: "Shuffle", color: "blue" },
-  { id: 2, label: "Peck", color: "pink" },
+  { id: 1, label: "Shuffle", color: "green" },
+  { id: 2, label: "Peck", color: "green" },
 ];
 
 export const ProjectBlackbirdPage = () => {

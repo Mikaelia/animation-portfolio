@@ -12,7 +12,7 @@ export const CssCard: React.FC<{
 }> = ({ name, title, description, src, art }) => {
   return (
     <Card>
-      <Link to={`${!art ? "project/animation/" : ""}css/${name}`}>
+      <Link to={`${!art ? "project/animation/" : ""}project/css/${name}`}>
         <div className="child-container w-100  mb-6 h-52 overflow-hidden rounded-xl opacity-100 sm:h-80 xl:h-80">
           <div
             className="h-full bg-cover bg-center bg-no-repeat"

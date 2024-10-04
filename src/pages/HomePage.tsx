@@ -28,6 +28,9 @@ export const HomePage = () => {
       <JournalSection />
       <Background />
       {/*<div className="h-screen"></div>*/}
+      <h3 className="absolute bottom-10 right-10 z-[10000] font-display text-7xl text-white">
+        Thank you!
+      </h3>
       <div className="z-[100] overflow-x-hidden ">
         <RiveFooter />
       </div>

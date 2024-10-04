@@ -14,7 +14,7 @@ export const HeaderSection = () => {
         <div
           className={`rive-projects relative flex w-full flex-col items-center pb-20 pt-20 text-center text-black duration-1000`}
         >
-          <h1 className="mt-[-15rem] font-display text-7xl sm:mt-[-10rem] sm:text-8xl lg:text-9xl xl:ml-[12rem]">
+          <h1 className="mt-[-15rem] font-display text-7xl sm:mt-[-10rem] sm:text-8xl lg:text-9xl xl:ml-32">
             MIKAELA GURNEY
           </h1>
           <p className="mb-20 pt-6 font-body text-xl lg:mt-2.5 lg:text-[2rem]">

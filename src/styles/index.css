@@ -3,8 +3,14 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import '@fontsource/nanum-pen-script';
-@import 'typeface-oswald';
 @import 'typeface-oxygen';
+
+@font-face {
+  font-family: 'Tanker';
+  src: url('src/assets/fonts/tanker-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */

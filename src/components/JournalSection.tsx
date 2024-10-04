@@ -7,7 +7,7 @@ import SleepCat from "@rive/SleepCat.tsx";
 export const JournalSection = () => {
   return (
     <>
-      <div className="blog-section z-[1000] flex w-screen max-w-[2000px] flex-col items-center bg-white px-4  md:px-12 ">
+      <div className="blog-section relative z-[1000] flex w-screen max-w-[2000px] flex-col items-center bg-white px-4  md:px-12 ">
         )
         <HeaderWave
           className="about-top-wave z-[-1] mb-[-20rem] mt-[-20rem] w-[2000px]"
@@ -20,9 +20,6 @@ export const JournalSection = () => {
           >
             JOURNAL
           </h2>
-          <div className="absolute left-[-5.6rem] top-[-12.1rem] mt-auto h-[20rem] w-[30rem]">
-            <SleepCat></SleepCat>
-          </div>
           <BlogList number={3} />
           <Link
             to="/blog-list"
@@ -34,6 +31,9 @@ export const JournalSection = () => {
             </span>
             <AngleArrowIcon className={"arrow-icon ml-1 mt-[2px] h-4"} />
           </Link>
+        </div>
+        <div className="absolute bottom-[-24.65rem] left-[55%] inline-block h-[20rem] w-[30rem] translate-x-[-55%]">
+          <SleepCat></SleepCat>
         </div>
       </div>
       <HeaderWave

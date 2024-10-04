@@ -8,7 +8,7 @@ export const Filters = ({
 }) => {
   return (
     <div className={`filters ${className} flex flex-col`}>
-      <h3 className="text-l mb-4 font-display font-medium">CATEGORIES</h3>
+      <h3 className="text-l mb-4 font-display text-lg">CATEGORIES</h3>
       <div className="pill-container flex flex-wrap gap-2">
         <Pill
           isButton

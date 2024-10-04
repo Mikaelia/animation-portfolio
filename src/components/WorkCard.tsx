@@ -88,11 +88,11 @@ export const WorkCard = ({
             ref={rectRef}
             className="link-non flex max-w-4xl flex-col rounded-b-sm py-6 text-sm text-black md:flex-row"
           >
-            <div className="date  mr-4 whitespace-nowrap font-display font-semibold">
+            <div className="date mr-4 whitespace-nowrap font-display font-semibold">
               <span>{date}</span>
             </div>
             <div className="detail">
-              <h3 className="mb-2 flex font-bold">
+              <h3 className="mb-2 mt-[-3.5px] flex font-display text-lg">
                 <span>{title}</span>
                 <span>
                   <AngleArrowIcon className={"arrow-icon ml-1 mt-[2px] h-4"} />
@@ -116,7 +116,9 @@ export const WorkCard = ({
             <span>{date}</span>
           </div>
           <div className="detail">
-            <h3 className="text-l mb-2 font-black">{title}</h3>
+            <h3 className="text-l mb-2 mt-[-3.5px] font-display text-lg">
+              {title}
+            </h3>
             <p className="mb-2">{details}</p>
             <div className="pill-container flex flex-wrap gap-2">
               {skills.map((v: string) => (

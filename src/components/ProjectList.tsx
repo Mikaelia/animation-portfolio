@@ -45,7 +45,7 @@ export const ProjectList = () => {
       const containerRect = listRef.current.getBoundingClientRect();
       const offsetX = rect.left - containerRect.left;
       const offsetY = rect.top - containerRect.top;
-      borderRef.current.style.opacity = ".3";
+      borderRef.current.style.opacity = ".1";
       borderRef.current.style.width = `${rect.width}px`;
       borderRef.current.style.height = `${rect.height}px`;
       borderRef.current.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
@@ -97,7 +97,7 @@ export const ProjectList = () => {
       >
         <div
           ref={borderRef}
-          className="absolute left-0 top-0 rounded-xl border-[5px] bg-white opacity-0  duration-500 ease-in-out "
+          className="absolute left-0 top-0 rounded-xl border-[5px] bg-white opacity-0  duration-500 ease-in-out"
         ></div>
         <li ref={rectRefs[0]}>
           <AnimationCard

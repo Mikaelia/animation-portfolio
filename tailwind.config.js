@@ -35,9 +35,8 @@ export default {
         lpurple: "#DCC7EA",
       },
       fontFamily: {
-        display: [["Oswald", "sans-serif"]],
+        display: [["Tanker", "sans-serif"]],
         body: ["Oxygen", "sans-serif"],
-        handwriting: ["Oswald", "sans-serif"],
       },
       gridTemplateColumns: {
         projects: "repeat(auto-fit, minmax(300px, 1fr))",

@@ -38,7 +38,7 @@ const BlogList = ({ number, newTab }: BlogListProps) => {
               className="font-normal no-underline"
               to={post.path}
             >
-              <h3 className="text-l mb-2 font-bold transition duration-300 group-hover:text-pink">
+              <h3 className="text-l mb-2 font-display text-lg font-bold transition duration-300 group-hover:text-pink">
                 {post.title}
               </h3>
               <p className="no-underline">{post.description}</p>

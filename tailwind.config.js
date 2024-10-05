@@ -39,7 +39,8 @@ export default {
         body: ["Oxygen", "sans-serif"],
       },
       gridTemplateColumns: {
-        projects: "repeat(auto-fit, minmax(300px, 1fr))",
+        projects_lg: "repeat(auto-fit, minmax(400px, 1fr))",
+        projects_sm: "repeat(auto-fit, minmax(300px, 1fr))",
       },
       gridTemplateRows: {
         projects: "repeat(3, min-content)",

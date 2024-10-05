@@ -93,7 +93,7 @@ export const ProjectList = () => {
     <>
       <ul
         ref={listRef}
-        className="relative grid w-full max-w-7xl auto-rows-min grid-cols-projects grid-rows-projects justify-center overflow-visible "
+        className="grid-cols-projects_sm lg:grid-cols-projects_lg relative grid w-full max-w-7xl auto-rows-min grid-rows-projects justify-center overflow-visible md:justify-between "
       >
         <div
           ref={borderRef}

@@ -22,3 +22,4 @@ TO DO:
 - [ ] Set display to context so that you can backtrack to same page position
 - [ ] Make cat follow mouse and smek it
 - [ ] Cat eat mouse, and hide the cursor -> or make the cursor interact somehow e.g. be partially eaten
+- [ ] Sphere blob out on back button

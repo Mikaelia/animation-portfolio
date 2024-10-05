@@ -3,9 +3,9 @@ import Blackbird from "@rive/Blackbird";
 import { useState } from "react";
 
 const buttonsConfig = [
-  { id: 0, label: "Happy Step", color: "green" },
-  { id: 1, label: "Shuffle", color: "green" },
-  { id: 2, label: "Peck", color: "green" },
+  { id: 0, label: "Happy Step", color: "red" },
+  { id: 1, label: "Shuffle", color: "blue" },
+  { id: 2, label: "Peck", color: "blue" },
 ];
 
 export const ProjectBlackbirdPage = () => {
@@ -20,13 +20,12 @@ export const ProjectBlackbirdPage = () => {
   const buildInstructionControls = () => {
     return (
       <div className="buttons items-left mt-10 flex flex-col">
-        <h2 style={{ fontSize: "0.875rem" }}>Choose:</h2>
         {buttonsConfig.map(({ id, label, color }) => (
           <button
             key={id}
             className={`${
               isActive === id && "active"
-            } select-button relative mt-6 w-full max-w-60  grow cursor-pointer whitespace-nowrap rounded-xl border pr-12 border-l${color} bg-${color} p-2 pl-4`}
+            } select-button relative mt-6 w-full max-w-60 grow cursor-pointer whitespace-nowrap rounded-xl border pr-12 border-l${color}  p-2 pl-4`}
             onClick={() => handleClick(id)}
           >
             {label}

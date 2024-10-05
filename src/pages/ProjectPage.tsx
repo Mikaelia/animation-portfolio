@@ -32,7 +32,10 @@ export const ProjectPage = ({
       <nav className=" mb-3 border-b border-gray5 bg-gray4 font-semibold ">
         <ul className="ml-3 flex items-center gap-5 p-2">
           <li className="nav inline-block bg-white bg-clip-text font-display text-2xl duration-500 ease-in-out">
-            <button onClick={() => navigate(-1)}>
+            <button
+              className="ml-[-.5rem] translate-y-[.5rem]"
+              onClick={() => navigate(-1)}
+            >
               {smQuery ? "Home" : <HomeButton></HomeButton>}
             </button>
           </li>
@@ -51,7 +54,7 @@ export const ProjectPage = ({
         <div
           className={`${!showSidePanel ? "minimized" : ""} ${absoluteSidepanel ? "absolute left-0 ml-0 w-full" : "relative ml-3"} ${absoluteSidepanel && !showSidePanel && "hidden"} side-panel w-1/3 rounded-bl-md rounded-tl-md border border-r-0 border-gray5 bg-gray4 p-8 text-xl font-semibold`}
         >
-          <h1 className="title mb-6">{title}</h1>
+          <h1 className="title mb-6 font-display text-3xl">{title}</h1>
           <div className="max-h-[95%] overflow-y-scroll text-sm font-light leading-6 scrollbar-hide">
             <div className="content">{instructions}</div>
           </div>

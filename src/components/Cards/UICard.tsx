@@ -24,7 +24,7 @@ export const UICard: React.FC<{
           children
         )}
       </div>
-      <h4 className="text-large mb-2 font-display text-white text-opacity-80 duration-500 ease-in-out group-hover:text-opacity-100">
+      <h4 className="mb-2 font-display text-lg text-white text-opacity-80 duration-500 ease-in-out group-hover:text-opacity-100">
         {title}
       </h4>
       <div className="pill absolute right-0 top-3 rounded-bl-xl rounded-tl-xl border border-r-0 border-white bg-black p-3 text-sm text-white opacity-80 duration-500 group-hover:border-black group-hover:bg-white group-hover:text-black group-hover:opacity-100">

@@ -24,7 +24,7 @@ export const AnimationCard: React.FC<{
           children
         )}
       </div>
-      <h4 className="mb-2 font-display text-white text-opacity-80 duration-500 ease-in-out group-hover:text-opacity-100">
+      <h4 className="mb-2 font-display text-lg text-white text-opacity-80 duration-500 ease-in-out group-hover:text-opacity-100">
         {title}
       </h4>
       <p className="text-gray1 text-opacity-65 duration-500 group-hover:text-opacity-100">

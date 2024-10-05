@@ -160,8 +160,10 @@ html {
   opacity: 90%
 }
 
-.select-button:hover, .select-button.active {
-  outline: 1px solid white;
+
+.select-button.active {
+  background: white;
+  color: black;
 }
 
 .select-button::before {
@@ -176,8 +178,12 @@ html {
 
 }
 
-.select-button:hover::before, .select-button.active::before {
+.select-button:hover::before {
   background: white;
+}
+
+.select-button.active::before {
+  background: black;
 }
 
 .side-panel {
